@@ -15,7 +15,7 @@
                </div>
             </div>
             <div class="iq-card-body">
-               <span class="table-add float-right mb-3 mr-2">
+               <span class="table-add float-right mb-3 mr-lg-2">
                   <a href="{{route('pasien.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah Data<a class=""><span></span></a>
                   </a>
                </span>
@@ -23,11 +23,11 @@
                <table class="table">
                   <thead>
                      <tr>
-                        <th scope="col">No</th>
+                        <th scope="col">No.</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Katogori Pasien</th>
                         <th scope="col">Jenis Kelamin</th>
-                        <th scope="col">No.Hp</th>
+                        <th scope="col">No. Hp</th>
                         <th scope="col">Action</th>
                      </tr>
                   </thead>
