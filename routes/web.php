@@ -22,6 +22,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/login', 'Admin\AuthAdminController@showLogin')->name('showlogin');
     Route::post('/login', 'Admin\AuthAdminController@login')->name('admin.login');
     Route::get('/logout', 'Admin\AuthAdminController@logout')->name('admin.logout');
+    Route::get('/profile', 'Admin\DashboardController@profile')->name('admin.profile');
+
 
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard')->middleware('CekLoginAuth');
     Route::get('/pasien', 'Admin\PasienController@index')->name('pasien.index')->middleware('CekLoginAuth');
@@ -40,4 +42,16 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/obat/destroy/{id}', 'Admin\ObatController@destroy')->name('obat.destroy')->middleware('CekLoginAuth');
 
     Route::get('/rekamMedik', 'Admin\RekamMedikController@index')->name('rekamMedik.index')->middleware('CekLoginAuth');
+
+    Route::get('/report', 'Admin\ReportController@index')->name('report.index')->middleware('CekLoginAuth');
+});
+
+Route::group(['prefix' => 'kasir'], function () {
+
+    Route::get('/login', 'Kasir\AuthKasirController@showLogin')->name('showlogin');
+    Route::post('/login', 'Kasir\AuthKasirController@login')->name('kasir.login');
+    Route::get('/logout', 'Kasir\AuthKasirController@logout')->name('kasir.logout');
+
+    Route::get('/dashboard', 'Kasir\DashboardController@index')->name('kasir.dashboard')->middleware('CekLoginAuth');
+
 });

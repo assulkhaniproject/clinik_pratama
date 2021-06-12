@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Klinik Harapan Bersama Tegal</title>
+    <title>Klinik Pratama Harapan Bersama Tegal</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('admin/images/favicon.ico')}}" />
     <!-- Bootstrap CSS -->
@@ -28,7 +28,7 @@
     </div>
     <!-- loader END -->
     <!-- Wrapper Start -->
-    <div class="iq-comingsoon pt-5">
+    <div class="iq-comingsoon pt-5 text-primary">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-sm-8 text-center">
@@ -36,7 +36,7 @@
                         <a href="#">
                             <img src="{{asset('admin/images/poltekharber.png')}}" class="img-fluid w-25" alt="">
                         </a>
-                        <h2 class="mt-4 mb-1">Klinik Pratama Harapan Bersama Kota Tegal</h2>
+                        <h2 class="mt-4 mb-1 text-primary">Klinik Pratama Harapan Bersama Kota Tegal</h2>
                         <p>Jl. Mataram No 9 (belakang terminal) Pesurungan Lor Kota Tegal, Jawa Tengah Indonesia</p>
                         <!-- <ul class="countdown" data-date="Feb 02 2022 20:20:22">
                            <li><span data-days>0</span>Days</li>
@@ -48,7 +48,7 @@
                     <div class="d-block row">
                         <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
                             <a type="button" href="{{route('admin.login')}}" class="btn btn-primary px-5 text-white">ADMIN</a>
-                            <a type="button" href="" class="btn btn-primary px-5 text-white"> KASIR</a>
+                            <a type="button" href="{{route('kasir.login')}}" class="btn btn-primary px-5 text-white"> KASIR</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                   </ul> -->
                </div>
                <div class="col-lg-6 text-right">
-                  Copyright 2021 Klinik Pratama <a href="https://poltektegal.ac.id/">Politeknik Harapan Bersama.</a>
+                  Copyright 2021 - Klinik Pratama <a href="https://poltektegal.ac.id/">Politeknik Harapan Bersama.</a>
                </div>
             </div>
          </div>

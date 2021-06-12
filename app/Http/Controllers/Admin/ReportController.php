@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RekamMedikController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class RekamMedikController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.rekamMedik.index');
+        return view('pages.admin.report.index');
     }
 
     /**

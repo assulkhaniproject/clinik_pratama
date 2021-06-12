@@ -31,7 +31,7 @@
                 <div class="row no-gutters">
                     <div class="col-md-6 text-center">
                         <div class="sign-in-detail text-white">
-                            <a class="sign-in-logo mb-5" href="#"></a>
+                            <a class="sign-in-logo mb-5" href=""></a>
                             <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
                                 <div class="item">
                                     <img src="{{asset('admin/images/login/1.png')}}" class="img-fluid mb-4" alt="logo">
@@ -53,9 +53,9 @@
                     </div>
                     <div class="col-md-6 position-relative">
                         <div class="sign-in-from">
-                            <h1 class="mb-0">Sign in Admin</h1>
-                            <p>Enter your email address and password to access admin panel.</p>
-                            <form class="mt-4" method="POST" action="{{route('admin.login')}}">
+                            <h1 class="mb-0">Sign in Kasir</h1>
+                            <p>Enter your email address and password to access kasir panel.</p>
+                            <form class="mt-4" method="POST" action="{{route('kasir.login')}}">
                             @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
