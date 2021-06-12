@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/login', 'Admin\AuthAdminController@login')->name('admin.login');
     Route::get('/logout', 'Admin\AuthAdminController@logout')->name('admin.logout');
     Route::get('/profile', 'Admin\DashboardController@profile')->name('admin.profile');
+    Route::get('/InfoCorona19', 'CoronaController@index')->name('admin.corona');
 
 
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard')->middleware('CekLoginAuth');

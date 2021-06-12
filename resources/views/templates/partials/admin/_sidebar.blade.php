@@ -2,7 +2,7 @@
    <div class="iq-sidebar-logo d-flex justify-content-between">
       <a href="#" class="title">
          <img src="{{asset('admin/images/logo.png')}}" class="img-fluid" alt="">
-         <span class="title">Clinic Pratama</span>
+         <span class="title">Klinik Pratama</span>
       </a>
       <div class="iq-menu-bt-sidebar">
          <div class="iq-menu-bt align-self-center">
@@ -39,7 +39,7 @@
             </li>
             <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
             <li>
-               <a href="dashboard-4.html" class="iq-waves-effect"><i class="lab la-mendeley"></i><span>Covid-19 Dashboard</span><span class="badge badge-danger">New</span></a>
+               <a href="{{route('admin.corona')}}" class="iq-waves-effect"><i class="lab la-mendeley"></i><span>Info Covid-19 Indonesia</span></a>
             </li>
          </ul>
       </nav>

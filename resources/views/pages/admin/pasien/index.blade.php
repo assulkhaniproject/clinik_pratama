@@ -34,15 +34,14 @@
                   @foreach($datas as $data)
                   <tbody>
                      <tr>
-                     <td class="checkbox-column text-center"> {{$loop->iteration}}.</td>
-                     <td>{{$data->nama}}</td>
+                        <td class="checkbox-column text-center"> {{$loop->iteration}}.</td>
+                        <td>{{$data->nama}}</td>
                         <td>{{$data->kategori_pasien}}</td>
                         <td>{{$data->jenis_kelamin}}</td>
                         <td>{{$data->no_hp}}</td>
                         <td>
-                        <a href="{{route('pasien.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
-                        <a href="{{route('pasien.destroy', $data->id)}}" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')"
-                            type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
+                           <a href="{{route('pasien.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
+                           <a href="{{route('pasien.destroy', $data->id)}}" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
                         </td>
                      </tr>
                   </tbody>

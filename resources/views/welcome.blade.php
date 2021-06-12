@@ -28,12 +28,12 @@
     </div>
     <!-- loader END -->
     <!-- Wrapper Start -->
-    <div class="iq-comingsoon pt-5 text-primary">
+    <div class="iq-comingsoon pt-5">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-sm-8 text-center">
                     <div class="iq-comingsoon-info">
-                        <a href="#">
+                        <a>
                             <img src="{{asset('admin/images/poltekharber.png')}}" class="img-fluid w-25" alt="">
                         </a>
                         <h2 class="mt-4 mb-1 text-primary">Klinik Pratama Harapan Bersama Kota Tegal</h2>
