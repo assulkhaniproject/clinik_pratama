@@ -30,5 +30,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/pasien/detail/{id}', 'Admin\PasienController@show')->name('pasien.show')->middleware('CekLoginAuth');
     Route::get('/pasien/edit/{id}', 'Admin\PasienController@edit')->name('pasien.edit')->middleware('CekLoginAuth');
     Route::patch('/pasien/update/{id}', 'Admin\PasienController@update')->name('pasien.update')->middleware('CekLoginAuth');
-    Route::get('/pasien/destroy/{id}', 'Admin\PasienController@destroy')->name('pasien.destroy');
+    Route::get('/pasien/destroy/{id}', 'Admin\PasienController@destroy')->name('pasien.destroy')->middleware('CekLoginAuth');
+
+    Route::get('/obat', 'Admin\ObatController@index')->name('obat.index')->middleware('CekLoginAuth');
+    Route::get('/obat/create', 'Admin\ObatController@create')->name('obat.create')->middleware('CekLoginAuth');
+    Route::post('/obat/store', 'Admin\ObatController@store')->name('obat.store')->middleware('CekLoginAuth');
+    Route::get('/obat/edit/{id}', 'Admin\ObatController@edit')->name('obat.edit')->middleware('CekLoginAuth');
+    Route::patch('/obat/update/{id}', 'Admin\ObatController@update')->name('obat.update')->middleware('CekLoginAuth');
+    Route::get('/obat/destroy/{id}', 'Admin\ObatController@destroy')->name('obat.destroy')->middleware('CekLoginAuth');
+
+    Route::get('/rekamMedik', 'Admin\RekamMedikController@index')->name('rekamMedik.index')->middleware('CekLoginAuth');
 });

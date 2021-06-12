@@ -25,13 +25,13 @@
                    @else class="false" @endif>
                <a href="{{route('pasien.index')}}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Data Pasien</span></a>
             </li>
-            <li @if (Request::is('admin/medik')) class="active"
+            <li @if (Request::is('admin/rekamMedik')) class="active"
                    @else class="false" @endif>
-               <a href="#" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>Rekam Medik</span></a>
+               <a href="{{route('rekamMedik.index')}}" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>Rekam Medik</span></a>
             </li>
             <li @if (Request::is('admin/obat')) class="active"
                    @else class="false" @endif>
-               <a href="#" class="iq-waves-effect"><i class="ion-medkit"></i><span>Data Obat</span></a>
+               <a href="{{route('obat.index')}}" class="iq-waves-effect"><i class="ion-medkit"></i><span>Data Obat</span></a>
             </li>
             <li @if (Request::is('admin/report')) class="active"
                    @else class="false" @endif>

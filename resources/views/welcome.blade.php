@@ -37,7 +37,7 @@
                             <img src="{{asset('admin/images/poltekharber.png')}}" class="img-fluid w-25" alt="">
                         </a>
                         <h2 class="mt-4 mb-1">Klinik Pratama Harapan Bersama Kota Tegal</h2>
-                        <p>We are working very hard to give you the best experience possible!</p>
+                        <p>Jl. Mataram No 9 (belakang terminal) Pesurungan Lor Kota Tegal, Jawa Tengah Indonesia</p>
                         <!-- <ul class="countdown" data-date="Feb 02 2022 20:20:22">
                            <li><span data-days>0</span>Days</li>
                            <li><span data-hours>0</span>Hours</li>
