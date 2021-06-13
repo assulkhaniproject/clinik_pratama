@@ -16,7 +16,7 @@
    <div id="sidebar-scrollbar">
       <nav class="iq-sidebar-menu">
          <ul id="iq-sidebar-toggle" class="iq-menu">
-            <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Dashboard</span></li>
+            <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Pages</span></li>
             <li @if (Request::is('admin/dashboard')) class="active"
                    @else class="false" @endif>
                <a href="{{route('admin.dashboard')}}" class="iq-waves-effect"><i class="ion-home"></i><span>Dashboard</span></a>
@@ -38,7 +38,8 @@
                <a href="{{route('report.index')}}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
             </li>
             <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
-            <li>
+            <li @if (Request::is('admin/InfoCorona19')) class="active"
+                   @else class="false" @endif>
                <a href="{{route('admin.corona')}}" class="iq-waves-effect"><i class="lab la-mendeley"></i><span>Info Covid-19 Indonesia</span></a>
             </li>
          </ul>
