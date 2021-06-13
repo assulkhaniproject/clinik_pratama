@@ -54,5 +54,7 @@ Route::group(['prefix' => 'kasir'], function () {
     Route::get('/logout', 'Kasir\AuthKasirController@logout')->name('kasir.logout');
 
     Route::get('/dashboard', 'Kasir\DashboardController@index')->name('kasir.dashboard')->middleware('CekLoginAuth');
+    Route::get('/pembayaran', 'Kasir\DashboardController@index')->name('kasir.pembayaran')->middleware('CekLoginAuth');
+    Route::get('/report', 'Kasir\DashboardController@index')->name('kasir.report')->middleware('CekLoginAuth');
 
 });
