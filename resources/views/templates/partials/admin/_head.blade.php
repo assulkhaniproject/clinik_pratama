@@ -4,7 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Clinic Pratama HB</title>
       <!-- Favicon -->
-      <link rel="shortcut icon" href="{{asset('admin/images/favicon.ico')}}" />
+      <link rel="shortcut icon" href="{{asset('admin/images/poltekharber.png')}}" />
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
       <!-- Typography CSS -->

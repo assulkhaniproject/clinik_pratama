@@ -1,7 +1,7 @@
 <div class="iq-sidebar">
    <div class="iq-sidebar-logo d-flex justify-content-between">
       <a href="#" class="title">
-         <img src="{{asset('admin/images/logo.png')}}" class="img-fluid" alt="">
+         <img src="{{asset('admin/images/poltekharber.png')}}" class="img-fluid" alt="">
          <span class="title">Klinik Pratama</span>
       </a>
       <div class="iq-menu-bt-sidebar">
