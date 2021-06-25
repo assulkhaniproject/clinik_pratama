@@ -39,3 +39,4 @@
 <script src="{{asset('admin/js/chart-custom.js')}}"></script>
 <!-- Custom JavaScript -->
 <script src="{{asset('admin/js/custom.js')}}"></script>
+<!-- Copyright - 2021 || Abu Muslih Assulkhani || Klinik Pratama PoltekHarber -->

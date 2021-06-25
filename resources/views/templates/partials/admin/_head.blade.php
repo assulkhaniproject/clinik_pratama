@@ -2,7 +2,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Clinic Pratama HB</title>
+      <title>Klinik Pratama HB</title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{asset('admin/images/poltekharber.png')}}" />
       <!-- Bootstrap CSS -->

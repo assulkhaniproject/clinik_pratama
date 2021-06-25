@@ -245,6 +245,6 @@
             </li>
          </ul>
       </nav>
-
+      <!-- Copyright - 2021 || Abu Muslih Assulkhani || Klinik Pratama PoltekHarber -->
    </div>
 </div>

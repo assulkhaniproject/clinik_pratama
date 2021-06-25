@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-<!-- Mirrored from iqonic.design/themes/xray/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jun 2021 21:10:05 GMT -->
-
 <head>
    @include('templates.partials.admin._head')
 </head>
@@ -10,10 +8,10 @@
 <body class="sidebar-main-menu">
    <!-- loader Start -->
    <div id="loading">
-         <div id="loading-center">
+      <div id="loading-center">
 
-         </div>
       </div>
+   </div>
    <!-- loader END -->
    <!-- Wrapper Start -->
    <div class="wrapper">
@@ -40,6 +38,6 @@
 
 </body>
 
-<!-- Mirrored from iqonic.design/themes/xray/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jun 2021 21:10:58 GMT -->
+<!-- Copyright - 2021 || Abu Muslih Assulkhani || Klinik Pratama PoltekHarber -->
 
 </html>

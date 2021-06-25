@@ -8,8 +8,9 @@
                   </ul>
                </div>
                <div class="col-lg-6 text-right">
-                  Copyright 2021 <a href="#">Clinic Pratama</a> Politeknik Harapan Bersama.
+                  Copyright 2021 <a href="#">Klinik Pratama</a> Politeknik Harapan Bersama.
                </div>
             </div>
          </div>
+         <!-- Copyright - 2021 || Abu Muslih Assulkhani || Klinik Pratama PoltekHarber -->
       </footer>
