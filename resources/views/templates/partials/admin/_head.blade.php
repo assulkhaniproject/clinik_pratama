@@ -20,6 +20,6 @@
       <link href="{{asset('admin/fullcalendar/list/main.css')}}" rel='stylesheet' />
 
       <link rel="stylesheet" href="{{asset('admin/css/flatpickr.min.css')}}" >
-      
+      <link rel="stylesheet" href="{{asset('admin/cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css')}}">
 
    </head>
