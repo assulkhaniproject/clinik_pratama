@@ -15,11 +15,12 @@ class CreateRekamMedikTable extends Migration
     {
         Schema::create('rekam_medik', function (Blueprint $table) {
             $table->id();
-            $table->char('no_identitas', 16);
             $table->string('no_rekam_medik');
-            $table->date('tgl_pemeriksaan');
-            $table->string('jenis_pemeriksaan');
-            $table->string('keluhan_pasien');
+            $table->char('no_identitas', 16);
+            $table->date('tanggal_periksa');
+            $table->string('jenis_periksa',100);
+            $table->string('keluhan',100);
+            $table->string('tindakan',100);
             $table->timestamps();
         });
     }

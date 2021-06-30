@@ -10,12 +10,14 @@ use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use NunoMaduro\Collision\Adapters\Phpunit\Style;
 use App\IdGenerator;
+use App\RekamMedik;
 
 class RekamMedikController extends Controller
 {
     public function index()
     {
-        return view('pages.admin.rekamMedik.index');
+        $data = RekamMedik::all();
+        return view('pages.admin.rekamMedik.index', compact('data'));
     }
 
     public function create()
@@ -27,12 +29,32 @@ class RekamMedikController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            // 'no_rekam_medik' => 'required',
+            'no_identitas' => 'required',
+            'tanggal_periksa' => 'required',
+            'no_hp' => 'required',
+            'jenis_periksa' => 'required',
+            'keluhan' => 'required',
+            'tindakan' => 'required',
+        ]);
+
+        RekamMedik::create([
+            'no_rekam_medik' => $request->no_rekam_medik,
+            'no_identitas' => $request->no_identitas,
+            'tanggal_periksa' => $request->tanggal_periksa,
+            'jenis_periksa' => $request->keluhan,
+            'keluhan' => $request->keluhan,
+            'tindakan' => $request->tindakan,
+        ]);
+        return redirect()->route('rekamMedik.index')->with('success', 'Data Berhasil Tersimpan');
+
     }
 
     public function show($id)
     {
-        //
+        $data = RekamMedik::find($id);
+        return view('pages.admin.rekamMedik.detail', compact('data'));
     }
 
     public function edit($id)

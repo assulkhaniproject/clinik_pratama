@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RekamMedik extends Model
 {
     protected $guarded = [];
-    protected $table = 'pasien';
+    protected $table = 'rekam_medik';
  
     public function pasien()
     {

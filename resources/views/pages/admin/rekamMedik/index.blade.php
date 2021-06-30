@@ -39,29 +39,29 @@
                   <thead>
                      <tr>
                         <th scope="col">No.</th>
+                        <th scope="col">No. Rekam Medik</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">Katogori Pasien</th>
-                        <th scope="col">Jenis Kelamin</th>
+                        <th scope="col">Tanggal Periksa</th>
                         <th scope="col">No. Hp</th>
                         <th scope="col">Action</th>
                      </tr>
                   </thead>
 
-
+                  @foreach($data as $data)
                   <tbody>
                      <tr>
-                        <td class="checkbox-column text-center">#</td>
-                        <td>#</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="checkbox-column text-center"> {{$loop->iteration}}.</td>
+                        <td>{{$data->no_rekam_medik}}</td>
+                        <td>{{$data->pasien->nama}}</td>
+                        <td>{{$data->tanggal_periksa}}</td>
+                        <td>{{$data->pasien->no_hp}}</td>
                         <td>
-                           <a href="#" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
+                           <a href="{{route('rekamMedik.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
                            <a href="#" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
                         </td>
                      </tr>
                   </tbody>
-
+                  @endforeach
 
                </table>
             </div>

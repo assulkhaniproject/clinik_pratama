@@ -17,11 +17,11 @@
                 </div>
                 <div class="iq-card-body">
                     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p> -->
-                    <form method="post" action="#">
+                    <form method="post" action="{{route('rekamMedik.store')}}">
                         @csrf
                         <div class="form-group">
                             <label for="">Nomor Rekam Medik:</label>
-                            <input name="no_rekam_medik" type="text" class="form-control {{$errors->has('no_rekam_medik')?'is-invalid':''}}" id="no_rekam_medik" value="{{$noRekamMedik}}" disabled>
+                            <input name="no_rekam_medik" type="text" class="form-control {{$errors->has('no_rekam_medik')?'is-invalid':''}}" id="no_rekam_medik" value="{{$noRekamMedik}}"readonly>
                             @if ($errors->has('no_rekam_medik'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('no_rekam_medik')}}</b></p>
@@ -29,7 +29,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="">No Identitas:</label>
+                            <label for="">No Identitas-Nama:</label>
                             {{-- <input name="no_identitas" type="number" class="form-control {{$errors->has('no_identitas')?'is-invalid':''}}" id="number_id"> --}}
                             <select name="no_identitas" id="no_identitas" class="fetch_no_identitas form-control select2" data-placeholder="Cari Pasien"></select>
                             {{-- <div id="autocompleteresultlist" style="position:relative;display:block;"></div> --}}
@@ -39,7 +39,7 @@
                             </span>
                             @endif
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="">Nama:</label>
                             <input name="nama" type="text" class="form-control {{$errors->has('nama')?'is-invalid':''}}" id="name_id">
                             @if ($errors->has('nama'))
@@ -47,7 +47,7 @@
                                 <p><b>{{ $errors->first('nama')}}</b></p>
                             </span>
                             @endif
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label for="">Tanggal Pemeriksaan:</label>
                             <input name="tanggal_periksa" type="date" class="form-control {{$errors->has('tempat_periksa')?'is-invalid':''}}" placeholder="">
@@ -61,37 +61,37 @@
                         <div class="form-group">
                             <label for="">No. HP:</label>
                             <input name="no_hp" type="text" class="form-control {{$errors->has('no_hp')?'is-invalid':''}}" id="hp_id">
-                            @if ($errors->has('jenis_kelamin'))
+                            @if ($errors->has('no_hp'))
                             <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('jenis_kelamin')}}</b></p>
+                                <p><b>{{ $errors->first('no_hp')}}</b></p>
                             </span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="">Jenis Pemeriksaan:</label>
-                            <select name="golongan_darah" type="text" class="form-control" id="gol_darah" required>
+                            <select name="jenis_periksa" type="text" class="form-control" id="gol_darah" required>
                                 <option>...</option>
-                                <option>A</option>
-                                <option>B</option>
-                                <option>AB</option>
-                                <option>O</option>
+                                <option>Tes Darah</option>
+                                <option>Cek Berat Badan</option>
+                                <option>Blabla</option>
+                                <option>Wkwkwk</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="">Keluhan Pasien:</label>
-                            <textarea name="alamat" type="text" class="form-control {{$errors->has('alamat')?'is-invalid':''}}" id="alamat"></textarea>
-                            @if ($errors->has('alamat'))
+                            <textarea name="keluhan" type="text" class="form-control {{$errors->has('keluhan')?'is-invalid':''}}" id="keluhan"></textarea>
+                            @if ($errors->has('keluhan'))
                             <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('alamat')}}</b></p>
+                                <p><b>{{ $errors->first('keluhan')}}</b></p>
                             </span>
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="">Keluhan Pasien:</label>
-                            <textarea name="alamat" type="text" class="form-control {{$errors->has('alamat')?'is-invalid':''}}" id="alamat"></textarea>
-                            @if ($errors->has('alamat'))
+                            <label for="">Tindakan Dokter:</label>
+                            <textarea name="tindakan" type="text" class="form-control {{$errors->has('tindakan')?'is-invalid':''}}" id="tindakan"></textarea>
+                            @if ($errors->has('tindakan'))
                             <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('alamat')}}</b></p>
+                                <p><b>{{ $errors->first('tindakan')}}</b></p>
                             </span>
                             @endif
                         </div>
