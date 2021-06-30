@@ -35,6 +35,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::patch('/pasien/update/{id}', 'Admin\PasienController@update')->name('pasien.update')->middleware('CekLoginAuth');
     Route::get('/pasien/destroy/{id}', 'Admin\PasienController@destroy')->name('pasien.destroy')->middleware('CekLoginAuth');
 
+    Route::get('/nipnipy/fetch/{type}', 'Admin\PasienController@loadNipNipy')->name('loadNipNipy');
+    Route::get('/data-nipnipy/fetch/{uniq}/{type}', 'Admin\PasienController@loadDataNipNipy')->name('loadDataNipNipy');
+
     Route::get('/obat', 'Admin\ObatController@index')->name('obat.index')->middleware('CekLoginAuth');
     Route::get('/obat/create', 'Admin\ObatController@create')->name('obat.create')->middleware('CekLoginAuth');
     Route::post('/obat/store', 'Admin\ObatController@store')->name('obat.store')->middleware('CekLoginAuth');
@@ -45,6 +48,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/rekamMedik', 'Admin\RekamMedikController@index')->name('rekamMedik.index')->middleware('CekLoginAuth');
     Route::get('/rekamMedik/create', 'Admin\RekamMedikController@create')->name('rekamMedik.create')->middleware('CekLoginAuth');
     Route::post('/rekamMedik/find', 'Admin\RekamMedikController@fetshautocomplete')->name('rekamMedik.find')->middleware('CekLoginAuth');
+
+    Route::get('/rekamMedik/get-pasien/fetch', 'Admin\RekamMedikController@getPasien')->name('getPasien');
 
     Route::get('/report', 'Admin\ReportController@index')->name('report.index')->middleware('CekLoginAuth');
 });

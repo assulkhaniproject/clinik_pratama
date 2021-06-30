@@ -35,6 +35,7 @@
    <!-- Optional JavaScript -->
    @include('templates.partials.admin._script')
    @include('sweetalert::alert')
+   @yield('othscript')
 
 </body>
 

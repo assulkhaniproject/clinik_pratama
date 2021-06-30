@@ -9,80 +9,42 @@ use JavaScript;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use NunoMaduro\Collision\Adapters\Phpunit\Style;
+use App\IdGenerator;
 
 class RekamMedikController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('pages.admin.rekamMedik.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('pages.admin.rekamMedik.create');
+        $noRekamMedik = $id = IdGenerator::generate(['table' => 'rekam_medik', 'field' => 'no_rekam_medik', 'length' => 12, 'prefix' =>'RKMDK-']);
+
+        return view('pages.admin.rekamMedik.create', compact('noRekamMedik'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
@@ -113,6 +75,14 @@ class RekamMedikController extends Controller
             ->where('no_identitas', 'like' ,'%'.$valueofnumberid.'%')->get();
             return response()->json($resultdata);
         }
+    }
+
+    public function getPasien(Request $request)
+    {
+        $data = Pasien::where('no_identitas', 'like', '%' . ($request->get('q') ?? '') . '%')
+                        ->orWhere('nama', 'like', '%' . ($request->get('q') ?? '') . '%');
+
+        return response()->json($data->limit(10)->get());
     }
 
 }

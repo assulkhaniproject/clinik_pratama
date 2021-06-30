@@ -9,6 +9,8 @@
       <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
       <!-- Typography CSS -->
       <link rel="stylesheet" href="{{asset('admin/css/typography.css')}}">
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
       <!-- Style CSS -->
       <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
       <!-- Responsive CSS -->

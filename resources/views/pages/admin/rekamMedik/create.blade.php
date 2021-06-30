@@ -20,9 +20,19 @@
                     <form method="post" action="#">
                         @csrf
                         <div class="form-group">
+                            <label for="">Nomor Rekam Medik:</label>
+                            <input name="no_rekam_medik" type="text" class="form-control {{$errors->has('no_rekam_medik')?'is-invalid':''}}" id="no_rekam_medik" value="{{$noRekamMedik}}" disabled>
+                            @if ($errors->has('no_rekam_medik'))
+                            <span class="invalid-feedback" role="alert">
+                                <p><b>{{ $errors->first('no_rekam_medik')}}</b></p>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group">
                             <label for="">No Identitas:</label>
-                            <input name="no_identitas" type="number" class="form-control {{$errors->has('no_identitas')?'is-invalid':''}}" id="number_id">
-                            <div id="autocompleteresultlist" style="position:relative;display:block;"></div>
+                            {{-- <input name="no_identitas" type="number" class="form-control {{$errors->has('no_identitas')?'is-invalid':''}}" id="number_id"> --}}
+                            <select name="no_identitas" id="no_identitas" class="fetch_no_identitas form-control select2" data-placeholder="Cari Pasien"></select>
+                            {{-- <div id="autocompleteresultlist" style="position:relative;display:block;"></div> --}}
                             @if ($errors->has('no_identitas'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('no_identitas')}}</b></p>
@@ -96,5 +106,36 @@
         </div>
     </div>
 </div>
+
+@section('othscript')
+<script>
+    $('.fetch_no_identitas').select2({
+          placeholder: $(this).data("placeholder"),
+          theme: 'bootstrap4',
+          ajax: {
+              url: '/admin/rekamMedik/get-pasien/fetch/',
+              dataType: 'json',
+              delay: 100,
+              allowClear:true,
+              cache: true,
+              data: function (params) { 
+                  return {
+                      q: params.term 
+                  }
+              },
+              processResults: function (data) {
+                  return {
+                      results:  $.map(data, function (item) {
+                          return {
+                            id: item.id,
+                            text:  item.no_identitas+ ' - ' +item.nama,
+                          }
+                      })
+                  };
+              },
+          },
+     })
+</script>
+@endsection
 
 @endsection
