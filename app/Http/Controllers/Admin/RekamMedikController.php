@@ -12,6 +12,7 @@ use NunoMaduro\Collision\Adapters\Phpunit\Style;
 use App\IdGenerator;
 use App\RekamMedik;
 
+
 class RekamMedikController extends Controller
 {
     public function index()
@@ -33,17 +34,18 @@ class RekamMedikController extends Controller
             // 'no_rekam_medik' => 'required',
             'no_identitas' => 'required',
             'tanggal_periksa' => 'required',
-            'no_hp' => 'required',
+            'nama_doc' => 'required',
             'jenis_periksa' => 'required',
-            'keluhan' => 'required',
-            'tindakan' => 'required',
+            // 'keluhan' => 'required',
+            // 'tindakan' => 'required',
         ]);
 
         RekamMedik::create([
             'no_rekam_medik' => $request->no_rekam_medik,
             'no_identitas' => $request->no_identitas,
             'tanggal_periksa' => $request->tanggal_periksa,
-            'jenis_periksa' => $request->keluhan,
+            'nama_doc' => $request->nama_doc,
+            'jenis_periksa' => $request->jenis_periksa,
             'keluhan' => $request->keluhan,
             'tindakan' => $request->tindakan,
         ]);
@@ -54,17 +56,40 @@ class RekamMedikController extends Controller
     public function show($id)
     {
         $data = RekamMedik::find($id);
-        return view('pages.admin.rekamMedik.detail', compact('data'));
+        $pasien = Pasien::find($data->no_identitas);
+        return view('pages.admin.rekamMedik.detail', compact('data', 'pasien'));
     }
 
     public function edit($id)
     {
-        //
+        $data = RekamMedik::find($id);
+        $pasien = Pasien::find($data->no_identitas);
+        return view('pages.admin.rekamMedik.edit', compact('data', 'pasien'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            // 'no_rekam_medik' => 'required',
+            // 'no_identitas' => 'required',
+            'tanggal_periksa' => 'required',
+            'nama_doc' => 'required',
+            'jenis_periksa' => 'required',
+            'keluhan' => 'required|min:8',
+            'tindakan' => 'required|min:8',
+            'resep' => 'required',
+        ]);
+        
+        $data = RekamMedik::find($id);
+        $data->tanggal_periksa = $request->tanggal_periksa;
+        $data->nama_doc = $request->nama_doc;
+        $data->jenis_periksa = $request->jenis_periksa;
+        $data->keluhan = $request->keluhan;
+        $data->tindakan = $request->tindakan;
+        $data->resep = $request->resep;
+
+        $data->update();
+        return redirect()->route('rekamMedik.index')->with('success', 'Data Berhasil Diedit');
     }
 
     public function destroy($id)

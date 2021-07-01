@@ -51,6 +51,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/rekamMedik/get-pasien/fetch', 'Admin\RekamMedikController@getPasien')->name('getPasien');
     Route::post('/rekamMedik/store', 'Admin\RekamMedikController@store')->name('rekamMedik.store')->middleware('CekLoginAuth');
     Route::get('/rekamMedik/detail/{id}', 'Admin\RekamMedikController@show')->name('rekamMedik.show')->middleware('CekLoginAuth');
+    Route::get('/rekamMedik/edit/{id}', 'Admin\RekamMedikController@edit')->name('rekamMedik.edit')->middleware('CekLoginAuth');
+    Route::patch('/rekamMedik/update/{id}', 'Admin\RekamMedikController@update')->name('rekamMedik.update')->middleware('CekLoginAuth');
 
     Route::get('/report', 'Admin\ReportController@index')->name('report.index')->middleware('CekLoginAuth');
 });

@@ -59,11 +59,11 @@
 
                         </div>
                         <div class="form-group">
-                            <label for="">No. HP:</label>
-                            <input name="no_hp" type="text" class="form-control {{$errors->has('no_hp')?'is-invalid':''}}" id="hp_id">
-                            @if ($errors->has('no_hp'))
+                            <label for="">Nama Dokter:</label>
+                            <input name="nama_doc" type="text" class="form-control {{$errors->has('nama_doc')?'is-invalid':''}}" id="nama_doc">
+                            @if ($errors->has('nama_doc'))
                             <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('no_hp')}}</b></p>
+                                <p><b>{{ $errors->first('nama_doc')}}</b></p>
                             </span>
                             @endif
                         </div>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Keluhan Pasien:</label>
-                            <textarea name="keluhan" type="text" class="form-control {{$errors->has('keluhan')?'is-invalid':''}}" id="keluhan"></textarea>
+                            <textarea name="keluhan" type="text" class="form-control {{$errors->has('keluhan')?'is-invalid':''}}" id="keluhan" disabled></textarea>
                             @if ($errors->has('keluhan'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('keluhan')}}</b></p>
@@ -88,10 +88,19 @@
                         </div>
                         <div class="form-group">
                             <label for="">Tindakan Dokter:</label>
-                            <textarea name="tindakan" type="text" class="form-control {{$errors->has('tindakan')?'is-invalid':''}}" id="tindakan"></textarea>
+                            <textarea name="tindakan" type="text" class="form-control {{$errors->has('tindakan')?'is-invalid':''}}" id="tindakan" disabled></textarea>
                             @if ($errors->has('tindakan'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('tindakan')}}</b></p>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label for="">Resep Obat:</label>
+                            <input name="resep_obat" type="text" class="form-control {{$errors->has('resep_obat')?'is-invalid':''}}" id="resep_obat" disabled>
+                            @if ($errors->has('resep_obat'))
+                            <span class="invalid-feedback" role="alert">
+                                <p><b>{{ $errors->first('resep_obat')}}</b></p>
                             </span>
                             @endif
                         </div>

@@ -42,7 +42,7 @@
                         <th scope="col">No. Rekam Medik</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Tanggal Periksa</th>
-                        <th scope="col">No. Hp</th>
+                        <th scope="col">Nama Dokter</th>
                         <th scope="col">Action</th>
                      </tr>
                   </thead>
@@ -54,7 +54,7 @@
                         <td>{{$data->no_rekam_medik}}</td>
                         <td>{{$data->pasien->nama}}</td>
                         <td>{{$data->tanggal_periksa}}</td>
-                        <td>{{$data->pasien->no_hp}}</td>
+                        <td>{{$data->nama_doc}}</td>
                         <td>
                            <a href="{{route('rekamMedik.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
                            <a href="#" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
