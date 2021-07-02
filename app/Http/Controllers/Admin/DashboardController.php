@@ -55,9 +55,9 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('pages.admin.profile-edit');
     }
 
     /**
@@ -81,5 +81,9 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function maintenance()
+    {
+        return view('maintenance');
     }
 }

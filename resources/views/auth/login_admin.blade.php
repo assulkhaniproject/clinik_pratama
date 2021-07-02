@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Login | Klinik Pratama HB</title>
       <!-- Favicon -->
-      <link rel="shortcut icon" href="{{asset('admin/images/favicon.ico')}}" />
+      <link rel="shortcut icon" href="{{asset('admin/images/icon.png')}}" />
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
       <!-- Typography CSS -->
@@ -27,7 +27,7 @@
       <!-- loader END -->
         <!-- Sign in Start -->
         <section class="sign-in-page">
-            <div class="container sign-in-page-bg mt-5 p-0">
+            <div class="container sign-in-page-bg mt-4 p-0">
                 <div class="row no-gutters">
                     <div class="col-md-6 text-center">
                         <div class="sign-in-detail text-white">
@@ -75,11 +75,11 @@
                                 </div>
                                 <div class="sign-info">
                                     <!-- <span class="dark-color d-inline-block line-height-2">Don't have an account? <a href="#">Sign up</a></span> -->
-                                    <ul class="iq-social-media">
+                                    {{-- <ul class="iq-social-media">
                                         <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
                                         <li><a href="#"><i class="ri-twitter-line"></i></a></li>
                                         <li><a href="#"><i class="ri-instagram-line"></i></a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </form>
                         </div>
