@@ -19,7 +19,7 @@
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="">Kode Obat :</label>
                <div class="col-sm-8">
-                  <input name="kode" type="text" class="form-control ml-3 text-dark {{$errors->has('kode')?'is-invalid':''}}" id="email" placeholder="">
+                  <input name="kode" type="text" class="form-control ml-3 text-dark {{$errors->has('kode')?'is-invalid':''}}" id="email" placeholder="" value="{{$kodeObat}}" readonly>
                   @if ($errors->has('kode'))
                   <span class="invalid-feedback" role="alert">
                      <p><b>{{ $errors->first('kode')}}</b></p>

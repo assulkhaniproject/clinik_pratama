@@ -177,6 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -232,7 +233,7 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
         'JavaScript'=>Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
-
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

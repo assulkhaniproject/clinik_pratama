@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\IdGenerator;
 use Illuminate\Http\Request;
 use App\Obat;
+use App\RekamMedik;
+use PDF;
 
 class ObatController extends Controller
 {
@@ -26,7 +29,9 @@ class ObatController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.obat.create');
+        $kodeObat = IdGenerator::generate(['table' => 'obat', 'field' => 'kode', 'length' => 8, 'prefix' =>'OBT-']);
+        
+        return view('pages.admin.obat.create', compact('kodeObat'));
     }
 
     /**
@@ -140,5 +145,20 @@ class ObatController extends Controller
         $data = Obat::find($id);
         $data->delete();
         return redirect()->route('obat.index')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    /**
+     * Generate pdf rekam medik
+     * 
+     * @param RekamMedik $rekamMedik
+     */
+    public function printRekamMedik(RekamMedik $rekamMedik)
+    {
+        $pdf = PDF::loadview('pages.admin.rekamMedik.pdf.rekam-medik', [
+            'rekamMedik' => $rekamMedik,
+            'tgl_periksa' => $this->dayDateID($rekamMedik->created_at)
+        ])->setPaper('f4', 'potrait');
+
+        return $pdf->download('dokumen-rekam-medik.pdf');
     }
 }

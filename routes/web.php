@@ -51,10 +51,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/rekamMedik/create', 'Admin\RekamMedikController@create')->name('rekamMedik.create')->middleware('CekLoginAuth');
     Route::post('/rekamMedik/find', 'Admin\RekamMedikController@fetshautocomplete')->name('rekamMedik.find')->middleware('CekLoginAuth');
     Route::get('/rekamMedik/get-pasien/fetch', 'Admin\RekamMedikController@getPasien')->name('getPasien');
+    Route::get('/rekamMedik/get-obat/fetch', 'Admin\RekamMedikController@getObat')->name('getObat');
     Route::post('/rekamMedik/store', 'Admin\RekamMedikController@store')->name('rekamMedik.store')->middleware('CekLoginAuth');
     Route::get('/rekamMedik/detail/{id}', 'Admin\RekamMedikController@show')->name('rekamMedik.show')->middleware('CekLoginAuth');
     Route::get('/rekamMedik/edit/{id}', 'Admin\RekamMedikController@edit')->name('rekamMedik.edit')->middleware('CekLoginAuth');
     Route::patch('/rekamMedik/update/{id}', 'Admin\RekamMedikController@update')->name('rekamMedik.update')->middleware('CekLoginAuth');
+    Route::delete('/rekamMedik/destroy/{id}', 'Admin\RekamMedikController@destroy')->name('rekamMedik.destroy')->middleware('CekLoginAuth');
+    Route::get('/rekamMedik/print/{rekamMedik}', 'Admin\ObatController@printRekamMedik')->name('rekamMedik.print')->middleware('CekLoginAuth');
 
     Route::get('/report', 'Admin\ReportController@index')->name('report.index')->middleware('CekLoginAuth');
 });

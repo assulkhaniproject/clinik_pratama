@@ -10,8 +10,9 @@ use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use NunoMaduro\Collision\Adapters\Phpunit\Style;
 use App\IdGenerator;
+use App\Obat;
 use App\RekamMedik;
-
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RekamMedikController extends Controller
 {
@@ -24,8 +25,9 @@ class RekamMedikController extends Controller
     public function create()
     {
         $noRekamMedik = $id = IdGenerator::generate(['table' => 'rekam_medik', 'field' => 'no_rekam_medik', 'length' => 12, 'prefix' =>'RKMDK-']);
+        $jenisPemeriksaan = RekamMedik::JENIS_PEMERIKSAAN;
 
-        return view('pages.admin.rekamMedik.create', compact('noRekamMedik'));
+        return view('pages.admin.rekamMedik.create', compact('noRekamMedik', 'jenisPemeriksaan'));
     }
 
     public function store(Request $request)
@@ -64,7 +66,9 @@ class RekamMedikController extends Controller
     {
         $data = RekamMedik::find($id);
         $pasien = Pasien::find($data->no_identitas);
-        return view('pages.admin.rekamMedik.edit', compact('data', 'pasien'));
+        $jenisPemeriksaan = RekamMedik::JENIS_PEMERIKSAAN;
+
+        return view('pages.admin.rekamMedik.edit', compact('data', 'pasien', 'jenisPemeriksaan'));
     }
 
     public function update(Request $request, $id)
@@ -77,24 +81,46 @@ class RekamMedikController extends Controller
             'jenis_periksa' => 'required',
             'keluhan' => 'required|min:8',
             'tindakan' => 'required|min:8',
-            'resep' => 'required',
+            'resep' => 'required|array|min:1',
         ]);
         
         $data = RekamMedik::find($id);
+
+        if($data->keluhan != null){
+            alert()->error('Data gagal diupdate', 'Rekam medik sudah menjadi histori medik');
+            return redirect()->route('rekamMedik.index');
+        }
+
         $data->tanggal_periksa = $request->tanggal_periksa;
         $data->nama_doc = $request->nama_doc;
         $data->jenis_periksa = $request->jenis_periksa;
         $data->keluhan = $request->keluhan;
         $data->tindakan = $request->tindakan;
-        $data->resep = $request->resep;
-
         $data->update();
+
+        // STOK UPDATE
+        foreach($request->resep as $item){
+            $obat = Obat::findOrFail($item);
+            $obat->update([
+                'stok' =>  $obat->stok -1
+            ]);
+        }
+        
+        $data->obat()->sync($request->resep);
         return redirect()->route('rekamMedik.index')->with('success', 'Data Berhasil Diedit');
     }
 
     public function destroy($id)
     {
-        //
+        $rekamMedik = RekamMedik::find($id);
+
+        if($rekamMedik->keluhan != null){
+            alert()->error('Data gagal dihapus', 'Rekam medik sudah menjadi histori medik');
+            return redirect()->route('rekamMedik.index');
+        }
+        
+        $rekamMedik->destroy();
+        return redirect()->route('rekamMedik.index')->with('success', 'Data Berhasil Dihapus');
     }
 
     public function fetshautocomplete(Request $request)
@@ -127,6 +153,14 @@ class RekamMedikController extends Controller
     public function getPasien(Request $request)
     {
         $data = Pasien::where('no_identitas', 'like', '%' . ($request->get('q') ?? '') . '%')
+                        ->orWhere('nama', 'like', '%' . ($request->get('q') ?? '') . '%');
+
+        return response()->json($data->limit(10)->get());
+    }
+
+    public function getObat(Request $request)
+    {
+        $data = Obat::where('kode', 'like', '%' . ($request->get('q') ?? '') . '%')
                         ->orWhere('nama', 'like', '%' . ($request->get('q') ?? '') . '%');
 
         return response()->json($data->limit(10)->get());

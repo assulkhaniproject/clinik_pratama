@@ -56,8 +56,14 @@
                         <td>{{$data->tanggal_periksa}}</td>
                         <td>{{$data->nama_doc}}</td>
                         <td>
-                           <a href="{{route('rekamMedik.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
-                           <a href="#" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
+                           <form action="{{ route('rekamMedik.destroy', $data->id) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <a href="{{route('rekamMedik.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
+                              @if (!$data->keluhan)
+                                 <button type="submit" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</button>
+                              @endif
+                           </form>
                         </td>
                      </tr>
                   </tbody>

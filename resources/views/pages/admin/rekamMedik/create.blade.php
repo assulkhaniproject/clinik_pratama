@@ -30,9 +30,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">No Identitas-Nama:</label>
-                            {{-- <input name="no_identitas" type="number" class="form-control {{$errors->has('no_identitas')?'is-invalid':''}}" id="number_id"> --}}
                             <select name="no_identitas" id="no_identitas" class="fetch_no_identitas form-control select2" data-placeholder="Cari Pasien"></select>
-                            {{-- <div id="autocompleteresultlist" style="position:relative;display:block;"></div> --}}
                             @if ($errors->has('no_identitas'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('no_identitas')}}</b></p>
@@ -71,10 +69,9 @@
                             <label for="">Jenis Pemeriksaan:</label>
                             <select name="jenis_periksa" type="text" class="form-control" id="gol_darah" required>
                                 <option>...</option>
-                                <option>Tes Darah</option>
-                                <option>Cek Berat Badan</option>
-                                <option>Blabla</option>
-                                <option>Wkwkwk</option>
+                                @foreach ($jenisPemeriksaan as $item)
+                                    <option value="{{$item}}">{{$item}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
