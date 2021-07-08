@@ -13,7 +13,7 @@ class PegawaiSeeder extends Seeder
     public function run()
     {
         Pegawai::create( [
-            'nipy'=>'10.010.070',
+            'nipy'=>'10010070',
             'nama'=>'Meyliya Qudriani',
             'tempat_lahir'=>'Pati',
             'tanggal_lahir'=>'1987-05-11',
@@ -28,7 +28,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'03.020.443',
+            'nipy'=>'03020443',
             'nama'=>'Vivin Avianti Oktavia',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1997-10-24',
@@ -43,7 +43,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'11.009.064',
+            'nipy'=>'11009064',
             'nama'=>'Novia Ludha Arisanti',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1985-08-05',
@@ -58,7 +58,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'11.018.383',
+            'nipy'=>'11018383',
             'nama'=>'Farida Oktavia',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1977-10-04',
@@ -73,7 +73,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'12.019.437',
+            'nipy'=>'12019437',
             'nama'=>'Arda Kusuma Dewi',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1997-04-17',
@@ -88,7 +88,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'11.018.385',
+            'nipy'=>'11018385',
             'nama'=>'Joko Purwanto',
             'tempat_lahir'=>'Cilacap',
             'tanggal_lahir'=>'1971-11-11',
@@ -103,7 +103,7 @@ class PegawaiSeeder extends Seeder
             ] );
              
         Pegawai::create( [
-            'nipy'=>'05.006.022',
+            'nipy'=>'05006022',
             'nama'=>'Umi Baroroh',
             'tempat_lahir'=>'Bogor',
             'tanggal_lahir'=>'1984-01-20',
@@ -118,7 +118,7 @@ class PegawaiSeeder extends Seeder
              ] );
              
         Pegawai::create( [
-            'nipy'=>'10.009.060',
+            'nipy'=>'10009060',
             'nama'=>'Tuti Ariani',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1987-08-11',
@@ -133,7 +133,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'05.021.515',
+            'nipy'=>'05021515',
             'nama'=>'Nova Avianti Rahayu',
             'tempat_lahir'=>'Ciamis',
             'tanggal_lahir'=>'1993-09-05',
@@ -148,7 +148,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'02.013.141',
+            'nipy'=>'02013141',
             'nama'=>'Tias Dwi Arti',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1987-10-30',
@@ -164,7 +164,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'02.013.140',
+            'nipy'=>'02013140',
             'nama'=>'Istiqomah Dwi Andari ',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1987-12-03',
@@ -179,7 +179,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'03.021.508',
+            'nipy'=>'03021508',
             'nama'=>'Ilma Ratih Zukrufiana',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1998-08-28',
@@ -194,7 +194,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'05.013.147',
+            'nipy'=>'05013147',
             'nama'=>'Seventina Nurul Hidayah',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1986-08-17',
@@ -209,7 +209,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'11.004.011',
+            'nipy'=>'11004011',
             'nama'=>'Ulfatul Latifah',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1980-01-05',
@@ -224,7 +224,7 @@ class PegawaiSeeder extends Seeder
              ] );
              
         Pegawai::create( [
-            'nipy'=>'05.013.157',
+            'nipy'=>'05013157',
             'nama'=>'Ratih Sakti Prastiwi',
             'tempat_lahir'=>'Yogyakarta',
             'tanggal_lahir'=>'1990-02-04',
@@ -239,7 +239,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'03.03.012.109',
+            'nipy'=>'0303012109',
             'nama'=>'Nora Rahmanindar',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1985-11-13',
@@ -254,7 +254,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'05.010.068',
+            'nipy'=>'05010068',
             'nama'=>'Desy Fitrianingsih',
             'tempat_lahir'=>'Kendawangan',
             'tanggal_lahir'=>'1987-06-03',
@@ -269,7 +269,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'10.010.071',
+            'nipy'=>'10010071',
             'nama'=>'Umriaty',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1986-08-28',
@@ -284,7 +284,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'05.016.291',
+            'nipy'=>'05016291',
             'nama'=>'Arif Rakhman',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1985-11-09',
@@ -299,7 +299,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'08.017.343',
+            'nipy'=>'08017343',
             'nama'=>'Lukmanul Khakim',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1990-03-09',
@@ -314,7 +314,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'08.015.265',
+            'nipy'=>'08015265',
             'nama'=>'M.Taufik Qurohman',
             'tempat_lahir'=>'Purwokerto',
             'tanggal_lahir'=>'1984-05-09',
@@ -328,7 +328,7 @@ class PegawaiSeeder extends Seeder
             'nama_ortu'=>'Sholihin'
 	        ] );
         Pegawai::create( [
-            'nipy'=>'10.007.032',
+            'nipy'=>'10007032',
             'nama'=>'Ginanajar Wiro Sasmito',
             'tempat_lahir'=>'Brebes',
             'tanggal_lahir'=>'1984-10-09',
@@ -343,7 +343,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'09.016.307',
+            'nipy'=>'09016307',
             'nama'=>'Muhammad Fikri Hidayatullah',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1988-12-05',
@@ -358,7 +358,7 @@ class PegawaiSeeder extends Seeder
             ] );
             
         Pegawai::create( [
-            'nipy'=>'08.015.222',
+            'nipy'=>'08015222',
             'nama'=>'Slamet Wiyono',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1985-09-03',

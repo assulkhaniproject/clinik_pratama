@@ -12,7 +12,7 @@ class PasienController extends Controller
 {
     public function index()
     {
-        $datas = Pasien::all();
+        $datas = Pasien::orderBy('id','DESC')->get();
         return view ('pages.admin.pasien.index', compact('datas'));
     }
 

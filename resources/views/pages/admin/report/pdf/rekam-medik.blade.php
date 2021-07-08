@@ -12,7 +12,7 @@
 </head>
 <body>
     <p>
-        <img width="106" height="111" src="{{public_path()}}/admin/images/logo-poltek.png" align="left" hspace="12"/>
+        <img width="106" height="111" src="{{public_path()}}/admin/images/icon.png" align="left" hspace="12"/>
         <strong style="font-size: 18px; margin:0 0 0 20px">Klinik Pratama Harapan Bersama</strong>
     </p>
     <p>

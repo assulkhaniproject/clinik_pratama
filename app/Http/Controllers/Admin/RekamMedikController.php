@@ -18,7 +18,7 @@ class RekamMedikController extends Controller
 {
     public function index()
     {
-        $data = RekamMedik::all();
+        $data = RekamMedik::orderBy('id','DESC')->get();
         return view('pages.admin.rekamMedik.index', compact('data'));
     }
 
