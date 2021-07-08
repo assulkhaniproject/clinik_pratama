@@ -10,10 +10,21 @@ class RekamMedik extends Model
     protected $guarded = [];
     protected $table = 'rekam_medik';
     public const JENIS_PEMERIKSAAN = [
-        'Tes Darah',
-        'Cek Berat Badan',
-        'Blabla',
-        'Wkwkwk',
+        'Pemeriksaan Umum',
+        'Medikasi Ringan',
+        'Medikasi Sedang',
+        'Medikasi Berat',
+        'KB PIl',
+        'KB Suntik 1 bulan',
+        'KB Suntik 2 bulan',
+        'KB Pasang & Lepas Implant',
+        'KB Padang & Lepas IUD',
+        'Pemeriksaan LAB. Gula Darah',
+        'Pemeriksaan LAB. Asam Urat',
+        'Pemeriksaan LAB. Kolestrol',
+        'Pemeriksaan LAB. HB',
+        'Rapid Antibody',
+        'Rapid Antigen',
     ];
  
     public function pasien()
