@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\RekamMedik;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -24,7 +26,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        ///
     }
 
     /**
@@ -35,7 +37,19 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'dari_tanggal' => 'required|date',
+            'ke_tanggal' => 'required|date|after_or_equal:dari_tanggal'
+        ]);
+
+        $filterRekam = RekamMedik::whereBetween('tanggal_periksa', [$request->dari_tanggal, $request->ke_tanggal])->get();
+
+        $pdf = PDF::loadview('pages.admin.report.pdf.rekam-medik', [
+            'filterRekam' => $filterRekam, 
+            'request' => $request
+        ])->setPaper('f4', 'potrait');
+
+        return $pdf->stream('dokumen-rekap-medik.pdf');
     }
 
     /**
