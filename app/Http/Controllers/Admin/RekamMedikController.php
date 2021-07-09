@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Dokter;
 use App\Http\Controllers\Controller;
 use App\Pasien;
 use Illuminate\Http\Request;
@@ -11,8 +12,10 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 use NunoMaduro\Collision\Adapters\Phpunit\Style;
 use App\IdGenerator;
 use App\Obat;
+use App\Pemeriksaan;
 use App\RekamMedik;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class RekamMedikController extends Controller
 {
@@ -25,9 +28,10 @@ class RekamMedikController extends Controller
     public function create()
     {
         $noRekamMedik = $id = IdGenerator::generate(['table' => 'rekam_medik', 'field' => 'no_rekam_medik', 'length' => 12, 'prefix' =>'RKMDK-']);
-        $jenisPemeriksaan = RekamMedik::JENIS_PEMERIKSAAN;
+        $jenisPemeriksaan = Pemeriksaan::all();
+        $dokter = Dokter::all();
 
-        return view('pages.admin.rekamMedik.create', compact('noRekamMedik', 'jenisPemeriksaan'));
+        return view('pages.admin.rekamMedik.create', compact('noRekamMedik', 'jenisPemeriksaan', 'dokter'));
     }
 
     public function store(Request $request)
@@ -36,8 +40,8 @@ class RekamMedikController extends Controller
             // 'no_rekam_medik' => 'required',
             'no_identitas' => 'required',
             'tanggal_periksa' => 'required',
-            'nama_doc' => 'required',
-            'jenis_periksa' => 'required',
+            'dokter_id' => 'required',
+            'pemeriksaan_id' => 'required',
             // 'keluhan' => 'required',
             // 'tindakan' => 'required',
         ]);
@@ -46,8 +50,8 @@ class RekamMedikController extends Controller
             'no_rekam_medik' => $request->no_rekam_medik,
             'no_identitas' => $request->no_identitas,
             'tanggal_periksa' => $request->tanggal_periksa,
-            'nama_doc' => $request->nama_doc,
-            'jenis_periksa' => $request->jenis_periksa,
+            'dokter_id' => $request->dokter_id,
+            'pemeriksaan_id' => $request->pemeriksaan_id,
             'keluhan' => $request->keluhan,
             'tindakan' => $request->tindakan,
         ]);
@@ -66,19 +70,18 @@ class RekamMedikController extends Controller
     {
         $data = RekamMedik::find($id);
         $pasien = Pasien::find($data->no_identitas);
-        $jenisPemeriksaan = RekamMedik::JENIS_PEMERIKSAAN;
+        $jenisPemeriksaan = Pemeriksaan::all();
+        $dokter = Dokter::all();
 
-        return view('pages.admin.rekamMedik.edit', compact('data', 'pasien', 'jenisPemeriksaan'));
+        return view('pages.admin.rekamMedik.edit', compact('data', 'pasien', 'jenisPemeriksaan', 'dokter'));
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            // 'no_rekam_medik' => 'required',
-            // 'no_identitas' => 'required',
             'tanggal_periksa' => 'required',
-            'nama_doc' => 'required',
-            'jenis_periksa' => 'required',
+            'dokter_id' => 'required',
+            'pemeriksaan_id' => 'required',
             'keluhan' => 'required|min:8',
             'tindakan' => 'required|min:8',
             'resep' => 'required|array|min:1',
@@ -92,8 +95,8 @@ class RekamMedikController extends Controller
         }
 
         $data->tanggal_periksa = $request->tanggal_periksa;
-        $data->nama_doc = $request->nama_doc;
-        $data->jenis_periksa = $request->jenis_periksa;
+        $data->dokter_id = $request->dokter_id;
+        $data->pemeriksaan_id = $request->pemeriksaan_id;
         $data->keluhan = $request->keluhan;
         $data->tindakan = $request->tindakan;
         $data->update();
@@ -148,6 +151,21 @@ class RekamMedikController extends Controller
             ->where('no_identitas', 'like' ,'%'.$valueofnumberid.'%')->get();
             return response()->json($resultdata);
         }
+    }
+
+    /**
+     * Generate pdf rekam medik
+     * 
+     * @param RekamMedik $rekamMedik
+     */
+    public function printRekamMedik(RekamMedik $rekamMedik)
+    {
+        $pdf = PDF::loadview('pages.admin.rekamMedik.pdf.rekam-medik', [
+            'rekamMedik' => $rekamMedik,
+            'tgl_periksa' => $this->dayDateID($rekamMedik->created_at)
+        ])->setPaper('f4', 'potrait');
+
+        return $pdf->stream('dokumen-rekam-medik.pdf');
     }
 
     public function getPasien(Request $request)

@@ -18,11 +18,10 @@ class CreateRekamMedikTable extends Migration
             $table->string('no_rekam_medik');
             $table->char('no_identitas', 16);
             $table->date('tanggal_periksa');
-            $table->string('nama_doc', 50);
-            $table->string('jenis_periksa',100);
+            $table->foreignId('dokter_id')->constrained('dokter');
+            $table->foreignId('pemeriksaan_id')->constrained('pemeriksaan');
             $table->string('keluhan',100)->nullable();
             $table->string('tindakan',100)->nullable();
-            $table->string('resep',100)->nullable();
             $table->timestamps();
         });
     }

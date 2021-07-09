@@ -55,27 +55,30 @@
                             <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Nama dokter
                                 :</label>
                             <div class="col-sm-8">
-                                <input type="text" name="nama_doc" class="form-control ml-3 text-dark {{$errors->has('nama_doc')?'is-invalid':''}}" id="pwd1" placeholder=""
-                                    value="{{ $data->nama_doc }}">
-                                @if ($errors->has('nama_doc'))
+                                <select name="dokter_id" type="text" class="form-control ml-3 text-dark {{$errors->has('dokter_id')?'is-invalid':''}}" id="dokter_id" required>
+                                    @foreach ($dokter as $item)
+                                        <option value="{{$item->id}}" {{$data->dokter_id == $item->id ? 'selected':''}}>{{$item->nama_dokter}}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('dokter_id'))
                                 <span class="invalid-feedback ml-3" role="alert">
-                                    <p><b>{{ $errors->first('nama_doc')}}</b></p>
+                                    <p><b>{{ $errors->first('dokter_id')}}</b></p>
                                 </span>
                                 @endif
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Jenis Periksa
+                            <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Jenis Pemeriksaan
                                 :</label>
                             <div class="col-sm-8">
-                                <select name="jenis_periksa" type="text" class="form-control ml-3 text-dark {{$errors->has('text')?'is-invalid':''}}" id="jenis_periksa" required>
+                                <select name="pemeriksaan_id" type="text" class="form-control ml-3 text-dark {{$errors->has('pemeriksaan_id')?'is-invalid':''}}" id="pemeriksaan_id" required>
                                     @foreach ($jenisPemeriksaan as $item)
-                                        <option value="{{$item}}" {{$item == $data->jenis_periksa ? 'selected':''}}>{{$item}}</option>
+                                        <option value="{{$item->id}}" {{$data->pemeriksaan_id == $item->id ? 'selected':''}}>{{$item->jenis_pemeriksaan}}</option>
                                     @endforeach
                                 </select>
-                                @if ($errors->has('jenis_periksa'))
+                                @if ($errors->has('pemeriksaan_id'))
                                 <span class="invalid-feedback ml-3" role="alert">
-                                    <p><b>{{ $errors->first('jenis_periksa')}}</b></p>
+                                    <p><b>{{ $errors->first('pemeriksaan_id')}}</b></p>
                                 </span>
                                 @endif
                             </div>

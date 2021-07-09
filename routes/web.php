@@ -57,7 +57,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/rekamMedik/edit/{id}', 'Admin\RekamMedikController@edit')->name('rekamMedik.edit')->middleware('CekLoginAuth');
     Route::patch('/rekamMedik/update/{id}', 'Admin\RekamMedikController@update')->name('rekamMedik.update')->middleware('CekLoginAuth');
     Route::delete('/rekamMedik/destroy/{id}', 'Admin\RekamMedikController@destroy')->name('rekamMedik.destroy')->middleware('CekLoginAuth');
-    Route::get('/rekamMedik/print/{rekamMedik}', 'Admin\ObatController@printRekamMedik')->name('rekamMedik.print')->middleware('CekLoginAuth');
+    Route::get('/rekamMedik/print/{rekamMedik}', 'Admin\RekamMedikController@printRekamMedik')->name('rekamMedik.print')->middleware('CekLoginAuth');
 
     Route::resource('report', 'Admin\ReportController');
 });

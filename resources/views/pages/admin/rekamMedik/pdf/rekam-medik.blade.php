@@ -54,7 +54,7 @@
             <tr>
                 <td height="25" width="120">Jenis Pemeriksaan :</td>
                 <td>:</td>
-                <td>{{$rekamMedik->jenis_periksa}}</td>
+                <td>{{$rekamMedik->pemeriksaan->jenis_pemeriksaan}}</td>
             </tr>
         </tbody>
     </table>

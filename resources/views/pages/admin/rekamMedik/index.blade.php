@@ -54,7 +54,7 @@
                         <td>{{$data->no_rekam_medik}}</td>
                         <td>{{$data->pasien->nama}}</td>
                         <td>{{$data->tanggal_periksa}}</td>
-                        <td>{{$data->nama_doc}}</td>
+                        <td>{{$data->dokter->nama_dokter}}</td>
                         <td>
                            <form action="{{ route('rekamMedik.destroy', $data->id) }}" method="POST">
                               @csrf

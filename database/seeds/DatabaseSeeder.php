@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ObatSeeder::class);
         $this->call(PemeriksaanSeeder::class);
         $this->call(DokterSeeder::class);
+        $this->call(PasienSeeder::class);
+        $this->call(RekamMedikSeeder::class);
+        // $this->call(RekamMedikObatSeeder::class);
+
     }
 }

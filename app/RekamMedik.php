@@ -36,5 +36,15 @@ class RekamMedik extends Model
     {
         return $this->belongsToMany(Obat::class, 'rekam_medik_obat', 'rekam_medik_id', 'obat_id');
     }
+
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class, 'dokter_id');
+    }
+
+    public function pemeriksaan()
+    {
+        return $this->belongsTo(Pemeriksaan::class, 'pemeriksaan_id');
+    }
     
 }

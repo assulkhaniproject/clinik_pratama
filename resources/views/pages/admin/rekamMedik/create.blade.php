@@ -16,7 +16,6 @@
                     </div>
                 </div>
                 <div class="iq-card-body">
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p> -->
                     <form method="post" action="{{route('rekamMedik.store')}}">
                         @csrf
                         <div class="form-group">
@@ -30,36 +29,30 @@
                         </div>
                         <div class="form-group">
                             <label for="">No Identitas-Nama:</label>
-                            <select name="no_identitas" id="no_identitas" class="fetch_no_identitas form-control select2" data-placeholder="Cari Pasien"></select>
+                            <select name="no_identitas" id="no_identitas" class="fetch_no_identitas form-control select2 {{$errors->has('no_identitas')?'is-invalid':''}}" data-placeholder="Cari Pasien"></select>
                             @if ($errors->has('no_identitas'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('no_identitas')}}</b></p>
                             </span>
                             @endif
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="">Nama:</label>
-                            <input name="nama" type="text" class="form-control {{$errors->has('nama')?'is-invalid':''}}" id="name_id">
-                            @if ($errors->has('nama'))
-                            <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('nama')}}</b></p>
-                            </span>
-                            @endif
-                        </div> --}}
                         <div class="form-group">
                             <label for="">Tanggal Pemeriksaan:</label>
-                            <input name="tanggal_periksa" type="date" class="form-control {{$errors->has('tempat_periksa')?'is-invalid':''}}" placeholder="">
+                            <input name="tanggal_periksa" type="date" class="form-control {{$errors->has('tanggal_periksa')?'is-invalid':''}}" placeholder="">
                             @if ($errors->has('tanggal_periksa'))
                             <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('tempat_periksa')}}</b></p>
+                                <p><b>{{ $errors->first('tanggal_periksa')}}</b></p>
                             </span>
                             @endif
-
                         </div>
                         <div class="form-group">
                             <label for="">Nama Dokter:</label>
-                            <input name="nama_doc" type="text" class="form-control {{$errors->has('nama_doc')?'is-invalid':''}}" id="nama_doc">
-                            @if ($errors->has('nama_doc'))
+                            <select name="dokter_id" type="text" class="form-control text-dark {{$errors->has('dokter_id')?'is-invalid':''}}" id="dokter_id" required>
+                                @foreach ($dokter as $item)
+                                    <option value="{{$item->id}}">{{$item->nama_dokter}}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('dokter_id'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('nama_doc')}}</b></p>
                             </span>
@@ -67,12 +60,16 @@
                         </div>
                         <div class="form-group">
                             <label for="">Jenis Pemeriksaan:</label>
-                            <select name="jenis_periksa" type="text" class="form-control" id="gol_darah" required>
-                                <option>...</option>
+                            <select name="pemeriksaan_id" type="text" class="form-control text-dark {{$errors->has('pemeriksaan_id')?'is-invalid':''}}" id="pemeriksaan_id" required>
                                 @foreach ($jenisPemeriksaan as $item)
-                                    <option value="{{$item}}">{{$item}}</option>
+                                    <option value="{{$item->id}}">{{$item->jenis_pemeriksaan}}</option>
                                 @endforeach
                             </select>
+                            @if ($errors->has('pemeriksaan_id'))
+                            <span class="invalid-feedback ml-3" role="alert">
+                                <p><b>{{ $errors->first('pemeriksaan_id')}}</b></p>
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label for="">Keluhan Pasien:</label>

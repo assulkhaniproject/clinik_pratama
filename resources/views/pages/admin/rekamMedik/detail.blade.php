@@ -28,12 +28,6 @@
                   <input type="text" class="form-control ml-3 text-dark" id="no_identitas" placeholder="" value="{{$pasien->no_identitas}}">
                </div>
             </div>
-            {{-- <div class="form-group row">
-               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Nama :</label>
-               <div class="col-sm-8">
-                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="">
-               </div>
-            </div> --}}
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Tanggal Periksa :</label>
                <div class="col-sm-8">
@@ -43,21 +37,15 @@
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Nama dokter :</label>
                <div class="col-sm-8">
-                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->nama_doc}}">
+                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->dokter->nama_dokter}}">
                </div>
             </div>
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Jenis Periksa :</label>
                <div class="col-sm-8">
-                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->jenis_periksa}}">
+                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->pemeriksaan->jenis_pemeriksaan}}">
                </div>
             </div>
-            {{-- <div class="form-group row">
-               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">No.Hp :</label>
-               <div class="col-sm-8">
-                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->no_hp}}">
-               </div>
-            </div> --}}
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Keluhan :</label>
                <div class="col-sm-8">

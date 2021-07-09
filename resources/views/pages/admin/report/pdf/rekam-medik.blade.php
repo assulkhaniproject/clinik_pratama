@@ -48,12 +48,12 @@
             @endphp
             @foreach ($filterRekam as $item)
             <tr>
-                <td>&nbsp;{{$no++}}</td>
-                <td>&nbsp;{{$item->no_rekam_medik}}</td>
-                <td>&nbsp;{{$item->pasien->nama}}</td>
-                <td>&nbsp;{{$item->tanggal_periksa}}</td>
-                <td>&nbsp;{{$item->jenis_periksa}}</td>
-                <td>&nbsp;{{$item->nama_doc}}</td>
+                <td style="text-align: center">{{$no++}}</td>
+                <td style="text-align: center">{{$item->no_rekam_medik}}</td>
+                <td style="text-align: center">{{$item->pasien->nama}}</td>
+                <td style="text-align: center">{{$item->tanggal_periksa}}</td>
+                <td style="text-align: center">{{$item->pemeriksaan->jenis_pemeriksaan}}</td>
+                <td style="text-align: center">{{$item->dokter->nama_dokter}}</td>
             </tr>
             @endforeach
         </tbody>
