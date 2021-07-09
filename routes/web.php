@@ -59,7 +59,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::delete('/rekamMedik/destroy/{id}', 'Admin\RekamMedikController@destroy')->name('rekamMedik.destroy')->middleware('CekLoginAuth');
     Route::get('/rekamMedik/print/{rekamMedik}', 'Admin\RekamMedikController@printRekamMedik')->name('rekamMedik.print')->middleware('CekLoginAuth');
 
-    Route::resource('report', 'Admin\ReportController');
+    Route::resource('report', 'Admin\ReportController')->middleware('CekLoginAuth');
 });
 
 Route::group(['prefix' => 'kasir'], function () {
@@ -69,7 +69,7 @@ Route::group(['prefix' => 'kasir'], function () {
     Route::get('/logout', 'Kasir\AuthKasirController@logout')->name('kasir.logout');
 
     Route::get('/dashboard', 'Kasir\DashboardController@index')->name('kasir.dashboard')->middleware('CekLoginAuth');
-    Route::get('/pembayaran', 'Kasir\DashboardController@index')->name('kasir.pembayaran')->middleware('CekLoginAuth');
-    Route::get('/report', 'Kasir\DashboardController@index')->name('kasir.report')->middleware('CekLoginAuth');
+    Route::resource('pembayaran', 'Kasir\PembayaranController')->parameter('pembayaran', 'rekamMedik')->middleware('CekLoginAuth');
+    Route::resource('report', 'Kasir\ReportController')->middleware('CekLoginAuth');
 
 });

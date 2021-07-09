@@ -9,23 +9,6 @@ class RekamMedik extends Model
 {
     protected $guarded = [];
     protected $table = 'rekam_medik';
-    public const JENIS_PEMERIKSAAN = [
-        'Pemeriksaan Umum',
-        'Medikasi Ringan',
-        'Medikasi Sedang',
-        'Medikasi Berat',
-        'KB PIl',
-        'KB Suntik 1 bulan',
-        'KB Suntik 2 bulan',
-        'KB Pasang & Lepas Implant',
-        'KB Padang & Lepas IUD',
-        'Pemeriksaan LAB. Gula Darah',
-        'Pemeriksaan LAB. Asam Urat',
-        'Pemeriksaan LAB. Kolestrol',
-        'Pemeriksaan LAB. HB',
-        'Rapid Antibody',
-        'Rapid Antigen',
-    ];
  
     public function pasien()
     {
@@ -45,6 +28,11 @@ class RekamMedik extends Model
     public function pemeriksaan()
     {
         return $this->belongsTo(Pemeriksaan::class, 'pemeriksaan_id');
+    }
+
+    public function transaksi()
+    {
+        return $this->hasOne(Transaksi::class, 'rekam_medik_id');
     }
     
 }
