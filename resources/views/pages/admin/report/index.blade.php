@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="iq-card-body">
-                    <form method="post" action="{{ route('report.store') }}">
+                    <form method="post" action="{{ route('report-admin.store') }}">
                         @csrf
                         Berdasarkan Tanggal: 
                         {{-- <div class="form-group">

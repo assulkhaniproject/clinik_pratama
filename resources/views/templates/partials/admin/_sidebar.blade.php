@@ -30,7 +30,7 @@
                <a href="{{route('obat.index')}}" class="iq-waves-effect"><i class="ion-medkit"></i><span>Data Obat</span></a>
             </li>
             <li @if (Request::is('admin/report')) class="active" @else class="false" @endif>
-               <a href="{{route('admin.report.index')}}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
+               <a href="{{route('report-admin.index')}}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
             </li>
             <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
             <li @if (Request::is('admin/InfoCorona19')) class="active" @else class="false" @endif>
