@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.dokter')
 
 <head>
     <title> Tambah Data | KLINIK PRATAMA HB</title>
@@ -116,7 +116,7 @@
           placeholder: $(this).data("placeholder"),
           theme: 'bootstrap4',
           ajax: {
-              url: '/admin/rekamMedik/get-pasien/fetch/',
+              url: '/dokter/rekamMedik/get-pasien/fetch/',
               dataType: 'json',
               delay: 100,
               allowClear:true,

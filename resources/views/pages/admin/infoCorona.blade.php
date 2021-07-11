@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.admin1')
 
 <head>
     <title> Info Corona-19 | KLINIK PRATAMA HB</title>

@@ -1,7 +1,7 @@
 <div class="iq-sidebar">
    <div class="iq-sidebar-logo d-flex justify-content-between">
       <a href="#" class="title">
-         <img src="{{asset('admin/images/logo.png')}}" class="img-fluid" alt="">
+         <img src="{{asset('admin/images/icon.png')}}" class="img-fluid" alt="">
          <span class="title">Klinik Pratama</span>
       </a>
       <div class="iq-menu-bt-sidebar">
@@ -23,7 +23,7 @@
             <li @if (Request::is('kasir/pembayaran')) class="active" @else class="false" @endif>
                <a href="{{ route('pembayaran.index') }}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Pembayaran</span></a>
             </li>
-            <li @if (Request::is('kasir/report')) class="active" @else class="false" @endif>
+            <li @if (Request::is('pembayaran/create')) class="active" @else class="false" @endif>
                <a href="{{ route('pembayaran.create') }}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
             </li>
          </ul>

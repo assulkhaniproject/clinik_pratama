@@ -16,7 +16,7 @@ class ObatController extends Controller
      */
     public function index()
     {
-        $datas = Obat::all();
+        $datas = Obat::orderBy('id','DESC')->get();
         return view('pages.admin.obat.index',compact('datas'));
     }
 

@@ -16,6 +16,8 @@ class CreateDokterTable extends Migration
         Schema::create('dokter', function (Blueprint $table) {
             $table->id();
 
+            $table->string('email', 50)->unique();
+            $table->string('password');
             $table->string('no_str');
             $table->string('nama_dokter');
             $table->string('harga');

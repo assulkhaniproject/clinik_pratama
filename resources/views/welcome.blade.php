@@ -49,14 +49,31 @@
                            <li><span data-seconds>0</span>Seconds</li>
                         </ul> --}}
                     </div>
-                    <div class="d-block row">
+                    {{-- <div class="d-block row">
                         <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
                             <a type="button" href="{{ route('admin.login') }}"
                                 class="btn btn-primary px-5 text-white">ADMIN</a>
-                            <a type="button" href="{{ route('kasir.login') }}" class="btn btn-primary px-5 text-white">
+                            <a type="button" href="{{ route('kasir.login') }}"
+                                class="btn btn-primary px-5 text-white">
                                 KASIR</a>
+                            <a type="button" href="{{ route('dokter.login') }}"
+                                class="btn btn-primary px-5 text-white">
+                                DOKTER</a>
+                                <a type="button" href="#" class="btn btn-primary px-5 text-white">
+                                    APOTEKER</a>
                         </div>
-                    </div>
+                    </div> --}}
+                    <div class="btn-group " role="group">
+                        <button id="btnGroupDrop1" type="button" class=" px-lg-5 py-2 btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sign In
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                           <a class="dropdown-item" href="{{ route('admin.login') }}">Admin</a>
+                           <a class="dropdown-item" href="{{ route('kasir.login') }}">Kasir</a>
+                           <a class="dropdown-item" href="{{ route('dokter.login') }}">Dokter</a>
+                           <a class="dropdown-item" href="{{ route('apoteker.login')}}">Apoteker</a>
+                        </div>
+                     </div>
                 </div>
             </div>
 

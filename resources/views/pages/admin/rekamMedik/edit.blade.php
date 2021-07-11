@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.dokter')
 
 <head>
     <title> Edit Rekam Medik | KLINIK PRATAMA HB</title>
@@ -141,7 +141,7 @@
                   placeholder: $(this).data("placeholder"),
                   theme: 'bootstrap4',
                   ajax: {
-                      url: '/admin/rekamMedik/get-obat/fetch/',
+                      url: '/dokter/rekamMedik/get-obat/fetch/',
                       dataType: 'json',
                       delay: 100,
                       allowClear:true,

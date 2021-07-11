@@ -25,15 +25,15 @@ class PasienController extends Controller
     {
         $this->validate($request, [
             'kategori_pasien' => 'required',
-            'nama' => 'required|max:100',
-            'no_identitas' => 'required|max:16',
-            'tempat_lahir' => 'required|max:20',
-            'tanggal_lahir' => 'required',
-            'jenis_kelamin' => 'required|max:9',
+            'nama.max' => 'required|max:100',
+            'no_identitas.max' => 'required|max:16',
+            'tempat_lahir.max' => 'required|max:20',
+            'tanggal_lahir.max' => 'required',
+            'jenis_kelamin.max' => 'required|max:9',
             'alamat' => 'required',
-            'usia' => 'required|max:2',
-            'golongan_darah' => 'required|max:2',
-            'no_hp' => 'required|max:13'
+            'usia.max' => 'required|max:2',
+            'golongan_darah.max' => 'required|max:2',
+            'no_hp.max' => 'required|max:13'
         ]);
 
         Pasien::create([

@@ -1,38 +1,53 @@
 <!doctype html>
 <html lang="en">
-   
-<!-- Mirrored from iqonic.design/themes/xray/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jun 2021 21:10:05 GMT -->
 
+<!-- Mirrored from iqonic.design/themes/xray/html/dashboard-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Jun 2021 18:03:00 GMT -->
 
-@include('templates.partials.kasir._head')
+<head>
+    @include('templates.partials.admin1._head')
+</head>
 
-   <body class="sidebar-main-menu">
-      <!-- loader Start -->
-      
-      <!-- loader END -->
-      <!-- Wrapper Start -->
-      <div class="wrapper">
-         <!-- Sidebar  -->
-         @include('templates.partials.kasir._sidebar')
-         
-         <!-- Page Content  -->
-         <div id="content-page" class="content-page">
+<body>
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+
+        </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+
+        <!-- Sidebar  -->
+        @include('templates.partials.kasir._sidebar')
+        <!-- end Sidebar -->
+
+        <!-- Page Content  -->
+        <div id="content-page" class="content-page">
+
             <!-- TOP Nav Bar -->
-			@include('templates.partials.kasir._navbar')
-         <!-- TOP Nav Bar END -->
-		 @yield('content')
+            @include('templates.partials.kasir._navbar')
+            <!-- TOP Nav Bar END -->
+
+            <!-- Content -->
+            @yield('content')
+            <!--end Content -->
+
             <!-- Footer -->
-			@include('templates.partials.kasir._footer')
-      <!-- Footer END -->
-         </div>
-      </div>
-      <!-- Wrapper END -->
-      
-      <!-- Optional JavaScript -->
-      @include('templates.partials.kasir._script')
-      @include('sweetalert::alert')
+            @include('templates.partials.kasir._footer')
+            <!-- Footer END -->
+        </div>
+    </div>
+    <!-- Wrapper END -->
 
-   </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    @include('templates.partials.kasir._script')
+    @include('sweetalert::alert')
+    @yield('othscript')
 
-<!-- Mirrored from iqonic.design/themes/xray/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Jun 2021 21:10:58 GMT -->
+</body>
+
+<!-- Mirrored from iqonic.design/themes/xray/html/dashboard-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Jun 2021 18:03:05 GMT -->
+
 </html>

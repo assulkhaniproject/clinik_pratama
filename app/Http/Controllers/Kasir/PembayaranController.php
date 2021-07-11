@@ -8,7 +8,7 @@ use App\Pasien;
 use App\RekamMedik;
 use App\Transaksi;
 use Illuminate\Http\Request;
-use PDF;
+use Barryvdh\DomPDF\PDF;
 
 class PembayaranController extends Controller
 {

@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.admin1')
 
 <head>
    <title> Data Obat | KLINIK PRATAMA HB</title>
@@ -26,9 +26,9 @@
                         <th scope="col">No.</th>
                         <th scope="col">Kode</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">Tanggal Kadaluarsa</th>
+                        <th scope="col">Kadaluarsa</th>
                         <th scope="col">Harga</th>
-                        <th scope="col">Jumlah Stok</th>
+                        <th scope="col">Stok</th>
                         <th scope="col">Action</th>
                      </tr>
                   </thead>

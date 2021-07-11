@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Petugas;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -24,6 +25,7 @@ class DashboardController extends Controller
      */
     public function profile()
     {
+        
         return view('pages.admin.profile');
     }
 

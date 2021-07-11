@@ -40,3 +40,9 @@
 <!-- Custom JavaScript -->
 <script src="{{asset('admin/js/custom.js')}}"></script>
 <!-- Copyright - 2021 || Abu Muslih Assulkhani || Klinik Pratama PoltekHarber -->
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+</script>
+@yield('script')
