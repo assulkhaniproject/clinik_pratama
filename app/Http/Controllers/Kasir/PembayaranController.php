@@ -8,13 +8,13 @@ use App\Pasien;
 use App\RekamMedik;
 use App\Transaksi;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PembayaranController extends Controller
 {
     public function index()
     {
-        $data = RekamMedik::where('keluhan', '!=', null)->doesntHave('transaksi')->oldest()->get();
+        $data = RekamMedik::where('status', 3)->doesntHave('transaksi')->oldest()->get();
         return view('pages.kasir.pembayaran.index', compact('data'));
     }
 
@@ -42,16 +42,16 @@ class PembayaranController extends Controller
 
     public function show(RekamMedik $rekamMedik)
     {
-        $data = RekamMedik::find($rekamMedik->id);
-        $pasien = Pasien::find($data->no_identitas);
+        $pasien = Pasien::find($rekamMedik->no_identitas);
 
-        return view('pages.kasir.pembayaran.detail', compact('data', 'pasien'));
+        return view('pages.kasir.pembayaran.detail', compact('rekamMedik', 'pasien'));
     }
 
     public function edit(RekamMedik $rekamMedik)
     {
         $kodeTransaksi = IdGenerator::generate(['table' => 'transaksi', 'field' => 'no_transaksi', 'length' => 12, 'prefix' =>'TRANS-']);
         $data = RekamMedik::find($rekamMedik->id);
+        
         return view('pages.kasir.pembayaran.create', compact('data', 'kodeTransaksi'));
     }
 
@@ -65,10 +65,14 @@ class PembayaranController extends Controller
             ]);
 
             Transaksi::create($request->all());
+
+            $rekamMedik->status = 4;
+            $rekamMedik->update();
         }
 
         $pdf = PDF::loadview('pages.kasir.pembayaran.pdf.nota', [
             'rekamMedik' => $rekamMedik,
+            'transaksi' => $rekamMedik->transaksi,
             'tgl_periksa' => $this->dayDateID($rekamMedik->created_at)
         ])->setPaper('f4', 'potrait');
 

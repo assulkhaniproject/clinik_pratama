@@ -39,7 +39,7 @@
                 <th>Nama Pasien</th>
                 <th>Tanggal Priksa</th>
                 <th>Jenis Periksa</th>
-                <th>Nama Dokter</th>
+                <th>Nama Pemeriksa</th>
             </tr>
         </thead>
         <tbody>
@@ -53,7 +53,7 @@
                 <td style="text-align: center">{{$item->pasien->nama}}</td>
                 <td style="text-align: center">{{$item->tanggal_periksa}}</td>
                 <td style="text-align: center">{{$item->pemeriksaan->jenis_pemeriksaan}}</td>
-                <td style="text-align: center">{{$item->dokter->nama_dokter}}</td>
+                <td style="text-align: center">{{$item->petugas->nama}}</td>
             </tr>
             @endforeach
         </tbody>

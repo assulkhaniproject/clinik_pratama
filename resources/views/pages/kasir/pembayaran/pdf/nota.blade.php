@@ -34,7 +34,7 @@
             <tr>
                 <td height="25" width="120">No. Transaksi</td>
                 <td>:</td>
-                <td>{{$rekamMedik->transaksi->no_transaksi}}</td>
+                <td>{{$transaksi->no_transaksi}}</td>
             </tr>
             <tr>
                 <td height="25" width="120">Nama Pasien :</td>
@@ -66,8 +66,8 @@
               <td>{{$biayaAdmin = str_replace('.', '', '15.000')}}</td>
            </tr>
            <tr>
-              <th scope="col">Biaya Dokter</th>
-              <td>{{$biayaDokter = str_replace('.', '', $rekamMedik->dokter->harga)}}</td>
+              <th scope="col">Biaya Petugas Medis</th>
+              <td>{{$biayaPetugasMedis = str_replace('.', '', $rekamMedik->petugasMedis)}}</td>
            </tr>
            <tr>
               <th scope="col" class="align-text-top">Farmasi</th>
@@ -87,8 +87,8 @@
               </td>
            </tr>
            <tr>
-              <th scope="col">Total yang harus dibayar</th>
-              <td>{{$total = $biayaAdmin + $biayaDokter + $biayaObat }}</td>
+              <th scope="col">Jumlah Pembayaran</th>
+              <td>{{$transaksi->total_pembayaran}}</td>
            </tr>
         </thead>
      </table>

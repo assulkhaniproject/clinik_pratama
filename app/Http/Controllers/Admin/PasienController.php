@@ -25,15 +25,15 @@ class PasienController extends Controller
     {
         $this->validate($request, [
             'kategori_pasien' => 'required',
-            'nama.max' => 'required|max:100',
-            'no_identitas.max' => 'required|max:16',
-            'tempat_lahir.max' => 'required|max:20',
-            'tanggal_lahir.max' => 'required',
-            'jenis_kelamin.max' => 'required|max:9',
+            'nama' => 'required|max:100',
+            'no_identitas' => 'required|max:16',
+            'tempat_lahir' => 'required|max:20',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required|max:9',
             'alamat' => 'required',
-            'usia.max' => 'required|max:2',
-            'golongan_darah.max' => 'required|max:2',
-            'no_hp.max' => 'required|max:13'
+            'usia' => 'required|max:2',
+            'golongan_darah' => 'required|max:2',
+            'no_hp' => 'required|max:13'
         ]);
 
         Pasien::create([
@@ -49,7 +49,7 @@ class PasienController extends Controller
             'golongan_darah' => $request->golongan_darah,
         ]);
 
-        return redirect()->route('pasien.index')->with('success', 'Data Berhasil Tersimpan');
+        return redirect()->route('admin.pasien.index')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function show($id)
@@ -67,7 +67,6 @@ class PasienController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'kategori_pasien' => 'required',
             'nama' => 'required|max:100',
             'no_identitas' => 'required|max:16|min:8',
             'tempat_lahir' => 'required|max:20',
@@ -80,7 +79,6 @@ class PasienController extends Controller
         ]);
 
         $data = Pasien::find($id);
-        $data->kategori_pasien = $request->kategori_pasien;
         $data->nama = $request->nama;
         $data->no_identitas = $request->no_identitas;
         $data->tempat_lahir = $request->tempat_lahir;
@@ -92,7 +90,7 @@ class PasienController extends Controller
         $data->no_hp = $request->no_hp;
         
         $data->update();
-        return redirect()->route('pasien.index')->with('success', 'Data Berhasil Diedit');
+        return redirect()->route('admin.pasien.index')->with('success', 'Data Berhasil Diedit');
 
     }
 
@@ -100,7 +98,7 @@ class PasienController extends Controller
     {
         $data = Pasien::find($id);
         $data->delete();
-        return redirect()->route('pasien.index')->with('success', 'Data Berhasil Dihapus');
+        return redirect()->route('admin.pasien.index')->with('success', 'Data Berhasil Dihapus');
     }
 
     public function loadNipNipy(Request $request, $type)

@@ -1,4 +1,4 @@
-@extends('templates.dokter')
+@extends('templates.admin')
 
 <head>
     <title> Tambah Data | KLINIK PRATAMA HB</title>
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="iq-card-body">
-                    <form method="post" action="{{route('rekamMedik.store')}}">
+                    <form method="post" action="{{route('admin.rekamMedik.store')}}">
                         @csrf
                         <div class="form-group">
                             <label for="">Nomor Rekam Medik:</label>
@@ -46,61 +46,22 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="">Nama Dokter:</label>
-                            <select name="dokter_id" type="text" class="form-control text-dark {{$errors->has('dokter_id')?'is-invalid':''}}" id="dokter_id" required>
-                                @foreach ($dokter as $item)
-                                    <option value="{{$item->id}}">{{$item->nama_dokter}}</option>
+                            <label for="">Nama Petugas Medis:</label>
+                            <select name="petugas_id" type="text" class="form-control text-dark {{$errors->has('petugas_id')?'is-invalid':''}}" id="petugas_id" required>
+                                @foreach ($petugasMedis as $item)
+                                    <option value="{{$item->id}}">{{$item->nama}} ({{$item->kategori}})</option>
                                 @endforeach
                             </select>
-                            @if ($errors->has('dokter_id'))
+                            @if ($errors->has('petugas_id'))
                             <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('nama_doc')}}</b></p>
-                            </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="">Jenis Pemeriksaan:</label>
-                            <select name="pemeriksaan_id" type="text" class="form-control text-dark {{$errors->has('pemeriksaan_id')?'is-invalid':''}}" id="pemeriksaan_id" required>
-                                @foreach ($jenisPemeriksaan as $item)
-                                    <option value="{{$item->id}}">{{$item->jenis_pemeriksaan}}</option>
-                                @endforeach
-                            </select>
-                            @if ($errors->has('pemeriksaan_id'))
-                            <span class="invalid-feedback ml-3" role="alert">
-                                <p><b>{{ $errors->first('pemeriksaan_id')}}</b></p>
-                            </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="">Keluhan Pasien:</label>
-                            <textarea name="keluhan" type="text" class="form-control {{$errors->has('keluhan')?'is-invalid':''}}" id="keluhan" disabled></textarea>
-                            @if ($errors->has('keluhan'))
-                            <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('keluhan')}}</b></p>
-                            </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tindakan Dokter:</label>
-                            <textarea name="tindakan" type="text" class="form-control {{$errors->has('tindakan')?'is-invalid':''}}" id="tindakan" disabled></textarea>
-                            @if ($errors->has('tindakan'))
-                            <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('tindakan')}}</b></p>
-                            </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="">Resep Obat:</label>
-                            <input name="resep_obat" type="text" class="form-control {{$errors->has('resep_obat')?'is-invalid':''}}" id="resep_obat" disabled>
-                            @if ($errors->has('resep_obat'))
-                            <span class="invalid-feedback" role="alert">
-                                <p><b>{{ $errors->first('resep_obat')}}</b></p>
+                                <p><b>{{ $errors->first('petugas_id')}}</b></p>
                             </span>
                             @endif
                         </div>
                         <!-- <div class="checkbox mb-3">
                      <label><input type="checkbox"> Remember me</label>
                   </div> -->
+                        <span>Ketika anda klik simpan, rekam medik akan dikirim ke bagian petugas medis</span> <br>
                         <a class="btn iq-bg-danger mt-3" onclick="history.back()">Batal</a>
                         <button type="submit" class="btn iq-bg-primary mt-3">Simpan</button>
                     </form>
@@ -116,7 +77,7 @@
           placeholder: $(this).data("placeholder"),
           theme: 'bootstrap4',
           ajax: {
-              url: '/dokter/rekamMedik/get-pasien/fetch/',
+              url: '{{route('admin.rekamMedik.getPasien')}}',
               dataType: 'json',
               delay: 100,
               allowClear:true,

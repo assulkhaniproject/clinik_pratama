@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
     <title>Detail Data Petugas | KLINIK PRATAMA HB</title>
@@ -109,15 +109,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Email
+                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Harga
                             :</label>
                         <div class="col-sm-8">
-                            <input name="email" type="email" readonly
-                                class="form-control ml-3 text-dark {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                                id="email" placeholder="" value="{{ $data->email }}">
-                            @if ($errors->has('email'))
+                            <input name="harga" type="harga" readonly
+                                class="form-control ml-3 text-dark {{ $errors->has('harga') ? 'is-invalid' : '' }}"
+                                id="harga" placeholder="" value="{{ $data->harga }}">
+                            @if ($errors->has('harga'))
                                 <span class="invalid-feedback" role="alert">
-                                    <p><b>{{ $errors->first('email') }}</b></p>
+                                    <p><b>{{ $errors->first('harga') }}</b></p>
                                 </span>
                             @endif
                         </div>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="form-group text-center">
                         <a class="btn btn-primary text-white" onclick="history.back()">Kembali</a>
-                        <a type="" href="{{route('petugas.edit', $data->id)}}" class="btn btn-warning text-white">Edit</a>
+                        <a type="" href="{{route('admin.petugas.edit', $data->id)}}" class="btn btn-warning text-white">Edit</a>
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@
 <!-- Mirrored from iqonic.design/themes/xray/html/dashboard-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Jun 2021 18:03:00 GMT -->
 
 <head>
-    @include('templates.partials.admin1._head')
+    @include('templates.partials.admin._head')
 </head>
 
 <body>

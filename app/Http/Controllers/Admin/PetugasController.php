@@ -38,29 +38,18 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        $rule = [
+        $this->validate($request, [
             'no_str' => 'required|max:20|min:16',
             'nama' => 'required|max:50',
-            'email' => 'required|max:50',
-            'password' => 'required',
             'tempat_lahir' => 'required|max:20',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required|max:9',
             'kategori' => 'required',
             'alamat' => 'required',
             'no_hp' => 'required|max:13|min:10',
+            'harga' => 'nullable|numeric',
             'foto' => 'required|image|mimes:jpg,png,jpeg|max:2048',
-        ];
-        $message = [
-            'required' => 'Isi Bidang Ini.',
-            'kode.max' => 'no str Maximal 20 Huruf.',
-            'nama.max' => 'Nama Maximal 50 Huruf.',
-            'email.max' => 'Email Maximal 50 Huruf.',
-            'tempat.max' => 'Tempat Lahir Maximal 20 Huruf.',
-            'no_hp.max' => 'Maksimal 13 angkat / Minimal 10 angka',
-            'foto.image' => 'file tidak sesuai.'
-        ];
-        $this->validate($request, $rule, $message);
+        ]);
 
         $foto = $request->file('foto');
         $filename = time() . '.' . $foto->getClientOriginalExtension();
@@ -70,19 +59,18 @@ class PetugasController extends Controller
         $data = new Petugas();
         $data->no_str = $request->no_str;
         $data->nama = $request->nama;
-        $data->email = $request->email;
-        $data->password = Hash::make($request->password);
         $data->tempat_lahir = $request->tempat_lahir;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->kategori = $request->kategori;
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
+        $data->harga = $request->harga;
         $data->foto = $request->filename;
         $data->save();
 
 
-        return redirect()->route('petugas.index')->with('success', 'Data Berhasil Tersimpan');
+        return redirect()->route('admin.petugas.index')->with('success', 'Data Berhasil Tersimpan');
     }
 
     /**
@@ -118,41 +106,31 @@ class PetugasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rule = [
+        $this->validate($request, [
             'no_str' => 'required|max:20|min:16',
             'nama' => 'required|max:50',
-            'email' => 'required|max:50',
             'tempat_lahir' => 'required|max:20',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required|max:9',
             'kategori' => 'required',
             'alamat' => 'required',
             'no_hp' => 'required|max:13|min:10',
-            'foto' => 'required|image|mimes:jpg,png,jpeg|max:2048',
-        ];
-        $message = [
-            'required' => 'Isi Bidang Ini.',
-            'kode.max' => 'no str Maximal 20 Huruf.',
-            'nama.max' => 'Nama Maximal 50 Huruf.',
-            'email.max' => 'Email Maximal 50 Huruf.',
-            'tempat.max' => 'Tempat Lahir Maximal 20 Huruf.',
-            'no_hp.max' => 'Maksimal 13 angkat / Minimal 10 angka',
-            'foto.image' => 'file tidak sesuai.'
-        ];
-        $this->validate($request, $rule, $message);
+            'harga' => 'nullable|numeric',
+            'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+        ]);
 
         $data = Petugas::find($id);
         $data->no_str = $request->no_str;
         $data->nama = $request->nama;
-        $data->email = $request->email;
-        $data->password = Hash::make($request->password);
         $data->tempat_lahir = $request->tempat_lahir;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->kategori = $request->kategori;
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
+        $data->harga = $request->harga;
         $foto = $request->file('foto');
+
         if ($foto) {
             $filename = time() . '.' . $foto->getClientOriginalExtension();
             $destinationPath = public_path('/admin/images/user');
@@ -161,9 +139,10 @@ class PetugasController extends Controller
         } else {
             $data->foto = $request->old_foto;
         }
+
         $data->update();
 
-        return redirect()->route('petugas.index');
+        return redirect()->route('admin.petugas.index')->with('success', 'Data Berhasil Disimpan');
     }
 
     /**
@@ -176,6 +155,6 @@ class PetugasController extends Controller
     {
         $data = Petugas::find($id);
         $data->delete();
-        return redirect()->route('petugas.index')->with('success', 'Data Berhasil Dihapus');
+        return redirect()->route('admin.petugas.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

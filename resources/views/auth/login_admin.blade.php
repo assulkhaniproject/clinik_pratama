@@ -62,7 +62,7 @@
                     <div class="sign-in-from">
                         <h1 class="mb-0">Sign in Admin</h1>
                         <p>Enter your email address and password to access admin panel.</p>
-                        <form class="mt-4" method="POST" action="{{ route('admin.login') }}">
+                        <form class="mt-4" method="POST" action="{{ route('login.store') }}">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>

@@ -17,55 +17,71 @@
          <form class="form-horizontal ml-5">
          <fieldset disabled>
             <div class="form-group row">
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Status Rekam Medik :</label>
+               <div class="col-sm-8">
+                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$rekamMedik->getStatus()}}" disabled>
+               </div>
+            </div>
+            <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center ml-4" for="">No Rekam Medik :</label>
                <div class="col-sm-8">
-                  <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$data->no_rekam_medik}}">
+                  <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$rekamMedik->no_rekam_medik}}" disabled>
                </div>
             </div>
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="">No. Identitas :</label>
                <div class="col-sm-8">
-                  <input type="text" class="form-control ml-3 text-dark" id="no_identitas" placeholder="" value="{{$pasien->no_identitas}}">
+                  <input type="text" class="form-control ml-3 text-dark" id="no_identitas" placeholder="" value="{{$pasien->no_identitas}}" disabled>
                </div>
             </div>
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Tanggal Periksa :</label>
                <div class="col-sm-8">
-                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->tanggal_periksa}}">
+                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$rekamMedik->tanggal_periksa}}" disabled>
                </div>
             </div>
             <div class="form-group row">
-               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Nama dokter :</label>
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Petugas Medis :</label>
                <div class="col-sm-8">
-                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->dokter->nama_dokter}}">
+                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$rekamMedik->petugas->nama}}" disabled>
                </div>
             </div>
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Jenis Periksa :</label>
                <div class="col-sm-8">
-                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$data->pemeriksaan->jenis_pemeriksaan}}">
+                  <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$rekamMedik->pemeriksaan->jenis_pemeriksaan ?? ''}}" disabled>
                </div>
             </div>
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Keluhan :</label>
+               <div class="col-sm-8 ml-3">
+                  @foreach ($rekamMedik->keluhan as $item)
+                  <span class="btn btn-light mb-2">
+                     {{$item->keluhan}}
+                  </span>
+                  @endforeach
+               </div>
+            </div>
+            <div class="form-group row">
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Keluhan Lainnya :</label>
                <div class="col-sm-8">
-                  <textarea type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="">{{$data->keluhan}}</textarea>
+                  <textarea type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="" disabled>{{$rekamMedik->keluhan_lain}}</textarea>
                </div>
             </div>
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Tindakan :</label>
-               <div class="col-sm-8">
-                  <textarea type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="">{{$data->tindakan}}</textarea>
+               <div class="col-sm-8 ml-3">
+                  @foreach ($rekamMedik->tindakan as $item)
+                  <span class="btn btn-light mb-2">
+                     {{$item->tindakan}}
+                  </span>
+                  @endforeach
                </div>
             </div>
             <div class="form-group row">
-               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Resep Obat :</label>
-               <div class="col-sm-8 ml-3">
-                  @foreach ($data->obat as $item)
-                  <span class="btn btn-light mb-2">
-                     {{$item->nama}}
-                  </span>
-                  @endforeach
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Tindakan Lainnya :</label>
+               <div class="col-sm-8">
+                  <textarea type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="" disabled>{{$rekamMedik->tindakan_lain}}</textarea>
                </div>
             </div>
          </fieldset>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\User;
 use Closure;
 
 class CekLoginAuth
@@ -18,6 +19,11 @@ class CekLoginAuth
         if(!session('berhasil_login')){
             return redirect('/');
         }
+
+        if(strtolower(User::find(session('user_id'))->name) != $request->segment(1)){
+            return redirect()->back();
+        }
+
         return $next($request);
     }
 }

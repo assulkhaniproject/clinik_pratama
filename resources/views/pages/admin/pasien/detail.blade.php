@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
    <title> Detail Pasien | KLINIK PRATAMA HB</title>
@@ -81,7 +81,7 @@
             </div> -->
             <div class="form-group text-center">
                <a class="btn btn-primary text-white" onclick="history.back()">Keluar</a>
-               <a href="{{route('pasien.edit', $data->id)}}" class="btn btn-warning text-white">Edit</a>
+               <a href="{{route('admin.pasien.edit', $data->id)}}" class="btn btn-warning text-white">Edit</a>
             </div>
          </form>
       </div>

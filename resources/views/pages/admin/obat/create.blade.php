@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
     <title>Tambah Data Obat | KLINIK PRATAMA HB</title>
@@ -14,7 +14,7 @@
             </div>
             <div class="iq-card-body">
                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p> -->
-                <form class="form-horizontal ml-5" action="{{ route('obat.store') }}" method="post"
+                <form class="form-horizontal ml-5" action="{{ route('admin.obat.store') }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">

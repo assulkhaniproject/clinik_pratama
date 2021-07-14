@@ -1,44 +1,52 @@
 <!doctype html>
 <html lang="en">
 
+<!-- Mirrored from iqonic.design/themes/xray/html/dashboard-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Jun 2021 18:03:00 GMT -->
+
 <head>
-   @include('templates.partials.admin._head')
+    @include('templates.partials.admin._head')
 </head>
 
-<body class="sidebar-main-menu">
-   <!-- loader Start -->
-   <div id="loading">
-      <div id="loading-center">
+<body>
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
 
-      </div>
-   </div>
-   <!-- loader END -->
-   <!-- Wrapper Start -->
-   <div class="wrapper">
-      <!-- Sidebar  -->
-      @include('templates.partials.admin._sidebar')
+        </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
 
-      <!-- Page Content  -->
-      <div id="content-page" class="content-page">
-         <!-- TOP Nav Bar -->
-         @include('templates.partials.admin._navbar')
-         <!-- TOP Nav Bar END -->
-         @yield('content')
-         <!-- Footer -->
-         @include('templates.partials.admin._footer')
-         <!-- Footer END -->
-      </div>
-   </div>
-   <!-- Wrapper END -->
+        <!-- Sidebar  -->
+        @include('templates.partials.admin._sidebar')
+        <!-- end Sidebar -->
 
+        <!-- Page Content  -->
+        <div id="content-page" class="content-page">
 
-   <!-- Optional JavaScript -->
-   @include('templates.partials.admin._script')
-   @include('sweetalert::alert')
-   @yield('othscript')
+            <!-- TOP Nav Bar -->
+            @include('templates.partials.admin._navbar')
+            <!-- TOP Nav Bar END -->
+
+            <!-- Content -->
+            @yield('content')
+            <!--end Content -->
+
+            <!-- Footer -->
+            @include('templates.partials.admin._footer')
+            <!-- Footer END -->
+        </div>
+    </div>
+    <!-- Wrapper END -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    @include('templates.partials.admin._script')
+    @include('sweetalert::alert')
 
 </body>
 
-<!-- Copyright - 2021 || Abu Muslih Assulkhani || Klinik Pratama PoltekHarber -->
+<!-- Mirrored from iqonic.design/themes/xray/html/dashboard-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Jun 2021 18:03:05 GMT -->
 
 </html>

@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
     <title> Report | KLINIK PRATAMA HB</title>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="iq-card-body">
-                    <form method="post" action="{{ route('report-admin.store') }}">
+                    <form method="post" action="{{ route('admin.report.store') }}">
                         @csrf
                         Berdasarkan Tanggal: 
                         {{-- <div class="form-group">

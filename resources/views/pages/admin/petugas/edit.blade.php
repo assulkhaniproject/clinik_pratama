@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
     <title>Edit Data Petugas | KLINIK PRATAMA HB</title>
@@ -16,7 +16,7 @@
             </div>
             <div class="iq-card-body">
                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p> -->
-                <form class="form-horizontal ml-5" action="{{ route('petugas.update', $data->id) }}" method="post"
+                <form class="form-horizontal ml-5" action="{{ route('admin.petugas.update', $data->id) }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     {{ method_field('patch') }}
@@ -115,50 +115,36 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Email
-                            :</label>
-                        <div class="col-sm-8">
-                            <input name="email" type="email"
-                                class="form-control ml-3 text-dark {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                                id="email" placeholder="" value="{{ $data->email }}">
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                    <p><b>{{ $errors->first('email') }}</b></p>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Password
-                            :</label>
-                        <div class="col-sm-8">
-                            <input name="password" type="text"
-                                class="form-control ml-3 text-dark {{ $errors->has('password') ? 'is-invalid' : '' }}"
-                                id="password" placeholder="">
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <p><b>{{ $errors->first('password') }}</b></p>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Kategori
                             :</label>
                         <div class="col-sm-8">
                             <select name="kategori" type="text"
                                 class="form-control ml-3 text-dark {{ $errors->has('kategori') ? 'is-invalid' : '' }}"
                                 id="kategori" placeholder="" value="{{ $data->kategori }}">
-                                <option {{ $data->kategori === 'Admin' ? 'selected' : '' }}>Admin</option>
-                                <option {{ $data->kategori === 'Kasir' ? 'selected' : '' }}>Kasir</option>
-                                <option {{ $data->kategori === 'Apoteker' ? 'selected' : '' }}>Apoteker</option>
-                                <option {{ $data->kategori === 'Dokter' ? 'selected' : '' }}>Dokter</option>
+                                <option value="Admin" {{ $data->kategori === 'Admin' ? 'selected' : '' }}>Admin</option>
+                                <option value="Kasir" {{ $data->kategori === 'Kasir' ? 'selected' : '' }}>Kasir</option>
+                                <option value="Apoteker" {{ $data->kategori === 'Apoteker' ? 'selected' : '' }}>Apoteker</option>
+                                <option value="Dokter" {{ $data->kategori === 'Dokter' ? 'selected' : '' }}>Dokter</option>
                                 @if ($errors->has('kategori'))
                                     <span class="invalid-feedback" role="alert">
                                         <p><b>{{ $errors->first('kategori') }}</b></p>
                                     </span>
                                 @endif
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="harga" style="display: none">
+                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Harga
+                            :</label>
+                        <div class="col-sm-8">
+                            <input name="harga" type="number"
+                                class="form-control ml-3 text-dark {{ $errors->has('harga') ? 'is-invalid' : '' }}"
+                                id="harga" placeholder="" value="{{$data->harga}}">
+                            @if ($errors->has('harga'))
+                                <span class="invalid-feedback" role="alert">
+                                    <p><b>{{ $errors->first('harga') }}</b></p>
+                                </span>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row">
@@ -189,7 +175,35 @@
 @endsection
 @section('script')
     <script>
-        var loadfile = function(event) {
+        function selectChange(){
+            switch ($('#kategori').val()) {
+                case 'Dokter':
+                    $('#harga').show();
+                    break;
+
+                case 'Bidan':
+                    $('#harga').show();
+                    break;
+
+                 case 'Perawat':
+                    $('#harga').show();
+                     break;
+                 
+                 default:
+                    $('#harga').hide();
+                    break;
+             }
+        }
+
+        selectChange();
+
+        $(() => {
+             $('#kategori').change(() => {
+                selectChange();
+             })
+        });
+
+        var loadfile = function (event) {
             var foto = document.getElementById('foto');
             var output = document.getElementById('output');
             if (foto) {

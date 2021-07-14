@@ -25,7 +25,7 @@
     <hr>
 
     <center>
-        <h3>Report Rekam Medik</h3>
+        <h3>Report Pembayaran Rekam Medik</h3>
         <p>Dari Tanggal : {{date('d-m-Y', strtotime($request->dari_tanggal))}} ke {{date('d-m-Y', strtotime($request->ke_tanggal))}}</p>
     </center>
     
@@ -39,7 +39,7 @@
                 <th>Nama Pasien</th>
                 <th>Tanggal Priksa</th>
                 <th>Jenis Periksa</th>
-                <th>Nama Dokter</th>
+                <th>Petugas Medis</th>
             </tr>
         </thead>
         <tbody>
@@ -49,11 +49,19 @@
             @foreach ($filterRekam as $item)
             <tr>
                 <td style="text-align: center">{{$no++}}</td>
-                <td style="text-align: center">{{$item->no_trransaksi}}</td>
+                <td style="text-align: center">{{$item->no_transaksi}}</td>
                 <td style="text-align: center">{{$item->rekamMedik->pasien->nama}}</td>
                 <td style="text-align: center">{{$item->rekamMedik->tanggal_periksa}}</td>
                 <td style="text-align: center">{{$item->rekamMedik->pemeriksaan->jenis_pemeriksaan}}</td>
-                <td style="text-align: center">{{$item->rekamMedik->dokter->nama_dokter}}</td>
+                <td style="text-align: center">{{$item->rekamMedik->petugas->nama}}</td>
+            </tr>
+            <tr>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"><strong>Total Pembayaran:</strong></td>
+                <td style="text-align: center">{{$item->total_pembayaran}}</td>
             </tr>
             @endforeach
         </tbody>

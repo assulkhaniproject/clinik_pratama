@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
    <title> Edit Data Pasien | KLINIK PRATAMA HB</title>
@@ -14,21 +14,13 @@
       </div>
       <div class="iq-card-body">
          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p> -->
-         <form class="form-horizontal ml-5" action="{{route('pasien.update',$data->id)}}" method="post" enctype="multipart/form-data">
+         <form class="form-horizontal ml-5" action="{{route('admin.pasien.update',$data->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             {{method_field('patch')}}
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center ml-4" for="">Kategori :</label>
                <div class="col-sm-8">
-                  <select name="kategori_pasien" type="text" class="form-control ml-3 text-dark {{$errors->has('kategori_pasien')?'is-invalid':''}}" id="email" placeholder="" value="">
-                     <option {{$data->kategori_pasien === 'Pasien Umum' ? 'selected' : '' }}>Pasien Umum</option>
-                     <option {{$data->kategori_pasien === 'Pasien Civitas PHB' ? 'selected' : '' }}>Pasien Civitas PHB</option>
-                  </select>
-                  @if ($errors->has('kategori_pasien'))
-                  <span class="invalid-feedback" role="alert">
-                     <p><b>{{ $errors->first('kategori_pasien')}}</b></p>
-                  </span>
-                  @endif
+                  <input name="kategori_pasien" type="text" class="form-control ml-3 text-dark {{$errors->has('kategori_pasien')?'is-invalid':''}}" id="email" placeholder="" value="{{$data->kategori_pasien}}" disabled>
                </div>
             </div>
             <div class="form-group row">

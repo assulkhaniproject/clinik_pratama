@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
    <title> Dashboard | KLINIK PRATAMA HB</title>

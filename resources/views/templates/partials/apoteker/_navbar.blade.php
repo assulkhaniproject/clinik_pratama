@@ -71,7 +71,7 @@
                                     </div>
                                 </a>
                                 <div class="d-inline-block w-100 text-center p-3">
-                                    <a class="bg-primary iq-sign-btn" href="{{ route('apoteker.logout') }}"
+                                    <a class="bg-primary iq-sign-btn" href="{{ route('login.destroy') }}"
                                         role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
                                 </div>
                             </div>

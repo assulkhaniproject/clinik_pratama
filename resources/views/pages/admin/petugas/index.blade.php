@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
     <title> Data Petugas | KLINIK PRATAMA HB</title>
@@ -16,7 +16,7 @@
                     </div>
                     <div class="iq-card-body">
                         <span class="table-add float-right mb-3 mr-lg-2">
-                            <a href="{{route('petugas.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah
+                            <a href="{{route('admin.petugas.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah
                                 Data<a class=""><span></span></a>
                             </a>
                         </span>
@@ -42,9 +42,9 @@
                                     <td>{{$data->nama}}</td>
                                     <td>{{$data->kategori}}</td>
                                     <td>
-                                        <a href="{{route('petugas.show',$data->id)}}" type="button"
+                                        <a href="{{route('admin.petugas.show',$data->id)}}" type="button"
                                             class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
-                                        <a href="{{route('petugas.destroy', $data->id)}}"
+                                        <a href="{{route('admin.petugas.destroy', $data->id)}}"
                                             onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button"
                                             class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
                                     </td>

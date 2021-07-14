@@ -65,9 +65,9 @@
                 </div>
                 <div class="col-md-6 position-relative">
                     <div class="sign-in-from">
-                        <h1 class="mb-0">Sign in Dokter</h1>
-                        <p>Enter your email address and password to access admin panel.</p>
-                        <form class="mt-2" method="POST" action="{{ route('dokter.login') }}">
+                        <h1 class="mb-0">Sign in Medis</h1>
+                        <p>For (Dokter, Bidan, Perawat), Enter your email address and password to access admin panel.</p>
+                        <form class="mt-2" method="POST" action="{{ route('login.store') }}">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>

@@ -11,10 +11,11 @@
          <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                <div class="iq-header-title row col-12">
-                  <h4 class="card-title">Antrian Pemeriksaan Rekam Medik</h4>
+                  <h4 class="card-title">Antrian Rekam Medik (Pembayaran)</h4>
                </div>
             </div>
             <div class="iq-card-body">
+               <p>Diurutkan berdasarkan antrian paling lama mendaftar pemeriksaan </p>
                <table class="table">
                   <thead>
                      <tr>
@@ -36,16 +37,12 @@
                         <td>{{$data->no_rekam_medik}}</td>
                         <td>{{$data->pasien->nama}}</td>
                         <td>{{date('d-m-Y H:i:s', strtotime($data->created_at))}}</td>
-                        <td>{{$data->dokter->nama_dokter}}</td>
+                        <td>{{$data->petugas->nama}}</td>
                         <td>
-                           <form action="{{ route('rekamMedik.destroy', $data->id) }}" method="POST">
-                              @csrf
-                              @method('DELETE')
-                              <a href="{{route('pembayaran.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
-                              @if ($index++ == 1)
-                              <a href="{{route('pembayaran.edit', $data->id)}}" type="button" class="btn mb-3 btn-success"><i class="ri-eye-fill"></i>Proses</a>
-                              @endif
-                           </form>
+                           <a href="{{route('kasir.pembayaran.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
+                           @if ($index++ == 1)
+                              <a href="{{route('kasir.pembayaran.edit', $data->id)}}" type="button" class="btn mb-3 btn-success"><i class="ri-eye-fill"></i>Proses</a>
+                           @endif
                         </td>
                      </tr>
                   </tbody>

@@ -67,7 +67,7 @@ class ObatController extends Controller
             'harga' => $request->harga,
             'stok' => $request->stok,
         ]);
-        return redirect()->route('obat.index')->with('success', 'Data Berhasil Tersimpan');
+        return redirect()->route('admin.obat.index')->with('success', 'Data Berhasil Tersimpan');
     }
 
     /**
@@ -129,7 +129,7 @@ class ObatController extends Controller
         $data->harga = $request->harga;
         $data->stok = $request->stok;
         $data->update();
-        return redirect()->route('obat.index')->with('success', 'Data Berhasil Diedit');
+        return redirect()->route('admin.obat.index')->with('success', 'Data Berhasil Diedit');
     }
 
     /**
@@ -142,6 +142,6 @@ class ObatController extends Controller
     {
         $data = Obat::find($id);
         $data->delete();
-        return redirect()->route('obat.index')->with('success', 'Data Berhasil Dihapus');
+        return redirect()->route('admin.obat.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

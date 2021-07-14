@@ -19,7 +19,7 @@ class PasienSeeder extends Seeder
 
         for ($i=0; $i < 10; $i++) { 
             Pasien::create([
-                'kategori_pasien' => $faker->randomElement(['1', '2']),
+                'kategori_pasien' => $faker->randomElement(['Pasien Umum', 'Pasien Civitas PHB']),
                 'nama' => $faker->name,
                 'no_identitas' => $faker->numberBetween($min = 1000000000000000, $max = 9999999999999999),
                 'tempat_lahir' => $faker->city,

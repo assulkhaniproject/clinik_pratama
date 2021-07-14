@@ -21,10 +21,10 @@
                <a href="{{route('kasir.dashboard')}}" class="iq-waves-effect"><i class="ion-home"></i><span>Dashboard</span></a>
             </li>
             <li @if (Request::is('kasir/pembayaran')) class="active" @else class="false" @endif>
-               <a href="{{ route('pembayaran.index') }}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Pembayaran</span></a>
+               <a href="{{ route('kasir.pembayaran.index') }}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Pembayaran</span></a>
             </li>
-            <li @if (Request::is('pembayaran/create')) class="active" @else class="false" @endif>
-               <a href="{{ route('pembayaran.create') }}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
+            <li @if (Request::is('kasir/pembayaran/create')) class="active" @else class="false" @endif>
+               <a href="{{ route('kasir.pembayaran.create') }}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
             </li>
          </ul>
       </nav>

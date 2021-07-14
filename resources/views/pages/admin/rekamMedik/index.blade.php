@@ -1,4 +1,4 @@
-@extends('templates.dokter')
+@extends('templates.admin')
 
 <head>
    <title> Data Rekam Medik | KLINIK PRATAMA HB</title>
@@ -26,15 +26,15 @@
          <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                <div class="iq-header-title row col-12">
-                  <h4 class="card-title">Data Rekam Medik</h4>
+                  <h4 class="card-title">Data Rekam Medik Dalam Proses</h4>
                </div>
             </div>
             <div class="iq-card-body">
                <span class="table-add float-right mb-3 mr-lg-2">
-                  <a href="{{route('rekamMedik.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah Data<a class=""><span></span></a>
+                  <a href="{{route('admin.rekamMedik.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah Data<a class=""><span></span></a>
                   </a>
                </span>
-               <!-- <p>The <code>.table </code> class adds basic styling to a table.</p> -->
+               <p>Diurutkan berdasarkan antrian paling baru mendaftar pemeriksaan </p>
                <table class="table">
                   <thead>
                      <tr>
@@ -42,7 +42,8 @@
                         <th scope="col">No. Rekam Medik</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Tanggal Periksa</th>
-                        <th scope="col">Nama Dokter</th>
+                        <th scope="col">Petugas Medis</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                      </tr>
                   </thead>
@@ -54,13 +55,14 @@
                         <td>{{$data->no_rekam_medik}}</td>
                         <td>{{$data->pasien->nama}}</td>
                         <td>{{$data->tanggal_periksa}}</td>
-                        <td>{{$data->dokter->nama_dokter}}</td>
+                        <td>{{$data->petugas->nama}} ({{$data->petugas->kategori}})</td>
+                        <td>{{$data->getStatus()}}</td>
                         <td>
-                           <form action="{{ route('rekamMedik.destroy', $data->id) }}" method="POST">
+                           <form action="{{ route('admin.rekamMedik.destroy', $data->id) }}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <a href="{{route('rekamMedik.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
-                              @if (!$data->keluhan)
+                              <a href="{{route('admin.rekamMedik.show', $data->id)}}" type="button" class="btn mb-3 btn-primary"><i class="ri-eye-fill"></i>Lihat</a>
+                              @if (!$data->pemeriksaan_id)
                                  <button type="submit" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</button>
                               @endif
                            </form>

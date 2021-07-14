@@ -42,36 +42,16 @@
                         </h3>
                         <hr>
                         <p>Jl. Mataram No 9 (belakang terminal) Pesurungan Lor Kota Tegal, Jawa Tengah Indonesia</p>
-                        {{-- <ul class="countdown" data-date="Feb 02 2022 20:20:22">
-                           <li><span data-days>0</span>Days</li>
-                           <li><span data-hours>0</span>Hours</li>
-                           <li><span data-minutes>0</span>Minutes</li>
-                           <li><span data-seconds>0</span>Seconds</li>
-                        </ul> --}}
                     </div>
-                    {{-- <div class="d-block row">
-                        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                            <a type="button" href="{{ route('admin.login') }}"
-                                class="btn btn-primary px-5 text-white">ADMIN</a>
-                            <a type="button" href="{{ route('kasir.login') }}"
-                                class="btn btn-primary px-5 text-white">
-                                KASIR</a>
-                            <a type="button" href="{{ route('dokter.login') }}"
-                                class="btn btn-primary px-5 text-white">
-                                DOKTER</a>
-                                <a type="button" href="#" class="btn btn-primary px-5 text-white">
-                                    APOTEKER</a>
-                        </div>
-                    </div> --}}
                     <div class="btn-group " role="group">
                         <button id="btnGroupDrop1" type="button" class=" px-lg-5 py-2 btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sign In
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                           <a class="dropdown-item" href="{{ route('admin.login') }}">Admin</a>
-                           <a class="dropdown-item" href="{{ route('kasir.login') }}">Kasir</a>
-                           <a class="dropdown-item" href="{{ route('dokter.login') }}">Dokter</a>
-                           <a class="dropdown-item" href="{{ route('apoteker.login')}}">Apoteker</a>
+                           <a class="dropdown-item" href="{{ route('login.index', 'Admin') }}">Admin</a>
+                           <a class="dropdown-item" href="{{ route('login.index', 'Kasir') }}">Kasir</a>
+                           <a class="dropdown-item" href="{{ route('login.index', 'Medis') }}">Medis</a>
+                           <a class="dropdown-item" href="{{ route('login.index', 'Apoteker')}}">Apoteker</a>
                         </div>
                      </div>
                 </div>

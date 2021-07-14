@@ -35,8 +35,8 @@
                         <td>{{$biayaAdmin = str_replace('.', '', '15.000')}}</td>
                      </tr>
                      <tr>
-                        <th scope="col">Biaya Dokter</th>
-                        <td>{{$biayaDokter = str_replace('.', '', $data->dokter->harga)}}</td>
+                        <th scope="col">Biaya Petugas Medis</th>
+                        <td>{{$biayaPetugasMedis = str_replace('.', '', $data->petugas->harga)}}</td>
                      </tr>
                      <tr>
                         <th scope="col" class="align-text-top">Farmasi</th>
@@ -57,12 +57,12 @@
                      </tr>
                      <tr>
                         <th scope="col">Total yang harus dibayar</th>
-                        <td>{{$total = $biayaAdmin + $biayaDokter + $biayaObat }}</td>
+                        <td>{{$total = $biayaAdmin + $biayaPetugasMedis + $biayaObat }}</td>
                      </tr>
                   </thead>
                </table>
                
-               <form method="post" action="{{route('pembayaran.update', $data->id)}}">
+               <form method="post" action="{{route('kasir.pembayaran.update', $data->id)}}">
                   @csrf
                   @method('PUT')
 

@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
    <title> Data Obat | KLINIK PRATAMA HB</title>
@@ -16,7 +16,7 @@
             </div>
             <div class="iq-card-body">
                <span class="table-add float-right mb-3 mr-lg-2">
-                  <a href="{{route('obat.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah Data<a class=""><span></span></a>
+                  <a href="{{route('admin.obat.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah Data<a class=""><span></span></a>
                   </a>
                </span>
                <!-- <p>The <code>.table </code> class adds basic styling to a table.</p> -->
@@ -42,8 +42,8 @@
                         <td>Rp.{{$data->harga}}</td>
                         <td>{{$data->stok}}</td>
                         <td>
-                           <a href="{{route('obat.edit', $data->id)}}" type="button" class="btn mb-3 btn-warning"><i class="ion-pricetag"></i>Edit</a>
-                           <a href="{{route('obat.destroy', $data->id)}}" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
+                           <a href="{{route('admin.obat.edit', $data->id)}}" type="button" class="btn mb-3 btn-warning"><i class="ion-pricetag"></i>Edit</a>
+                           <a href="{{route('admin.obat.destroy', $data->id)}}" onclick="return confirm('Apakah Anda Akan Menghapus Data Ini ?')" type="button" class="btn mb-3 btn-danger"><i class="ion-trash-b"></i>Hapus</a>
                         </td>
                      </tr>
                   </tbody>

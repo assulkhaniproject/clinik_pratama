@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin')
 
 <head>
    <title> Tambah Data | KLINIK PRATAMA HB</title>
@@ -16,14 +16,14 @@
             </div>
             <div class="iq-card-body">
                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p> -->
-               <form method="post" action="{{route('pasien.store')}}">
+               <form method="post" action="{{route('admin.pasien.store')}}">
                   @csrf
                   <div class="form-group">
                      <label for="email">Kategori:</label>
                      <select name="kategori_pasien" type="text" class="form-control {{$errors->has('kategori_pasien')?'is-invalid':''}}" id="kategori">
-                        <option>...</option>
-                        <option value="1">Pasien Umum</option>
-                        <option value="2">Pasien Civitas PHB</option>
+                        <option disabled selected>...</option>
+                        <option value="Pasien Umum">Pasien Umum</option>
+                        <option value="Pasien Civitas PHB">Pasien Civitas PHB</option>
                      </select>
                      @if ($errors->has('kategori_pasien'))
                      <span class="invalid-feedback" role="alert">
@@ -91,7 +91,7 @@
                   <div class="form-group">
                      <label for="">Jenis Kelamin:</label>
                      <select name="jenis_kelamin" type="text" class="form-control {{$errors->has('jenis_kelamin')?'is-invalid':''}}" id="jenis_kelamin">
-                        <option>...</option>
+                        <option disabled selected>...</option>
                         <option value="Laki-laki">Laki-laki</option>
                         <option value="Perempuan">Perempuan</option>
                         @if ($errors->has('jenis_kelamin'))
@@ -115,15 +115,15 @@
                      <label for="">Usia:</label>
                      <input name="usia" type="number" class="form-control {{$errors->has('usia')?'is-invalid':''}}" id="usia">
                      @if ($errors->has('usia'))
-                  <span class="invalid-feedback" role="alert">
-                     <p><b>{{ $errors->first('usia')}}</b></p>
-                  </span>
+                     <span class="invalid-feedback" role="alert">
+                        <p><b>{{ $errors->first('usia')}}</b></p>
+                     </span>
                   @endif
                   </div>
                   <div class="form-group">
                      <label for="">Golongan Darah:</label>
                      <select name="golongan_darah" type="text" class="form-control" id="gol_darah" required>
-                        <option>...</option>
+                        <option disabled selected>...</option>
                         <option>A</option>
                         <option>B</option>
                         <option>AB</option>
@@ -151,11 +151,11 @@
    </div>
 </div>
 
-@section('othscript')
+@section('script')
    <script>
       $(() => {
          $('#kategori').change(() => {
-            if($('#kategori').val() == '2'){
+            if($('#kategori').val() == 'Pasien Civitas PHB'){
                $('#civitas').show();
             }else{
                $('#civitas').hide();

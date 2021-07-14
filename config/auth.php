@@ -36,9 +36,9 @@ return [
     */
 
     'guards' => [
-        'admin' => [
+        'web' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'users',
         ],
 
         'api' => [
@@ -66,9 +66,9 @@ return [
     */
 
     'providers' => [
-        'admin' => [
+        'users' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => App\User::class,
         ],
 
         // 'users' => [

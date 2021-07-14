@@ -1,4 +1,5 @@
-@extends('templates.admin1')
+@extends('templates.'.App\User::find(session('user_id'))->name)
+
 
 <head>
     <title> Maintenance | KLINIK PRATAMA HB</title>

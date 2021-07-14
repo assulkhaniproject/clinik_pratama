@@ -13,6 +13,6 @@ class CoronaController extends Controller
         $res = Http::get('https://api.kawalcorona.com/indonesia');
         $datas = $res->json();
         $data = $response->json();
-        return view('pages.admin.infoCorona', compact('data','datas'));
+        return view('infoCorona', compact('data','datas'));
     }
 }

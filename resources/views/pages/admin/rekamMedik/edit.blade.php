@@ -1,4 +1,4 @@
-@extends('templates.dokter')
+@extends('templates.admin')
 
 <head>
     <title> Edit Rekam Medik | KLINIK PRATAMA HB</title>
