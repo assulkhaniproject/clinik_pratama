@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Petugas;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
@@ -61,7 +62,7 @@ class AuthController extends Controller
             }
         }
 
-        return redirect()->back()->with('message','Email Atau Password Salah !!');
+        return redirect()->back()->with('message','NIPY Atau Password Salah !!');
     }
 
     public function destroy(Request $request)

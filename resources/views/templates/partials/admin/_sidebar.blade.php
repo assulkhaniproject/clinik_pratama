@@ -39,10 +39,10 @@
             <li @if (Request::is('admin/petugas')) class="active" @else class="false" @endif>
                <a href="{{route('admin.petugas.index')}}" class="iq-waves-effect"><i class="fa fa-user-circle"></i><span>Data Petugas</span></a>
             </li>
-            <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
+            {{-- <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
             <li @if (Request::is('admin/InfoCorona19')) class="active" @else class="false" @endif>
                <a href="{{route('corona')}}" class="iq-waves-effect"><i class="lab la-mendeley"></i><span>Info Covid-19 Indonesia</span></a>
-            </li>
+            </li> --}}
          </ul>
       </nav>
       <div class="p-3"></div>

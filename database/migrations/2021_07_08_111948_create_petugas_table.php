@@ -15,7 +15,6 @@ class CreatePetugasTable extends Migration
     {
         Schema::create('petugas', function (Blueprint $table) {
             $table->id();
-            
             $table->string('no_str', 20)->nullable()->unique();
             $table->string('nama', 50);
             $table->string('tempat_lahir', 20);

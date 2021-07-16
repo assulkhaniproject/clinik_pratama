@@ -82,6 +82,8 @@ Route::name('admin.')->prefix('admin')->middleware('CekLoginAuth')->group(functi
 
     // Report
     Route::resource('report', 'Admin\ReportController');
+
+
 });
 
 /**
@@ -98,7 +100,7 @@ Route::name('medis.')->prefix('medis')->middleware('CekLoginAuth')->group(functi
     Route::get('/rekamMedik/get-obat/fetch', 'Medis\RekamMedikController@getObat')->name('getObat');
     Route::get('/rekamMedik/get-keluhan/fetch', 'Medis\RekamMedikController@getKeluhan')->name('getKeluhan');
     Route::get('/rekamMedik/get-tindakan/fetch', 'Medis\RekamMedikController@getTindakan')->name('getTindakan');
-
+    // Print Rekam Medik
     Route::get('/rekamMedik/print/{rekamMedik}', 'Medis\RekamMedikController@printRekamMedik')->name('rekamMedik.print');
 });
 

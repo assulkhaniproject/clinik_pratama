@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Sign In Dokter | Klinik Pratama HB</title>
+    <title>Sign In Medis | Klinik Pratama HB</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('admin/images/icon.png') }}" />
     <!-- Bootstrap CSS -->

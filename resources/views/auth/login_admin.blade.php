@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login | Klinik Pratama HB</title>
+    <title>Sign In Admin | Klinik Pratama HB</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('admin/images/icon.png') }}" />
     <!-- Bootstrap CSS -->
@@ -65,9 +65,9 @@
                         <form class="mt-4" method="POST" action="{{ route('login.store') }}">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
+                                <label for="exampleInputEmail1">Email</label>
                                 <input name="email" type="email" class="form-control mb-0" id="exampleInputEmail1"
-                                    placeholder="Enter email">
+                                    placeholder="Enter Email">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
@@ -82,13 +82,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary float-right">Sign in</button>
                             </div>
-                            <div class="sign-info">
-                                <!-- <span class="dark-color d-inline-block line-height-2">Don't have an account? <a href="#">Sign up</a></span> -->
-                                {{-- <ul class="iq-social-media">
-                                        <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
-                                        <li><a href="#"><i class="ri-twitter-line"></i></a></li>
-                                        <li><a href="#"><i class="ri-instagram-line"></i></a></li>
-                                    </ul> --}}
+                            <div class="sign-info">                            
                             </div>
                         </form>
                     </div>

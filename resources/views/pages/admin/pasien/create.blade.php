@@ -186,7 +186,7 @@
                           results:  $.map(data, function (item) {
                               return {
                                  id: (valType == 'mahasiswa' ? item.nim:item.nipy),
-                                  text:  (valType == 'mahasiswa' ? item.nim:item.nipy) +' '+item.nama,
+                                  text:  (valType == 'mahasiswa' ? item.nim:item.nipy),
                               }
                           })
                       };

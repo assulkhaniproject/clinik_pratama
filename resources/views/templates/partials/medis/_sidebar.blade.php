@@ -23,10 +23,10 @@
              <li @if (Request::is('medis/rekamMedik')) class="active" @else class="false" @endif>
                 <a href="{{route('medis.rekamMedik.index')}}" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>Rekam Medik</span></a>
              </li>
-             <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
+             {{-- <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
              <li @if (Request::is('InfoCorona19')) class="active" @else class="false" @endif>
                 <a href="{{route('corona')}}" class="iq-waves-effect"><i class="lab la-mendeley"></i><span>Info Covid-19 Indonesia</span></a>
-             </li>
+             </li> --}}
           </ul>
        </nav>
        <div class="p-3"></div>
