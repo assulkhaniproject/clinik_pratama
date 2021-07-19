@@ -29,6 +29,9 @@
             <li @if (Request::is('admin/report')) class="active" @else class="false" @endif>
                <a href="{{route('admin.report.index')}}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
             </li>
+            <li @if (Request::is('admin/reportkeuangan')) class="active" @else class="false" @endif>
+               <a href="{{ route('admin.reportkeuangan.index') }}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report Keuangan</span></a>
+            </li>
             <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Data Utama</span></li>
             <li @if (Request::is('admin/pasien')) class="active" @else class="false" @endif>
                <a href="{{route('admin.pasien.index')}}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Data Pasien</span></a>

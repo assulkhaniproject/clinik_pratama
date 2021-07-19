@@ -15,7 +15,7 @@
             </div>
             <div class="iq-card-body">
                <p>Diurutkan berdasarkan antrian paling baru melakukan pembayaran </p>
-               <table class="table">
+               <table id="myTable" class="table">
                   <thead>
                      <tr>
                         <th scope="col">No.</th>

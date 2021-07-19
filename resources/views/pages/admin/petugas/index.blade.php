@@ -21,7 +21,7 @@
                             </a>
                         </span>
                         <!-- <p>The <code>.table </code> class adds basic styling to a table.</p> -->
-                        <table class="table">
+                        <table id="myTable" class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">No.</th>

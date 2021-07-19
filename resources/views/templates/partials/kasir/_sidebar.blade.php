@@ -23,9 +23,9 @@
             <li @if (Request::is('kasir/pembayaran')) class="active" @else class="false" @endif>
                <a href="{{ route('kasir.pembayaran.index') }}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Pembayaran</span></a>
             </li>
-            <li @if (Request::is('kasir/pembayaran/create')) class="active" @else class="false" @endif>
+            {{-- <li @if (Request::is('kasir/pembayaran/create')) class="active" @else class="false" @endif>
                <a href="{{ route('kasir.pembayaran.create') }}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
-            </li>
+            </li> --}}
          </ul>
       </nav>
       <div class="p-3"></div>

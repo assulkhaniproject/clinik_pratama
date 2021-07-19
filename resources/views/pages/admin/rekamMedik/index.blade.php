@@ -35,7 +35,7 @@
                   </a>
                </span>
                <p>Diurutkan berdasarkan antrian paling baru mendaftar pemeriksaan </p>
-               <table class="table">
+               <table id="myTable" class="table">
                   <thead>
                      <tr>
                         <th scope="col">No.</th>

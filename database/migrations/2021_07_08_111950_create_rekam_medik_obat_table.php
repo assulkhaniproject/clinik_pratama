@@ -17,6 +17,7 @@ class CreateRekamMedikObatTable extends Migration
             $table->foreignId('rekam_medik_id')->constrained('rekam_medik');
             $table->unsignedInteger('obat_id');
             $table->foreign('obat_id')->references('id')->on('obat');
+            $table->char('resep_obat')->nullabel();
         });
     }
 

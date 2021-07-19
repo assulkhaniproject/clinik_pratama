@@ -39,7 +39,7 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        $data = User::where('email', $request->email)->firstOrFail();
+        $data = User::where('username', $request->username)->firstOrFail();
 
         if (Hash::check($request->password, $data->password)) {
             session([
@@ -64,6 +64,8 @@ class AuthController extends Controller
 
         return redirect()->back()->with('message','NIPY Atau Password Salah !!');
     }
+
+    
 
     public function destroy(Request $request)
     {

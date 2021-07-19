@@ -65,9 +65,9 @@
                         <form class="mt-4" method="POST" action="{{ route('login.store') }}">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input name="email" type="email" class="form-control mb-0" id="exampleInputEmail1"
-                                    placeholder="Enter Email">
+                                <label for="exampleInputUsername">Username</label>
+                                <input name="username" type="username" class="form-control mb-0" id="exampleInputUsername"
+                                    placeholder="Masukan Username">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>

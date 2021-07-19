@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/login/{kategoriUser}', 'AuthController@index')->name('login.index');
 Route::post('/login', 'AuthController@store')->name('login.store');
+// Route::post('/login', 'AuthController@nipy')->name('login.nipy');
 Route::get('/logout', 'AuthController@destroy')->name('login.destroy');
 
 /**
@@ -82,6 +83,7 @@ Route::name('admin.')->prefix('admin')->middleware('CekLoginAuth')->group(functi
 
     // Report
     Route::resource('report', 'Admin\ReportController');
+    Route::resource('reportkeuangan', 'Admin\ReportKeuanganController');
 
 
 });

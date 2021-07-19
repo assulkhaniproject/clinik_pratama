@@ -20,7 +20,7 @@
                   </a>
                </span>
                <!-- <p>The <code>.table </code> class adds basic styling to a table.</p> -->
-               <table class="table">
+               <table id="myTable" class="table">
                   <thead>
                      <tr>
                         <th scope="col">No.</th>
@@ -34,6 +34,7 @@
                   @foreach($datas as $data)
                   <tbody>
                      <tr>
+                        <!-- <td></td> -->
                         <td class="checkbox-column text-center"> {{$loop->iteration}}.</td>
                         <td>{{$data->nama}}</td>
                         <td>{{$data->kategori_pasien}}</td>

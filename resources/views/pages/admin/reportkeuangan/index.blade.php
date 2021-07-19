@@ -1,4 +1,4 @@
-@extends('templates.kasir')
+@extends('templates.admin')
 
 <head>
     <title> Report | KLINIK PRATAMA HB</title>
@@ -24,7 +24,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Report Data Rekam Medik</h4>
+                        <h4 class="card-title">Report Data Keuangan Rekam Medik</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">

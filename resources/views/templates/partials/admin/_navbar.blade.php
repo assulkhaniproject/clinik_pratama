@@ -11,7 +11,7 @@
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <div class="iq-search-bar">
                 <form action="#" class="searchbox mt-3">
-                    <input type="text" class="text search-input" placeholder="Type here to search...">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="text search-input" placeholder="Type here to search...">
                     <a class="search-link" href="#"><i class="ri-search-line"></i></a>
                 </form>
             </div>
