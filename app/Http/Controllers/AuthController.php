@@ -39,25 +39,28 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        $data = User::where('username', $request->username)->firstOrFail();
+        $data = Petugas::where('username', $request->username)
+                    ->orWhere('nipy', $request->username)
+                    ->first();
 
-        if (Hash::check($request->password, $data->password)) {
+        if ($data && Hash::check($request->password, $data->password)) {
             session([
-                'user_id' => $data->id,
+                'role' => in_array($data->kategori, ['Bidan', 'Perawat', 'Dokter']) ? 'medis' : strtolower($data->kategori),
+                'petugas_id' => $data->id,
                 'berhasil_login' => true
             ]);
             
-            switch ($data->name) {
-                case 'Admin':
+            switch (session('role')) {
+                case 'admin':
                     return redirect()->route('admin.dashboard');
 
-                case 'Medis':
+                case 'medis':
                     return redirect()->route('medis.dashboard');
 
-                case 'Apoteker':
+                case 'apoteker':
                     return redirect()->route('apoteker.dashboard');
                     
-                case 'Kasir':
+                case 'kasir':
                     return redirect()->route('kasir.dashboard');
             }
         }

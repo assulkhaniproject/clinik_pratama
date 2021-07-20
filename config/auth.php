@@ -1,5 +1,7 @@
 <?php
 
+use App\Petugas;
+
 return [
 
     /*
@@ -66,9 +68,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'petugas' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Petugas::class,
         ],
 
         // 'users' => [

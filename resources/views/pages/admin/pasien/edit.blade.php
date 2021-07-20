@@ -23,6 +23,7 @@
                   <input name="kategori_pasien" type="text" class="form-control ml-3 text-dark {{$errors->has('kategori_pasien')?'is-invalid':''}}" id="email" placeholder="" value="{{$data->kategori_pasien}}" disabled>
                </div>
             </div>
+            @if ($data->kategori_pasien != 'Pasien Civitas PHB')
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="">No. Identitas :</label>
                <div class="col-sm-8">
@@ -34,6 +35,7 @@
                   @endif
                </div>
             </div>
+            @endif
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Nama :</label>
                <div class="col-sm-8">

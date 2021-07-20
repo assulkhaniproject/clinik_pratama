@@ -43,6 +43,45 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Username :</label>
+                        <div class="col-sm-8">
+                            <input value="{{old('username')}}" name="username" type="text"
+                                class="form-control ml-3 text-dark {{ $errors->has('username') ? 'is-invalid' : '' }}"
+                                id="pwd1" placeholder="">
+                            @if ($errors->has('username'))
+                                <span class="invalid-feedback" role="alert">
+                                    <p><b>{{ $errors->first('username') }}</b></p>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Password :</label>
+                        <div class="col-sm-8">
+                            <input value="{{old('password')}}" name="password" type="text"
+                                class="form-control ml-3 text-dark {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                                id="pwd1" placeholder="">
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                    <p><b>{{ $errors->first('password') }}</b></p>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">NIPY :</label>
+                        <div class="col-sm-8">
+                            <input value="{{old('nipy')}}" name="nipy" type="text"
+                                class="form-control ml-3 text-dark {{ $errors->has('nipy') ? 'is-invalid' : '' }}"
+                                id="pwd1" placeholder="">
+                            @if ($errors->has('nipy'))
+                                <span class="invalid-feedback" role="alert">
+                                    <p><b>{{ $errors->first('nipy') }}</b></p>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Tempat/Tanggal Lahir
                             :</label>
                         <div class="col-sm-4">

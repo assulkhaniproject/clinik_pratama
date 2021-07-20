@@ -42,7 +42,7 @@ class ReportController extends Controller
             'ke_tanggal' => 'required|date|after_or_equal:dari_tanggal'
         ]);
 
-        $filterRekam = RekamMedik::whereBetween('tanggal_periksa', [$request->dari_tanggal, $request->ke_tanggal])->get();
+        $filterRekam = RekamMedik::where('status', 4)->whereBetween('tanggal_periksa', [$request->dari_tanggal, $request->ke_tanggal])->get();
 
         $pdf = PDF::loadview('pages.admin.report.pdf.rekam-medik', [
             'filterRekam' => $filterRekam, 

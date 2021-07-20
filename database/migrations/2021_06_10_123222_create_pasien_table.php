@@ -17,7 +17,7 @@ class CreatePasienTable extends Migration
             $table->increments('id');
             $table->string('kategori_pasien');
             $table->string('nama', 100);
-            $table->char('no_identitas', 16);
+            $table->char('no_identitas', 16)->nullable();
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->char('jenis_kelamin', 9);

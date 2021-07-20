@@ -67,6 +67,17 @@
                     <div class="sign-in-from">
                         <h1 class="mb-0">Sign in Medis</h1>
                         <p>Masukan Nomor NIPY untuk Login</p>
+                        @if (session()->has('message'))
+                        <div class="alert alert-info mx-3 mt-3">
+                            {{ session('message') }}
+                        </div>
+                        @endif
+
+                        @if($errors->any())
+                        <div class="alert alert-danger mx-3 mt-3">
+                            Maaf ada kesalahan, silahkan cek isian yang anda masukan
+                        </div>
+                        @endif
                         <form class="mt-2" method="POST" action="{{ route('login.store') }}">
                             @csrf
                             <div class="form-group">

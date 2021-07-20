@@ -57,6 +57,17 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Aturan Minum :</label>
+                        <div class="col-sm-8">
+                            <textarea name="aturan_minum" class="ml-3 form-control {{ $errors->has('aturan_minum') ? 'is-invalid' : '' }}" id="aturan_minum" cols="30" rows="3"></textarea>
+                            @if ($errors->has('aturan_minum'))
+                                <span class="invalid-feedback" role="alert">
+                                    <p><b>{{ $errors->first('aturan_minum') }}</b></p>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Kadaluarsa Obat
                             :</label>
                         <div class="col-sm-8">

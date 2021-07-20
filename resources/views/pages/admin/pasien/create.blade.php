@@ -59,7 +59,7 @@
                      </span>
                      @endif
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" id="no_identitas_form">
                      <label for="">No Identitas:</label>
                      <input name="no_identitas" type="number" class="form-control {{$errors->has('no_identitas')?'is-invalid':''}}" id="identitas">
                      @if ($errors->has('no_identitas'))
@@ -154,10 +154,14 @@
 @section('script')
    <script>
       $(() => {
+         $('#no_identitas_form').show();
+         
          $('#kategori').change(() => {
             if($('#kategori').val() == 'Pasien Civitas PHB'){
+               $('#no_identitas_form').hide();
                $('#civitas').show();
             }else{
+               $('#no_identitas_form').show();
                $('#civitas').hide();
             }
          })

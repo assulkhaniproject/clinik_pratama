@@ -18,6 +18,7 @@ class CreateObatTable extends Migration
             $table->char('kode', 8)->unique();
             $table->string('nama', 50);
             $table->string('jenis', 50);
+            $table->text('aturan_minum')->nullable();
             $table->date('kadaluarsa');
             $table->string('harga', 10);
             $table->char('stok', 5);

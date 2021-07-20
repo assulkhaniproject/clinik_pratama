@@ -113,7 +113,7 @@
                 </div>
                 <div align="left" style="margin: 50px "></div>
                 <div align="left"><br>
-                    <span class="">( Kepala Klinik )</span></div>
+                    <span class="">( {{$kepala_klinik}} )</span></div>
             </td>
         </tr>
         </tbody>

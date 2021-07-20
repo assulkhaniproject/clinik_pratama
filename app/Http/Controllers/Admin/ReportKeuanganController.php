@@ -18,9 +18,7 @@ class ReportKeuanganController extends Controller
      */
     public function index()
     {
-        //
-        $data = RekamMedik::where('status', 3)->doesntHave('transaksi')->oldest()->get();
-        return view('pages.admin.reportkeuangan.index', compact('data'));
+        return view('pages.admin.reportkeuangan.index');
     }
 
     /**
@@ -31,7 +29,6 @@ class ReportKeuanganController extends Controller
     public function create()
     {
         //
-        return view('pages.admin.reportkeuangan.index');
     }
 
     /**
@@ -42,7 +39,6 @@ class ReportKeuanganController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'dari_tanggal' => 'required|date',
             'ke_tanggal' => 'required|date|after_or_equal:dari_tanggal'

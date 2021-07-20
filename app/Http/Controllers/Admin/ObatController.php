@@ -44,6 +44,7 @@ class ObatController extends Controller
             'kode' => 'required|max:8|min:8',
             'nama' => 'required|max:50',
             'jenis' => 'required|max:50',
+            'aturan_minum' => 'required|min:5',
             'kadaluarsa' => 'required',
             'harga' => 'required|max:10',
             'stok' => 'required|max:5',
@@ -64,6 +65,7 @@ class ObatController extends Controller
             'nama' => $request->nama,
             'jenis' => $request->jenis,
             'kadaluarsa' => $request->kadaluarsa,
+            'aturan_minum' => $request->aturan_minum,
             'harga' => $request->harga,
             'stok' => $request->stok,
         ]);
@@ -106,6 +108,7 @@ class ObatController extends Controller
             'kode' => 'required|max:8|min:8',
             'nama' => 'required|max:50',
             'jenis' => 'required|max:50',
+            'aturan_minum' => 'required|min:5',
             'kadaluarsa' => 'required',
             'harga' => 'required|max:10',
             'stok' => 'required|max:5',
@@ -125,6 +128,7 @@ class ObatController extends Controller
         $data->kode = $request->kode;
         $data->nama = $request->nama;
         $data->jenis = $request->jenis;
+        $data->aturan_minum = $request->aturan_minum;
         $data->kadaluarsa = $request->kadaluarsa;
         $data->harga = $request->harga;
         $data->stok = $request->stok;

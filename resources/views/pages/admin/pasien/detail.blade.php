@@ -22,12 +22,14 @@
                   <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$data->kategori_pasien}}">
                </div>
             </div>
+            @if ($data->kategori_pasien != 'Pasien Civitas PHB')
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="">No. Identitas :</label>
                <div class="col-sm-8">
                   <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$data->no_identitas}}">
                </div>
             </div>
+            @endif
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Nama :</label>
                <div class="col-sm-8">

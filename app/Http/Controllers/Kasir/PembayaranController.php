@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Kasir;
 use App\Http\Controllers\Controller;
 use App\IdGenerator;
 use App\Pasien;
+use App\Pengaturan;
 use App\RekamMedik;
 use App\Transaksi;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Config;
 
 class PembayaranController extends Controller
 {
@@ -55,16 +57,25 @@ class PembayaranController extends Controller
         return view('pages.kasir.pembayaran.create', compact('data', 'kodeTransaksi'));
     }
 
+
+    /**
+     * Update data rekam medik status menjadi 4
+     * dan menambahkan transaksi
+     * serta redirect menampilkan nota
+     * 
+     */
     public function update(Request $request, RekamMedik $rekamMedik)
     {
-        if($rekamMedik->transaksi == null){
+        $transaksi = $rekamMedik->transaksi;
+
+        if($transaksi == null){
             $this->validate($request, [
                 'no_transaksi' => 'required',
                 'rekam_medik_id' => 'required',
                 'total_pembayaran' => 'required',
             ]);
 
-            Transaksi::create($request->all());
+            $transaksi = Transaksi::create($request->all());
 
             $rekamMedik->status = 4;
             $rekamMedik->update();
@@ -72,8 +83,9 @@ class PembayaranController extends Controller
 
         $pdf = PDF::loadview('pages.kasir.pembayaran.pdf.nota', [
             'rekamMedik' => $rekamMedik,
-            'transaksi' => $rekamMedik->transaksi,
-            'tgl_periksa' => $this->dayDateID($rekamMedik->created_at)
+            'transaksi' => $transaksi,
+            'tgl_periksa' => $this->dayDateID($rekamMedik->created_at),
+            'kepala_klinik' => Pengaturan::find('KEPALA_KLINIK')->first()->value
         ])->setPaper('f4', 'potrait');
 
         return $pdf->stream('nota.pdf');

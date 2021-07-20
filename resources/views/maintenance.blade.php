@@ -1,4 +1,4 @@
-@extends('templates.'.App\User::find(session('user_id'))->name)
+@extends('templates.'.session('role'))
 
 
 <head>

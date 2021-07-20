@@ -16,6 +16,7 @@ class CreatePetugasTable extends Migration
         Schema::create('petugas', function (Blueprint $table) {
             $table->id();
             $table->string('no_str', 20)->nullable()->unique();
+            $table->string('nipy', 50)->unique();
             $table->string('nama', 50);
             $table->string('tempat_lahir', 20);
             $table->date('tanggal_lahir');
@@ -25,6 +26,10 @@ class CreatePetugasTable extends Migration
             $table->char('no_hp', 13);
             $table->string('harga', 7)->nullable();
             $table->text('foto')->nullable();
+
+            // Login details
+            $table->string('username', 100)->unique();
+            $table->string('password');
             $table->timestamps();
         });
     }

@@ -22,6 +22,10 @@ class PetugasSeeder extends Seeder
             'alamat'=>'Jl. Slerok Tegal Timur',
             'no_hp'=>'085786222334',
             'harga' => '200000',
+
+            'nipy'    => '1122334455',
+            'username'    => 'admin',
+            'password'    => bcrypt('password')
         ]);
 
         Petugas::create( [
@@ -30,10 +34,14 @@ class PetugasSeeder extends Seeder
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1997-10-24',
             'jenis_kelamin'=>'Perempuan',
-            'kategori'=>'Medis',
+            'kategori'=>'Dokter',
             'alamat'=>'Jl. Gede giri No.27 rt 29 rw 7 pegirikan, talang',
             'no_hp'=>'0895422824354',
             'harga' => null,
+
+            'nipy'    => '2233445566',
+            'username'    => 'dokter',
+            'password'    => bcrypt('password')
         ]);
 
         Petugas::create( [
@@ -46,6 +54,10 @@ class PetugasSeeder extends Seeder
             'alamat'=>'Griya Bahari Sentosa Blok D2 No. 4 Rt. 04/Rw.07 Kelurahan Dampyak Kecamatan Kramat',
             'no_hp'=>'0895422824354',
             'harga' => null,
+
+            'nipy'    => '3344556677',
+            'username'    => 'apoteker',
+            'password'    => bcrypt('password')
         ]);
 
         Petugas::create( [
@@ -58,6 +70,10 @@ class PetugasSeeder extends Seeder
             'alamat'=>'Perum Puri Lestari no 6 Kel Kalinyamat Wetan Tegal Selatan',
             'no_hp'=>'085742922211',
             'harga' => '100000',
+            
+            'nipy'    => '4455667788',
+            'username'    => 'kasir',
+            'password'    => bcrypt('password')
         ]);
         Petugas::create( [
             'no_str'=>'11018389',
@@ -69,6 +85,10 @@ class PetugasSeeder extends Seeder
             'alamat'=>'Perum Puri Lestari no 6 Kel Kalinyamat Wetan Tegal Selatan',
             'no_hp'=>'085742922211',
             'harga' => '100000',
+
+            'nipy'    => '5566778899',
+            'username'    => 'bidan',
+            'password'    => bcrypt('password')
         ]);
     }
 }

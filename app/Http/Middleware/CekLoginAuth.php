@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Petugas;
 use App\User;
 use Closure;
 
@@ -20,7 +21,7 @@ class CekLoginAuth
             return redirect('/');
         }
 
-        if(strtolower(User::find(session('user_id'))->name) != $request->segment(1)){
+        if(session('role') != $request->segment(1)){
             return redirect()->back();
         }
 

@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Petugas;
+use App\Traits\UploadFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class PetugasController extends Controller
 {
+    use UploadFile;
+
     /**
      * Display a listing of the resource.
      *
@@ -41,6 +45,9 @@ class PetugasController extends Controller
         $this->validate($request, [
             'no_str' => 'required|max:20|min:16',
             'nama' => 'required|max:50',
+            'username' => 'required|min:5|unique:petugas,username',
+            'password' => 'required',
+            'nipy' => 'required|min:5|unique:petugas,nipy',
             'tempat_lahir' => 'required|max:20',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required|max:9',
@@ -51,14 +58,12 @@ class PetugasController extends Controller
             'foto' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
-        $foto = $request->file('foto');
-        $filename = time() . '.' . $foto->getClientOriginalExtension();
-        $destinationPath = public_path('/admin/images/user/');
-        $foto->move($destinationPath, $filename);
-
         $data = new Petugas();
         $data->no_str = $request->no_str;
         $data->nama = $request->nama;
+        $data->username = $request->username;
+        $data->password = bcrypt($request->password);
+        $data->nipy = $request->nipy;
         $data->tempat_lahir = $request->tempat_lahir;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->jenis_kelamin = $request->jenis_kelamin;
@@ -66,7 +71,7 @@ class PetugasController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->harga = $request->harga;
-        $data->foto = $request->filename;
+        $data->foto = $this->uploadFileDisk($request, 'public', 'foto', 'admin/images/user/');
         $data->save();
 
 
@@ -106,9 +111,14 @@ class PetugasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = Petugas::find($id);
+
         $this->validate($request, [
             'no_str' => 'required|max:20|min:16',
             'nama' => 'required|max:50',
+            'username' => 'required|min:5|unique:petugas,username,'. $id,
+            'password' => 'nullable',
+            'nipy' => 'required|min:5|unique:petugas,nipy,'.$id,
             'tempat_lahir' => 'required|max:20',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required|max:9',
@@ -119,9 +129,13 @@ class PetugasController extends Controller
             'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
-        $data = Petugas::find($id);
         $data->no_str = $request->no_str;
         $data->nama = $request->nama;
+        $data->username = $request->username;
+        if($request->password != null){
+            $data->password = bcrypt($request->password);
+        }
+        $data->nipy = $request->nipy;
         $data->tempat_lahir = $request->tempat_lahir;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->jenis_kelamin = $request->jenis_kelamin;
@@ -132,10 +146,7 @@ class PetugasController extends Controller
         $foto = $request->file('foto');
 
         if ($foto) {
-            $filename = time() . '.' . $foto->getClientOriginalExtension();
-            $destinationPath = public_path('/admin/images/user');
-            $foto->move($destinationPath, $filename);
-            $data->foto = $filename;
+            $data->foto = $this->uploadFileDisk($request, 'public', 'foto', 'admin/images/user/');
         } else {
             $data->foto = $request->old_foto;
         }

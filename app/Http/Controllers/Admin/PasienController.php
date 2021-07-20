@@ -26,7 +26,7 @@ class PasienController extends Controller
         $this->validate($request, [
             'kategori_pasien' => 'required',
             'nama' => 'required|max:100',
-            'no_identitas' => 'required|max:16',
+            'no_identitas' => 'nullable|max:16',
             'tempat_lahir' => 'required|max:20',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required|max:9',
@@ -68,7 +68,7 @@ class PasienController extends Controller
     {
         $this->validate($request,[
             'nama' => 'required|max:100',
-            'no_identitas' => 'required|max:16|min:8',
+            'no_identitas' => 'nullable|max:16|min:8',
             'tempat_lahir' => 'required|max:20',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required|max:9',

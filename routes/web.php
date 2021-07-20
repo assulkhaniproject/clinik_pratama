@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DefController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -85,6 +86,8 @@ Route::name('admin.')->prefix('admin')->middleware('CekLoginAuth')->group(functi
     Route::resource('report', 'Admin\ReportController');
     Route::resource('reportkeuangan', 'Admin\ReportKeuanganController');
 
+    // Def Config (Seperti kepala klinik)
+    Route::resource('pengaturan', 'Admin\PengaturanController');
 
 });
 
@@ -128,5 +131,5 @@ Route::name('kasir.')->prefix('kasir')->middleware('CekLoginAuth')->group(functi
 
     // Pembayaran | Report
     Route::resource('pembayaran', 'Kasir\PembayaranController')->parameter('pembayaran', 'rekamMedik');
-    Route::resource('report/kasir', 'Kasir\ReportController');
+    // Route::resource('report/kasir', 'Kasir\ReportController');
 });
