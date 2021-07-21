@@ -49,9 +49,9 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                            <a class="dropdown-item" href="{{ route('login.index', 'Admin') }}">Admin</a>
-                           <a class="dropdown-item" href="{{ route('login.index', 'Kasir') }}">Kasir</a>
                            <a class="dropdown-item" href="{{ route('login.index', 'Medis') }}">Medis</a>
                            <a class="dropdown-item" href="{{ route('login.index', 'Apoteker')}}">Apoteker</a>
+                           <a class="dropdown-item" href="{{ route('login.index', 'Kasir') }}">Kasir</a>
                         </div>
                      </div>
                 </div>

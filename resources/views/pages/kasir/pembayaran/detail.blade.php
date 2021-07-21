@@ -1,7 +1,7 @@
 @extends('templates.kasir')
 
 <head>
-   <title> Detail Rekam Medik | KLINIK PRATAMA HB</title>
+   <title> Detail Rekam Medis | KLINIK PRATAMA HB</title>
 </head>
 @section('content')
 
@@ -9,7 +9,7 @@
    <div class="iq-card">
       <div class="iq-card-header d-flex justify-content-between">
          <div class="iq-header-title">
-            <h4 class="card-title">Detail Data Rekam Medik Pasien</h4>
+            <h4 class="card-title">Detail Data Rekam Medis Pasien</h4>
          </div>
       </div>
       <div class="iq-card-body">
@@ -17,13 +17,13 @@
          <form class="form-horizontal ml-5">
          <fieldset disabled>
             <div class="form-group row">
-               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Status Rekam Medik :</label>
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Status Rekam Medis :</label>
                <div class="col-sm-8">
                   <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$rekamMedik->getStatus()}}" disabled>
                </div>
             </div>
             <div class="form-group row">
-               <label class="control-label col-sm-2 align-self-center ml-4" for="">No Rekam Medik :</label>
+               <label class="control-label col-sm-2 align-self-center ml-4" for="">No Rekam Medis :</label>
                <div class="col-sm-8">
                   <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$rekamMedik->no_rekam_medik}}" disabled>
                </div>

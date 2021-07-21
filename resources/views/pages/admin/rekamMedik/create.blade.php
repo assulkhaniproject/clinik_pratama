@@ -12,14 +12,14 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Tambah Data Rekam Medik</h4>
+                        <h4 class="card-title">Tambah Data Rekam Medis</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">
                     <form method="post" action="{{route('admin.rekamMedik.store')}}">
                         @csrf
                         <div class="form-group">
-                            <label for="">Nomor Rekam Medik:</label>
+                            <label for="">Nomor Rekam Medis:</label>
                             <input name="no_rekam_medik" type="text" class="form-control {{$errors->has('no_rekam_medik')?'is-invalid':''}}" id="no_rekam_medik" value="{{$noRekamMedik}}"readonly>
                             @if ($errors->has('no_rekam_medik'))
                             <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@
                         <!-- <div class="checkbox mb-3">
                      <label><input type="checkbox"> Remember me</label>
                   </div> -->
-                        <span>Ketika anda klik simpan, rekam medik akan dikirim ke bagian petugas medis</span> <br>
+                        <span>Ketika anda klik simpan, rekam medis akan dikirim ke bagian petugas medis</span> <br>
                         <a class="btn iq-bg-danger mt-3" onclick="history.back()">Batal</a>
                         <button type="submit" class="btn iq-bg-primary mt-3">Simpan</button>
                     </form>

@@ -17,6 +17,11 @@ class DashboardController extends Controller
         return view('pages.medis.dashboard');
     }
 
+    public function profile()
+    {
+        
+        return view('pages.medis.profile');
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -11,4 +11,7 @@ class DashboardController extends Controller
     {
         return view('pages.kasir.dashboard');
     }
+    public function profile(){
+        return view('pages.kasir.profile');
+    }
 }
