@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Apoteker;
 
 use App\Http\Controllers\Controller;
 use App\IdGenerator;
@@ -17,7 +17,7 @@ class ObatController extends Controller
     public function index()
     {
         $datas = Obat::orderBy('id','DESC')->get();
-        return view('pages.admin.obat.index',compact('datas'));
+        return view('pages.apoteker.obat.index',compact('datas'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ObatController extends Controller
     {
         $kodeObat = IdGenerator::generate(['table' => 'obat', 'field' => 'kode', 'length' => 8, 'prefix' =>'OBT-']);
         
-        return view('pages.admin.obat.create', compact('kodeObat'));
+        return view('pages.apoteker.obat.create', compact('kodeObat'));
     }
 
     /**
@@ -44,7 +44,6 @@ class ObatController extends Controller
             'kode' => 'required|max:8|min:8',
             'nama' => 'required|max:50',
             'jenis' => 'required|max:50',
-            'aturan_minum' => 'required|min:5',
             'kadaluarsa' => 'required',
             'harga' => 'required|max:10',
             'stok' => 'required|max:5',
@@ -65,11 +64,10 @@ class ObatController extends Controller
             'nama' => $request->nama,
             'jenis' => $request->jenis,
             'kadaluarsa' => $request->kadaluarsa,
-            'aturan_minum' => $request->aturan_minum,
             'harga' => $request->harga,
             'stok' => $request->stok,
         ]);
-        return redirect()->route('admin.obat.index')->with('success', 'Data Berhasil Tersimpan');
+        return redirect()->route('apoteker.obat.index')->with('success', 'Data Berhasil Tersimpan');
     }
 
     /**
@@ -92,7 +90,7 @@ class ObatController extends Controller
     public function edit($id)
     {
         $data = Obat::find($id);
-        return view('pages.admin.obat.edit', compact('data'));
+        return view('pages.apoteker.obat.edit', compact('data'));
     }
 
     /**
@@ -108,7 +106,6 @@ class ObatController extends Controller
             'kode' => 'required|max:8|min:8',
             'nama' => 'required|max:50',
             'jenis' => 'required|max:50',
-            'aturan_minum' => 'required|min:5',
             'kadaluarsa' => 'required',
             'harga' => 'required|max:10',
             'stok' => 'required|max:5',
@@ -128,12 +125,11 @@ class ObatController extends Controller
         $data->kode = $request->kode;
         $data->nama = $request->nama;
         $data->jenis = $request->jenis;
-        $data->aturan_minum = $request->aturan_minum;
         $data->kadaluarsa = $request->kadaluarsa;
         $data->harga = $request->harga;
         $data->stok = $request->stok;
         $data->update();
-        return redirect()->route('admin.obat.index')->with('success', 'Data Berhasil Diedit');
+        return redirect()->route('apoteker.obat.index')->with('success', 'Data Berhasil Diedit');
     }
 
     /**
@@ -146,6 +142,6 @@ class ObatController extends Controller
     {
         $data = Obat::find($id);
         $data->delete();
-        return redirect()->route('admin.obat.index')->with('success', 'Data Berhasil Dihapus');
+        return redirect()->route('apoteker.obat.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

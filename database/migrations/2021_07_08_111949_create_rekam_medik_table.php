@@ -22,6 +22,7 @@ class CreateRekamMedikTable extends Migration
             $table->foreignId('pemeriksaan_id')->nullable()->constrained('pemeriksaan');
             $table->text('keluhan_lain')->nullable();
             $table->text('tindakan_lain')->nullable();
+            $table->text('resep_aturan_minum')->nullable();
             $table->string('status', 1)->default(1); //status dimulai dari 1 (dibuat oleh admin)
             $table->timestamps();
         });

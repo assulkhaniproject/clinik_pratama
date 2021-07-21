@@ -84,6 +84,22 @@
                   <textarea type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="" disabled>{{$rekamMedik->tindakan_lain}}</textarea>
                </div>
             </div>
+            <div class="form-group row">
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Resep Obat :</label>
+               <div class="col-sm-8 ml-3">
+                  @foreach ($rekamMedik->obat as $item)
+                  <span class="btn btn-light mb-2">
+                     {{$item->nama}}
+                  </span>
+                  @endforeach
+               </div>
+            </div>
+            <div class="form-group row">
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Aturan Minum :</label>
+               <div class="col-sm-8 ml-3">
+                  <textarea name="resep_aturan_minum" class="form-control" rows="5" disabled>{{$rekamMedik->resep_aturan_minum}}</textarea>
+               </div>
+            </div>
          </fieldset>
          <!-- <div class="form-group">
             <div class="checkbox">

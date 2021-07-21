@@ -52,14 +52,6 @@ Route::name('admin.')->prefix('admin')->middleware('CekLoginAuth')->group(functi
     Route::get('/nipnipy/fetch/{type}', 'Admin\PasienController@loadNipNipy')->name('loadNipNipy');
     Route::get('/data-nipnipy/fetch/{uniq}/{type}', 'Admin\PasienController@loadDataNipNipy')->name('loadDataNipNipy');
 
-    // Obat
-    Route::get('/obat', 'Admin\ObatController@index')->name('obat.index');
-    Route::get('/obat/create', 'Admin\ObatController@create')->name('obat.create');
-    Route::post('/obat/store', 'Admin\ObatController@store')->name('obat.store');
-    Route::get('/obat/edit/{id}', 'Admin\ObatController@edit')->name('obat.edit');
-    Route::patch('/obat/update/{id}', 'Admin\ObatController@update')->name('obat.update');
-    Route::get('/obat/destroy/{id}', 'Admin\ObatController@destroy')->name('obat.destroy');
-
     // Petugas
     Route::get('/petugas', 'Admin\PetugasController@index')->name('petugas.index');
     Route::get('/petugas/create', 'Admin\PetugasController@create')->name('petugas.create');
@@ -119,6 +111,14 @@ Route::name('apoteker.')->prefix('apoteker')->group(function () {
 
     //Rekam Medik
     Route::resource('rekamMedik', 'Apoteker\RekamMedikController');
+
+    // Obat
+    Route::get('/obat', 'Apoteker\ObatController@index')->name('obat.index');
+    Route::get('/obat/create', 'Apoteker\ObatController@create')->name('obat.create');
+    Route::post('/obat/store', 'Apoteker\ObatController@store')->name('obat.store');
+    Route::get('/obat/edit/{id}', 'Apoteker\ObatController@edit')->name('obat.edit');
+    Route::patch('/obat/update/{id}', 'Apoteker\ObatController@update')->name('obat.update');
+    Route::get('/obat/destroy/{id}', 'Apoteker\ObatController@destroy')->name('obat.destroy');
 });
 
 /**

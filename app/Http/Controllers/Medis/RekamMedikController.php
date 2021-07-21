@@ -36,6 +36,10 @@ class RekamMedikController extends Controller
         //
     }
 
+    /**
+     * Menampilkan form edit untuk memasukan pemeriksaan obat dll
+     * 
+     */
     public function edit(RekamMedik $rekamMedik)
     {
         $pasien = Pasien::find($rekamMedik->no_identitas);
@@ -44,6 +48,10 @@ class RekamMedikController extends Controller
         return view('pages.medis.rekamMedik.edit', compact('rekamMedik', 'pasien', 'jenisPemeriksaan'));
     }
 
+    /**
+     * Aksi untuk menyimpan pemeriksaan pasien
+     * 
+     */
     public function update(Request $request, RekamMedik $rekamMedik)
     {
         $this->validate($request,[
@@ -53,10 +61,12 @@ class RekamMedikController extends Controller
             'keluhan' => 'nullable|array|min:1',
             'tindakan' => 'nullable|array|min:1',
             'resep' => 'required|array|min:1',
+            'resep_aturan_minum' => 'required|min:5',
         ]);
 
         $rekamMedik->pemeriksaan_id = $request->pemeriksaan_id;
         $rekamMedik->status = 2;
+        $rekamMedik->resep_aturan_minum = $request->resep_aturan_minum;
         
         if($request->keluhan_lain != null){
             $rekamMedik->keluhan_lain = $request->keluhan_lain;

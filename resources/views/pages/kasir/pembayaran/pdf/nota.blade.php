@@ -71,11 +71,11 @@
         <thead>
             <tr>
                 <th scope="col">Biaya Dokter</th>
-                <td>{{ $biayaAdmin = str_replace('.', '', '15.000') }}</td>
+                <td>{{ $biayaAdmin = (int)str_replace('.', '', '15.000') }}</td>
             </tr>
             <tr>
                 <th scope="col">Biaya Petugas Medis</th>
-                <td>{{ $biayaPetugasMedis = str_replace('.', '', $rekamMedik->petugasMedis) }}</td>
+                <td>{{ $biayaPetugasMedis = (int)str_replace('.', '', $rekamMedik->petugas->harga) }}</td>
             </tr>
             <tr>
                 <th scope="col" class="align-text-top">Farmasi</th>
@@ -85,9 +85,9 @@
                             $biayaObat = 0;
                         @endphp
                         @foreach ($rekamMedik->obat as $item)
-                            <li>{{ $item->nama }} ({{ str_replace('.', '', $item->harga) }})</li>
+                            <li>{{ $item->nama }} ({{ (int)str_replace('.', '', $item->harga) }})</li>
                             @php
-                                $biayaObat += str_replace('.', '', $item->harga);
+                                $biayaObat += (int)str_replace('.', '', $item->harga);
                             @endphp
                         @endforeach
                         <li><strong>Total Farmasi</strong> ({{ $biayaObat }})</li>

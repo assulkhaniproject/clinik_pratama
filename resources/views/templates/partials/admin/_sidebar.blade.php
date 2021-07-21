@@ -36,9 +36,6 @@
             <li @if (Request::is('admin/pasien')) class="active" @else class="false" @endif>
                <a href="{{route('admin.pasien.index')}}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Data Pasien</span></a>
             </li>
-            <li @if (Request::is('admin/obat')) class="active" @else class="false" @endif>
-               <a href="{{route('admin.obat.index')}}" class="iq-waves-effect"><i class="ion-medkit"></i><span>Data Obat</span></a>
-            </li>
             <li @if (Request::is('admin/petugas')) class="active" @else class="false" @endif>
                <a href="{{route('admin.petugas.index')}}" class="iq-waves-effect"><i class="fa fa-user-circle"></i><span>Data Petugas</span></a>
             </li>

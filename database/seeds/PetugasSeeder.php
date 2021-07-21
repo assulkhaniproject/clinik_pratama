@@ -12,6 +12,11 @@ class PetugasSeeder extends Seeder
      */
     public function run()
     {
+
+        /**
+         * Tanpa HARGA
+         * 
+         */
         Petugas::create( [
             'no_str'=>'10010070',
             'nama'=>'Meyliya Qudriani',
@@ -21,26 +26,10 @@ class PetugasSeeder extends Seeder
             'kategori'=>'Admin',
             'alamat'=>'Jl. Slerok Tegal Timur',
             'no_hp'=>'085786222334',
-            'harga' => '200000',
+            'harga' => null,
 
             'nipy'    => '1122334455',
             'username'    => 'admin',
-            'password'    => bcrypt('password')
-        ]);
-
-        Petugas::create( [
-            'no_str'=>'03020443',
-            'nama'=>'Vivin Avianti Oktavia',
-            'tempat_lahir'=>'Tegal',
-            'tanggal_lahir'=>'1997-10-24',
-            'jenis_kelamin'=>'Perempuan',
-            'kategori'=>'Dokter',
-            'alamat'=>'Jl. Gede giri No.27 rt 29 rw 7 pegirikan, talang',
-            'no_hp'=>'0895422824354',
-            'harga' => null,
-
-            'nipy'    => '2233445566',
-            'username'    => 'dokter',
             'password'    => bcrypt('password')
         ]);
 
@@ -69,12 +58,17 @@ class PetugasSeeder extends Seeder
             'kategori'=>'Kasir',
             'alamat'=>'Perum Puri Lestari no 6 Kel Kalinyamat Wetan Tegal Selatan',
             'no_hp'=>'085742922211',
-            'harga' => '100000',
+            'harga' => null,
             
             'nipy'    => '4455667788',
             'username'    => 'kasir',
             'password'    => bcrypt('password')
         ]);
+
+        /**
+         * HARUS ADA HARGA KARENA PETUGAS MEDIS (DOKTER, PERAWAT, BIDAN)
+         * 
+         */
         Petugas::create( [
             'no_str'=>'11018389',
             'nama'=>'Farida Oktavia',
@@ -88,6 +82,22 @@ class PetugasSeeder extends Seeder
 
             'nipy'    => '5566778899',
             'username'    => 'bidan',
+            'password'    => bcrypt('password')
+        ]);
+
+        Petugas::create( [
+            'no_str'=>'03020443',
+            'nama'=>'Vivin Avianti Oktavia',
+            'tempat_lahir'=>'Tegal',
+            'tanggal_lahir'=>'1997-10-24',
+            'jenis_kelamin'=>'Perempuan',
+            'kategori'=>'Dokter',
+            'alamat'=>'Jl. Gede giri No.27 rt 29 rw 7 pegirikan, talang',
+            'no_hp'=>'0895422824354',
+            'harga' => '100000',
+
+            'nipy'    => '2233445566',
+            'username'    => 'dokter',
             'password'    => bcrypt('password')
         ]);
     }

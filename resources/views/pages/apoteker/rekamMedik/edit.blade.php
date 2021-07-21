@@ -23,6 +23,12 @@
                   @endforeach
                </div>
             </div>
+            <div class="form-group row">
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Aturan Minum :</label>
+               <div class="col-sm-8 ml-3">
+                  <textarea name="resep_aturan_minum" class="form-control" rows="5" disabled>{{$rekamMedik->resep_aturan_minum}}</textarea>
+               </div>
+            </div>
             <div class="form-group text-center mt-3">
                <form class="form-horizontal ml-5" action="{{ route('apoteker.rekamMedik.update', $rekamMedik->id) }}" method="post"
                   enctype="multipart/form-data">
