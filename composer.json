@@ -17,7 +17,8 @@
         "laracasts/utilities": "^3.2",
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
-        "realrashid/sweet-alert": "^3.2"
+        "realrashid/sweet-alert": "^3.2",
+        "fakerphp/faker": "^1.9.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
