@@ -1,7 +1,7 @@
 @extends('templates.kasir')
 
 <head>
-   <title> Antrian Pemeriksaan | KLINIK PRATAMA HB</title>
+   <title> Antrian Pembayaran | KLINIK PRATAMA HB</title>
 </head>
 @section('content')
 

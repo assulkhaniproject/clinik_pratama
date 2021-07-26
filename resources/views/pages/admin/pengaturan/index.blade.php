@@ -1,7 +1,7 @@
 @extends('templates.admin')
 
 <head>
-    <title> Report | KLINIK PRATAMA HB</title>
+    <title> Setting | KLINIK PRATAMA HB</title>
 </head>
 @section('content')
 {{-- <div class="mt-5 iq-maintenance">

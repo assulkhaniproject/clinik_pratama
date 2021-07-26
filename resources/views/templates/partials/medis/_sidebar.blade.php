@@ -21,7 +21,7 @@
                 <a href="{{route('medis.dashboard')}}" class="iq-waves-effect"><i class="ion-home"></i><span>Dashboard</span></a>
              </li>
              <li @if (Request::is('medis/rekamMedik')) class="active" @else class="false" @endif>
-                <a href="{{route('medis.rekamMedik.index')}}" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>Rekam Medik</span></a>
+                <a href="{{route('medis.rekamMedik.index')}}" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>Antrian Pemeriksaan</span></a>
              </li>
              {{-- <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
              <li @if (Request::is('InfoCorona19')) class="active" @else class="false" @endif>

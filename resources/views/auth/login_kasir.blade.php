@@ -6,7 +6,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Login | Klinik Pratama HB</title>
+      <title>Sign In Kasir | Klinik Pratama HB</title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{asset('admin/images/icon.png')}}" />
       <!-- Bootstrap CSS -->
@@ -73,7 +73,7 @@
                             @csrf
                                 <div class="form-group">
                                     <label for="exampleInputUsername">Username</label>
-                                    <input name="username" type="username" class="form-control mb-0" id="exampleInputUsername" placeholder="Masukan username">
+                                    <input name="username" type="username" class="form-control mb-0" id="exampleInputUsername" placeholder="Masukan username / Nipy">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>

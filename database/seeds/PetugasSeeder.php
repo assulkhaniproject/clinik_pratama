@@ -18,7 +18,7 @@ class PetugasSeeder extends Seeder
          * 
          */
         Petugas::create( [
-            'no_str'=>'10010070',
+            'no_str'=>'1001007012345',
             'nama'=>'Meyliya Qudriani',
             'tempat_lahir'=>'Pati',
             'tanggal_lahir'=>'1987-05-11',
@@ -34,34 +34,34 @@ class PetugasSeeder extends Seeder
         ]);
 
         Petugas::create( [
-            'no_str'=>'11009064',
+            'no_str'=>'1100906412345',
             'nama'=>'Novia Ludha Arisanti',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1985-08-05',
             'jenis_kelamin'=>'Perempuan',
-            'kategori'=>'Apoteker',
+            'kategori'=>'Bidan',
             'alamat'=>'Griya Bahari Sentosa Blok D2 No. 4 Rt. 04/Rw.07 Kelurahan Dampyak Kecamatan Kramat',
             'no_hp'=>'0895422824354',
             'harga' => null,
 
             'nipy'    => '3344556677',
-            'username'    => 'apoteker',
+            'username'    => 'bidan',
             'password'    => bcrypt('password')
         ]);
 
         Petugas::create( [
-            'no_str'=>'11018383',
+            'no_str'=>'1101838312345',
             'nama'=>'Farida Oktavia',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1977-10-04',
             'jenis_kelamin'=>'Perempuan',
-            'kategori'=>'Kasir',
+            'kategori'=>'Apoteker',
             'alamat'=>'Perum Puri Lestari no 6 Kel Kalinyamat Wetan Tegal Selatan',
             'no_hp'=>'085742922211',
             'harga' => null,
             
             'nipy'    => '4455667788',
-            'username'    => 'kasir',
+            'username'    => 'Apoteker',
             'password'    => bcrypt('password')
         ]);
 
@@ -69,36 +69,39 @@ class PetugasSeeder extends Seeder
          * HARUS ADA HARGA KARENA PETUGAS MEDIS (DOKTER, PERAWAT, BIDAN)
          * 
          */
-        Petugas::create( [
-            'no_str'=>'11018389',
-            'nama'=>'Farida Oktavia',
-            'tempat_lahir'=>'Tegal',
-            'tanggal_lahir'=>'1977-10-04',
-            'jenis_kelamin'=>'Perempuan',
-            'kategori'=>'Bidan',
-            'alamat'=>'Perum Puri Lestari no 6 Kel Kalinyamat Wetan Tegal Selatan',
-            'no_hp'=>'085742922211',
-            'harga' => '100000',
-
-            'nipy'    => '5566778899',
-            'username'    => 'bidan',
-            'password'    => bcrypt('password')
-        ]);
 
         Petugas::create( [
-            'no_str'=>'03020443',
+            'no_str'=>'030204431234',
             'nama'=>'Vivin Avianti Oktavia',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1997-10-24',
+            'jenis_kelamin'=>'Perempuan',
+            'kategori'=>'Kasir',
+            'alamat'=>'Jl. Gede giri No.27 rt 29 rw 7 pegirikan, talang',
+            'no_hp'=>'0895422824354',
+            'harga' => '100000',
+
+            'nipy'    => '2233445566',
+            'username'    => 'kasir',
+            'password'    => bcrypt('password')
+        ]);
+
+
+        Petugas::create( [
+            'no_str'=>'030204431235',
+            'nama'=>'Inka Roekmiasri',
+            'tempat_lahir'=>'Tegal',
+            'tanggal_lahir'=>'1991-10-24',
             'jenis_kelamin'=>'Perempuan',
             'kategori'=>'Dokter',
             'alamat'=>'Jl. Gede giri No.27 rt 29 rw 7 pegirikan, talang',
             'no_hp'=>'0895422824354',
             'harga' => '100000',
 
-            'nipy'    => '2233445566',
+            'nipy'    => '223344556677',
             'username'    => 'dokter',
             'password'    => bcrypt('password')
         ]);
+
     }
 }

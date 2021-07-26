@@ -79,7 +79,7 @@
                             <div class="form-group">
                                 <label for="exampleInputUsername">Username</label>
                                 <input name="username" type="username" class="form-control mb-0" id="exampleInputUsername"
-                                    placeholder="Masukan Username">
+                                    placeholder="Masukan Username / Nipy">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>

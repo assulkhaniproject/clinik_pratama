@@ -14,7 +14,7 @@ class PengaturanSeeder extends Seeder
     {
         Pengaturan::create([
             'key' => 'KEPALA_KLINIK',
-            'value' => 'Mbuh Sapa'
+            'value' => 'Meyliya Qudriani'
         ]);
     }
 }
