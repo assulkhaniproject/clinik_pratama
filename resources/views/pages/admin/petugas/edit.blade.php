@@ -190,7 +190,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Foto
                             :</label>
                         <div class="col-sm-8">
@@ -205,7 +205,7 @@
                                 </span>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group text-center">
                         <a class="btn btn-primary text-white" onclick="history.back()">Kembali</a>
                         <button type="submit" class="btn btn-warning text-white">Simpan</button>

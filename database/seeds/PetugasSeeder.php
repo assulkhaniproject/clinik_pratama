@@ -42,7 +42,7 @@ class PetugasSeeder extends Seeder
             'kategori'=>'Bidan',
             'alamat'=>'Griya Bahari Sentosa Blok D2 No. 4 Rt. 04/Rw.07 Kelurahan Dampyak Kecamatan Kramat',
             'no_hp'=>'0895422824354',
-            'harga' => null,
+            'harga' => '100000',
 
             'nipy'    => '3344556677',
             'username'    => 'bidan',
@@ -79,7 +79,7 @@ class PetugasSeeder extends Seeder
             'kategori'=>'Kasir',
             'alamat'=>'Jl. Gede giri No.27 rt 29 rw 7 pegirikan, talang',
             'no_hp'=>'0895422824354',
-            'harga' => '100000',
+            'harga' => null,
 
             'nipy'    => '2233445566',
             'username'    => 'kasir',

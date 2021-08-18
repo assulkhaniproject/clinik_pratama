@@ -68,7 +68,7 @@
                         <h1 class="mb-0">Sign in Medis</h1>
                         <p>Masukan Nomor NIPY untuk Login</p>
                         @if (session()->has('message'))
-                        <div class="alert alert-info mx-3 mt-3">
+                        <div class="alert alert-danger mx-3 mt-3">
                             {{ session('message') }}
                         </div>
                         @endif

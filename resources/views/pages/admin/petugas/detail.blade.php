@@ -162,21 +162,21 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Foto
                             :</label>
                         <div class="col-sm-8">
                             <img id="output" class="img-fluid ml-3" height="100" width="100"
                                 src="{{ asset('admin/images/user/11.png') }}">
                             {{-- <img id="output" class="img-fluid ml-3" height="100" width="100"
-                                src="{{ Storage::url('public/admin/images/user/'.$data->foto) }}"> --}}
+                                src="{{ Storage::url('public/admin/images/user/'.$data->foto) }}">
                             @if ($errors->has('foto'))
                                 <span class="invalid-feedback" role="alert">
                                     <p><b>{{ $errors->first('foto') }}</b></p>
                                 </span>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group text-center">
                         <a class="btn btn-primary text-white" onclick="history.back()">Kembali</a>
                         <a type="" href="{{route('admin.petugas.edit', $data->id)}}" class="btn btn-warning text-white">Edit</a>

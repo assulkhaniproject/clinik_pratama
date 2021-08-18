@@ -63,7 +63,7 @@
                         <h1 class="mb-0">Sign in Admin</h1>
                         <p>Enter your email address and password to access admin panel.</p>
                         @if (session()->has('message'))
-                        <div class="alert alert-info mx-3 mt-3">
+                        <div class="alert alert-danger mx-3 mt-3">
                             {{ session('message') }}
                         </div>
                         @endif

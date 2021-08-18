@@ -55,7 +55,7 @@ class PetugasController extends Controller
             'alamat' => 'required',
             'no_hp' => 'required|max:13|min:10',
             'harga' => 'nullable|numeric',
-            'foto' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+            // 'foto' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
         $data = new Petugas();
@@ -71,7 +71,7 @@ class PetugasController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->harga = $request->harga;
-        $data->foto = $this->uploadFileDisk($request, 'public', 'foto', 'admin/images/user/');
+        // $data->foto = $this->uploadFileDisk($request, 'public', 'foto', 'admin/images/user/');
         $data->save();
 
 
@@ -126,7 +126,7 @@ class PetugasController extends Controller
             'alamat' => 'required',
             'no_hp' => 'required|max:13|min:10',
             'harga' => 'nullable|numeric',
-            'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            // 'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
         $data->no_str = $request->no_str;
@@ -143,13 +143,13 @@ class PetugasController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->harga = $request->harga;
-        $foto = $request->file('foto');
+        // $foto = $request->file('foto');
 
-        if ($foto) {
-            $data->foto = $this->uploadFileDisk($request, 'public', 'foto', 'admin/images/user/');
-        } else {
-            $data->foto = $request->old_foto;
-        }
+        // if ($foto) {
+        //     $data->foto = $this->uploadFileDisk($request, 'public', 'foto', 'admin/images/user/');
+        // } else {
+        //     $data->foto = $request->old_foto;
+        // }
 
         $data->update();
 
