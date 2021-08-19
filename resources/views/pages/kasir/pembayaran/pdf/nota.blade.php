@@ -70,7 +70,7 @@
     <table border="1" cellspacing="0" cellpadding="0" width="100%">
         <thead>
             <tr>
-                <th scope="col">Biaya Dokter</th>
+                <th scope="col">Biaya Admin</th>
                 <td>{{ $biayaAdmin = (int)str_replace('.', '', '15.000') }}</td>
             </tr>
             <tr>
