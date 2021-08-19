@@ -31,7 +31,7 @@ class PemeriksaanSeeder extends Seeder
 
         Pemeriksaan::create([
             
-            'jenis_pemeriksaan' => 'Medikasi Bera',
+            'jenis_pemeriksaan' => 'Medikasi Berat',
             'harga' => '55.000',
         ]);
 
