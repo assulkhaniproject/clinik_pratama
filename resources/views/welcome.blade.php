@@ -43,7 +43,10 @@
                         <hr>
                         <p>Jl. Mataram No 9 (belakang terminal) Pesurungan Lor Kota Tegal, Jawa Tengah Indonesia</p>
                     </div>
-                    <div class="btn-group " role="group">
+                    <a href="{{ route('login.index') }}" id="btnGroupDrop1" type="button" class=" px-lg-5 py-2 btn btn-primary">
+                        Sign In
+                    </a>
+                    {{-- <div class="btn-group " role="group">
                         <button id="btnGroupDrop1" type="button" class=" px-lg-5 py-2 btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sign In
                         </button>
@@ -53,7 +56,7 @@
                            <a class="dropdown-item" href="{{ route('login.index', 'Medis') }}">Medis</a>
                            <a class="dropdown-item" href="{{ route('login.index', 'Apoteker')}}">Apoteker</a>
                         </div>
-                     </div>
+                     </div> --}}
                 </div>
             </div>
 

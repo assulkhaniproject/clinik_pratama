@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
  * Auth Routes
  * 
  */
-Route::get('/login/{kategoriUser}', 'AuthController@index')->name('login.index');
+// Route::get('/login/{kategoriUser}', 'AuthController@index')->name('login.index');
+Route::get('/login', 'AuthController@index')->name('login.index');
 Route::post('/login', 'AuthController@store')->name('login.store');
 // Route::post('/login', 'AuthController@nipy')->name('login.nipy');
 Route::get('/logout', 'AuthController@destroy')->name('login.destroy');

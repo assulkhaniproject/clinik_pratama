@@ -13,24 +13,26 @@ class AuthController extends Controller
      * Menampilkan halaman login sesuai request
      * 
      */
-    public function index($kategoriUser)
+    public function index()
     {
-        switch ($kategoriUser) {
-            case 'Admin':
-                return view('auth.login_admin');
+        return view('auth.login');
 
-            case 'Medis':
-                return view('auth.login_dokter');
+        // switch ($kategoriUser) {
+        //     case 'Admin':
+        //         return view('auth.login_admin');
 
-            case 'Apoteker':
-                return view('auth.login_apoteker');
+        //     case 'Medis':
+        //         return view('auth.login_dokter');
+
+        //     case 'Apoteker':
+        //         return view('auth.login_apoteker');
                     
-            case 'Kasir':
-                return view('auth.login_kasir');
+        //     case 'Kasir':
+        //         return view('auth.login_kasir');
 
-            default:
-                return redirect()->route('home');
-        }
+        //     default:
+        //         return redirect()->route('home');
+        // }
     }
 
     /**
