@@ -92,6 +92,7 @@ Route::name('admin.')->prefix('admin')->middleware('CekLoginAuth')->group(functi
 Route::name('medis.')->prefix('medis')->middleware('CekLoginAuth')->group(function () {
     // | Dashboard | --
     Route::get('/dashboard', 'Medis\DashboardController@index')->name('dashboard');
+    Route::get('/profile', 'Medis\DashboardController@profile')->name('profile');
 
     // Rekam Medik
     Route::resource('rekamMedik', 'Medis\RekamMedikController');
@@ -109,6 +110,7 @@ Route::name('medis.')->prefix('medis')->middleware('CekLoginAuth')->group(functi
 Route::name('apoteker.')->prefix('apoteker')->group(function () {
     // | Dashboard | --
     Route::get('/dashboard', 'Apoteker\DashboardController@index')->name('dashboard')->middleware('CekLoginAuth');
+    Route::get('/profile', 'Apoteker\DashboardController@profile')->name('profile');
 
     //Rekam Medik
     Route::resource('rekamMedik', 'Apoteker\RekamMedikController');
@@ -129,6 +131,7 @@ Route::name('apoteker.')->prefix('apoteker')->group(function () {
 Route::name('kasir.')->prefix('kasir')->middleware('CekLoginAuth')->group(function () {
     // | Dashboard |--
     Route::get('/dashboard', 'Kasir\DashboardController@index')->name('dashboard');
+    Route::get('/profile', 'Kasir\DashboardController@profile')->name('profile');
 
     // Pembayaran | Report
     Route::resource('pembayaran', 'Kasir\PembayaranController')->parameter('pembayaran', 'rekamMedik');

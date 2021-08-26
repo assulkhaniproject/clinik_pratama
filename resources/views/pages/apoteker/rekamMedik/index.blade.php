@@ -1,7 +1,7 @@
 @extends('templates.apoteker')
 
 <head>
-   <title> Data Rekam Medik | KLINIK PRATAMA HB</title>
+   <title> Data Rekam Medis | KLINIK PRATAMA HB</title>
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
 </head>
 @section('content')
@@ -26,7 +26,7 @@
          <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                <div class="iq-header-title row col-12">
-                  <h4 class="card-title">Antrian Rekam Medik (Peresepan Obat Apoteker) </h4>
+                  <h4 class="card-title">Antrian Rekam Medis (Peresepan Obat Apoteker) </h4>
                </div>
             </div>
             <div class="iq-card-body">
@@ -35,7 +35,7 @@
                   <thead>
                      <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">No. Rekam Medik</th>
+                        <th scope="col">No. Rekam Medis</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Tanggal Periksa</th>
                         <th scope="col">Petugas Medis</th>

@@ -23,7 +23,7 @@
                 </li>
                 <li @if (Request::is('apoteker/rekamMedik')) class="active" @else class="false" @endif>
                     <a href="{{ route('apoteker.rekamMedik.index') }}" class="iq-waves-effect"><i
-                            class="ion-heart-broken"></i><span>Rekam Medik</span></a>
+                            class="ion-heart-broken"></i><span>Antrian Resep Obat</span></a>
                 </li>
                 <li @if (Request::is('apoteker/obat')) class="active" @else class="false" @endif>
                     <a href="{{route('apoteker.obat.index')}}" class="iq-waves-effect"><i class="ion-medkit"></i><span>Data Obat</span></a>

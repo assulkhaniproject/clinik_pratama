@@ -167,7 +167,9 @@
                             :</label>
                         <div class="col-sm-8">
                             <img id="output" class="img-fluid ml-3" height="100" width="100"
-                                src="{{ Storage::url('public/admin/images/user/'.$data->foto) }}">
+                                src="{{ asset('admin/images/user/11.png') }}">
+                            {{-- <img id="output" class="img-fluid ml-3" height="100" width="100"
+                                src="{{ Storage::url('public/admin/images/user/'.$data->foto) }}"> --}}
                             @if ($errors->has('foto'))
                                 <span class="invalid-feedback" role="alert">
                                     <p><b>{{ $errors->first('foto') }}</b></p>

@@ -1,7 +1,7 @@
 @extends('templates.apoteker')
 
 <head>
-    <title> Edit Rekam Medik | KLINIK PRATAMA HB</title>
+    <title> Edit Rekam Medis | KLINIK PRATAMA HB</title>
 </head>
 @section('content')
 
@@ -35,7 +35,7 @@
                   <fieldset>
                       @csrf
                       {{ method_field('patch') }}
-                      <p>Perhatian ! setelah anda mengklik "Kirim Ke Kasir", rekam medik akan masuk ke kasir, kemudian stok obat akan berkurang dan aksi tidak dapat diubah</p>
+                      <p>Perhatian ! setelah anda mengklik "Kirim Ke Kasir", rekam medis akan masuk ke kasir, kemudian stok obat akan berkurang dan aksi tidak dapat diubah</p>
                       <a class="btn btn-primary text-white" onclick="history.back()">Keluar</a>
                      <button type="submit" class="btn btn-warning text-white">Kirim Ke Kasir Untuk Pembayarann</button>
                   </fieldset>
@@ -47,18 +47,18 @@
         <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                 <div class="iq-header-title">
-                    <h4 class="card-title">Detail Lain Rekam Medik Pasien</h4>
+                    <h4 class="card-title">Detail Lain Rekam Medis Pasien</h4>
                 </div>
             </div>
             <div class="iq-card-body">
                <div class="form-group row">
-                     <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Status Rekam Medik :</label>
+                     <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Status Rekam Medis :</label>
                      <div class="col-sm-8">
                         <input type="nama" class="form-control ml-3 text-dark" id="pwd1" placeholder="" value="{{$rekamMedik->getStatus()}}" disabled>
                      </div>
                   </div>
                   <div class="form-group row">
-                     <label class="control-label col-sm-2 align-self-center ml-4" for="">No Rekam Medik :</label>
+                     <label class="control-label col-sm-2 align-self-center ml-4" for="">No Rekam Medis :</label>
                      <div class="col-sm-8">
                         <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$rekamMedik->no_rekam_medik}}" disabled>
                      </div>

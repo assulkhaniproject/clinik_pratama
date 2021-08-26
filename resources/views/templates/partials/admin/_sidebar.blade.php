@@ -21,16 +21,16 @@
             </li>
             <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Data Medik</span></li>
             <li @if (Request::is('admin/rekamMedik')) class="active" @else class="false" @endif>
-               <a href="{{route('admin.rekamMedik.index')}}" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>Rekam Medik</span></a>
+               <a href="{{route('admin.rekamMedik.index')}}" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>Rekam Medis</span></a>
             </li>
-            <li @if (Request::is('admin/rekamMedik/showHistory')) class="active" @else class="false" @endif>
-               <a href="{{route('admin.rekamMedik.showHistory')}}" class="iq-waves-effect"><i class="ion-heart-broken"></i><span>History Rekam Medik</span></a>
+            <li @if (Request::is('admin/history-rekam-medik')) class="active" @else class="false" @endif>
+               <a href="{{route('admin.rekamMedik.showHistory')}}" class="iq-waves-effect"><i class="fa fa-folder"></i><span>History Rekam Medis</span></a>
             </li>
             <li @if (Request::is('admin/report')) class="active" @else class="false" @endif>
-               <a href="{{route('admin.report.index')}}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
+               <a href="{{route('admin.report.index')}}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report Rekam Medis</span></a>
             </li>
             <li @if (Request::is('admin/reportkeuangan')) class="active" @else class="false" @endif>
-               <a href="{{ route('admin.reportkeuangan.index') }}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report Keuangan</span></a>
+               <a href="{{ route('admin.reportkeuangan.index') }}" class="iq-waves-effect"><i class="ri-calculator-fill"></i><span>Report Keuangan</span></a>
             </li>
             <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Data Utama</span></li>
             <li @if (Request::is('admin/pasien')) class="active" @else class="false" @endif>

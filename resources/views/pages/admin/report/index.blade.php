@@ -1,7 +1,7 @@
 @extends('templates.admin')
 
 <head>
-    <title> Report | KLINIK PRATAMA HB</title>
+    <title> Report Rekam Medis | KLINIK PRATAMA HB</title>
 </head>
 @section('content')
 {{-- <div class="mt-5 iq-maintenance">
@@ -24,7 +24,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Report Data Rekam Medik</h4>
+                        <h4 class="card-title">Report Data Rekam Medis</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">

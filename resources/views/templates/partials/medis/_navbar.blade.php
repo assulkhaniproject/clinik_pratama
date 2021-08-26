@@ -48,7 +48,7 @@
                                     <h5 class="mb-0 text-white line-height">Hello Petugas Medis</h5>
                                     <span class="text-white font-size-12">Available</span>
                                 </div>
-                                <a href="{{ route('admin.profile') }}" class="iq-sub-card iq-bg-primary-hover">
+                                <a href="{{ route('medis.profile') }}" class="iq-sub-card iq-bg-primary-hover">
                                     <div class="media align-items-center">
                                         <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-file-user-line"></i>
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="{{ route('maintenance') }}" class="iq-sub-card iq-bg-primary-hover">
+                                {{-- <a href="{{ route('maintenance') }}" class="iq-sub-card iq-bg-primary-hover">
                                     <div class="media align-items-center">
                                         <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-profile-line"></i>
@@ -69,7 +69,7 @@
                                             <p class="mb-0 font-size-12">Modify your personal details.</p>
                                         </div>
                                     </div>
-                                </a>
+                                </a> --}}
                                 <div class="d-inline-block w-100 text-center p-3">
                                     <a class="bg-primary iq-sign-btn" href="{{ route('login.destroy') }}"
                                         role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>

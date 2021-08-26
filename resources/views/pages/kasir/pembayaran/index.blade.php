@@ -1,7 +1,7 @@
 @extends('templates.kasir')
 
 <head>
-   <title> Antrian Pemeriksaan | KLINIK PRATAMA HB</title>
+   <title> Antrian Pembayaran | KLINIK PRATAMA HB</title>
 </head>
 @section('content')
 
@@ -11,7 +11,7 @@
          <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                <div class="iq-header-title row col-12">
-                  <h4 class="card-title">Antrian Rekam Medik (Pembayaran)</h4>
+                  <h4 class="card-title">Antrian Rekam Medis (Pembayaran)</h4>
                </div>
             </div>
             <div class="iq-card-body">
@@ -20,7 +20,7 @@
                   <thead>
                      <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">No. Rekam Medik</th>
+                        <th scope="col">No. Rekam Medis</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Waktu Periksa</th>
                         <th scope="col">Nama Dokter</th>

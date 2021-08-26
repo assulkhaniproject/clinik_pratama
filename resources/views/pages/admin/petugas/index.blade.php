@@ -37,7 +37,8 @@
                             <tbody>
                                 <tr>
                                     <td class="checkbox-column text-center"> {{$loop->iteration}}.</td>
-                                    <td class="user-img img-fluid"><img src="{{ Storage::url('admin/images/user/'.$data->foto) }}" alt="story-img" class="rounded-circle avatar-50"></td>
+                                    {{-- <td class="user-img img-fluid"><img src="{{ Storage::url('admin/images/user/'.$data->foto) }}" alt="story-img" class="rounded-circle avatar-50"></td> --}}
+                                    <td class="user-img img-fluid"><img src="{{ asset('admin/images/user/1.jpg') }}" alt="story-img" class="rounded-circle avatar-50"></td>
                                     <td>{{$data->no_str}}</td>
                                     <td>{{$data->nama}}</td>
                                     <td>{{$data->kategori}}</td>

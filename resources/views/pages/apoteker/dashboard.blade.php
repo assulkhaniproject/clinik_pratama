@@ -7,11 +7,11 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-7">
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-header d-flex justify-content-between">
                         <div class="iq-header-title">
-                            <h4 class="card-title">Clinic Staff</h4>
+                            <h4 class="card-title">Staf Apoteker</h4>
                         </div>
                     </div>
                     <div class="iq-card-body">
@@ -111,45 +111,23 @@
                                         <p class="mb-0 text-center pl-2 pr-2">Klinik Pratama Harapan Bersama</p>
                                     </div>
                                 </div>
-                    </div>
-                    </li>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-lg-12">
-            <div class="iq-card">
-                <div class="iq-card-header d-flex justify-content-between">
-                    <div class="iq-header-title">
-                        <h4 class="card-title">Dashboard</h4>
-                    </div>
-                </div>
-                <div class="iq-card-body">
-                    {{-- <p>Here’s a carousel with slides only. Note the presence of the <code>.d-block</code> and <code>.img-fluid</code> on carousel images to prevent browser default image alignment.</p> --}}
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{ asset('admin/images/small/img-1.jpg') }}" class="d-block w-100" alt="#">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('admin/images/small/img-1.jpg') }}" class="d-block w-100" alt="#">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('admin/images/small/img-1.jpg') }}" class="d-block w-100" alt="#">
-                            </div>
+            <div class="col-md-5">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Calendar</h4>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                    </div>
+                    <div class="iq-card-body smaill-calender-home">
+                        <input type="text" class="flatpicker d-none">
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

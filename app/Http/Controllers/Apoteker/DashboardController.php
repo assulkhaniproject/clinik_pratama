@@ -17,6 +17,12 @@ class DashboardController extends Controller
         return view('pages.apoteker.dashboard');
     }
 
+    
+    public function profile()
+    {
+        
+        return view('pages.apoteker.profile');
+    }
     /**
      * Show the form for creating a new resource.
      *

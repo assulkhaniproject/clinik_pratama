@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rekap Rekam Medik</title>
+    <title>Rekap Rekam Medis</title>
     <style>
         @page { size: 21cm 33cm portrait; }
         @page { margin: 1.5cm 1.5cm 1.5cm 1.5cm; }
@@ -25,7 +25,7 @@
     <hr>
 
     <center>
-        <h3>Report Rekam Medik</h3>
+        <h3>Report Rekam Medis</h3>
         <p>Dari Tanggal : {{date('d-m-Y', strtotime($request->dari_tanggal))}} ke {{date('d-m-Y', strtotime($request->ke_tanggal))}}</p>
     </center>
     
@@ -35,7 +35,7 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>No Rekam Medik</th>
+                <th>No Rekam Medis</th>
                 <th>Nama Pasien</th>
                 <th>Tanggal Priksa</th>
                 <th>Jenis Periksa</th>
