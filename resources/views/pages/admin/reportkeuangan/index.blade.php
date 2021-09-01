@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.'.Request::segment(1))
 
 <head>
     <title> Report Keuangan | KLINIK PRATAMA HB</title>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="iq-card-body">
-                    <form method="post" action="{{ route('admin.reportkeuangan.store') }}">
+                    <form method="post" action="{{ route(Request::segment(1).'.reportkeuangan.store') }}">
                         @csrf
                         Berdasarkan Tanggal: 
                         {{-- <div class="form-group">

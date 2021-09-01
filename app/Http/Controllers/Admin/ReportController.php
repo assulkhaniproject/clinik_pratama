@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Pengaturan;
 use App\RekamMedik;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
@@ -46,7 +47,9 @@ class ReportController extends Controller
 
         $pdf = PDF::loadview('pages.admin.report.pdf.rekam-medik', [
             'filterRekam' => $filterRekam, 
-            'request' => $request
+            'request' => $request,
+            'tgl_periksa' => $this->dayDateID(now()),
+            'kepala_klinik' => Pengaturan::find('KEPALA_KLINIK')->first()->value
         ])->setPaper('f4', 'potrait');
 
         return $pdf->stream('dokumen-rekap-medik.pdf');
