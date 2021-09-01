@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Tanggal Pemeriksaan:</label>
-                            <input name="tanggal_periksa" type="date" class="form-control {{$errors->has('tanggal_periksa')?'is-invalid':''}}" placeholder="">
+                            <input name="tanggal_periksa" value="{{ date('Y-m-d') }}" type="date" class="form-control {{$errors->has('tanggal_periksa')?'is-invalid':''}}" placeholder="" readonly>
                             @if ($errors->has('tanggal_periksa'))
                             <span class="invalid-feedback" role="alert">
                                 <p><b>{{ $errors->first('tanggal_periksa')}}</b></p>
