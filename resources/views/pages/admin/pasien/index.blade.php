@@ -18,6 +18,8 @@
                <span class="table-add float-right mb-3 mr-lg-2">
                   <a href="{{route('admin.pasien.create')}}" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Tambah Data<a class=""><span></span></a>
                   </a>
+                  {{-- <a href="#" role="button" class="btn btn-primary mr-5"><i class="ion-plus-circled"></i>Import Data<a class=""><span></span></a>
+                  </a> --}}
                </span>
                <!-- <p>The <code>.table </code> class adds basic styling to a table.</p> -->
                <table id="myTable" class="table">

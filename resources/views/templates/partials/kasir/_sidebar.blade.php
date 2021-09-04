@@ -23,6 +23,9 @@
             <li @if (Request::is('kasir/pembayaran')) class="active" @else class="false" @endif>
                <a href="{{ route('kasir.pembayaran.index') }}" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Antrian Pembayaran</span></a>
             </li>
+            {{-- <li @if (Request::is('kasir/pembayaran')) class="active" @else class="false" @endif>
+               <a href="#" class="iq-waves-effect"><i class="ri-group-fill"></i><span>Report Keuangan</span></a>
+            </li> --}}
             {{-- <li @if (Request::is('kasir/pembayaran/create')) class="active" @else class="false" @endif>
                <a href="{{ route('kasir.pembayaran.create') }}" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Report</span></a>
             </li> --}}
