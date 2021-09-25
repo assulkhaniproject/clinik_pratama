@@ -15,11 +15,12 @@ class PasienSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('id_ID');
-        $idServiceSuffle = Mahasiswa::all()->pluck('id')->toArray();
 
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 8; $i++) { 
             Pasien::create([
-                'kategori_pasien' => $faker->randomElement(['Pasien Umum', 'Pasien Civitas PHB']),
+                'kategori_pasien' => 'Pasien Umum',
+                'civitas' => '',
+                'nim_nipy' => '',
                 'nama' => $faker->name,
                 'no_identitas' => $faker->numberBetween($min = 1000000000000000, $max = 9999999999999999),
                 'tempat_lahir' => $faker->city,
@@ -31,5 +32,6 @@ class PasienSeeder extends Seeder
                 'golongan_darah' => 'A',
             ]);
         }
+
     }
 }

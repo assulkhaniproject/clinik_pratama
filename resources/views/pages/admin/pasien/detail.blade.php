@@ -29,6 +29,19 @@
                   <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$data->no_identitas}}">
                </div>
             </div>
+            @else
+            <div class="form-group row">
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="">Civitas :</label>
+               <div class="col-sm-8">
+                  <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$data->civitas}}">
+               </div>
+            </div>
+            <div class="form-group row">
+               <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="">NIM / NIPY :</label>
+               <div class="col-sm-8">
+                  <input type="text" class="form-control ml-3 text-dark" id="email" placeholder="" value="{{$data->nim_nipy}}">
+               </div>
+            </div>
             @endif
             <div class="form-group row">
                <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Nama :</label>
