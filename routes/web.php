@@ -135,5 +135,6 @@ Route::name('kasir.')->prefix('kasir')->middleware('CekLoginAuth')->group(functi
 
     // Pembayaran | Report
     Route::resource('pembayaran', 'Kasir\PembayaranController')->parameter('pembayaran', 'rekamMedik');
+    Route::resource('reportkeuangan', 'Admin\ReportKeuanganController');
     // Route::resource('report/kasir', 'Kasir\ReportController');
 });

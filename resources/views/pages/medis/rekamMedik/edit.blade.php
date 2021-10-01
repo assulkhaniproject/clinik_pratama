@@ -115,17 +115,16 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Resep Obat:</label>
-                        <div class="col-sm-8">
-                            <div class="ml-3">
-                                <select name="resep[]" class="fetch_resep form-control select2 ml-3 {{$errors->has('resep')?'is-invalid':''}}" multiple data-placeholder="Cari Obat">
-                                    @foreach($rekamMedik->obat as $key => $item)                                   
-                                        <option value="{{ $item->id }}" @if($rekamMedik->obat->containsStrict('id', $item->id)) selected="selected" @endif>{{ $item->kode }} {{ $item->nama }}</option>
-                                     @endforeach 
-                                </select>
-                            </div>
-
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Resep Obat:</label>
+                            <div class="col-sm-8">
+                                <div class="ml-3">
+                                    <select name="resep[]" class="fetch_resep form-control select2 ml-3 {{$errors->has('resep')?'is-invalid':''}}" multiple data-placeholder="Cari Obat">
+                                        @foreach($rekamMedik->obat as $key => $item)                                   
+                                            <option value="{{ $item->id }}" @if($rekamMedik->obat->containsStrict('id', $item->id)) selected="selected" @endif>{{ $item->kode }} {{ $item->nama }}</option>
+                                        @endforeach 
+                                    </select>
+                                </div>
                                 @if ($errors->has('resep'))
                                 <span class="invalid-feedback" role="alert">
                                     <p><b>{{ $errors->first('resep')}}</b></p>

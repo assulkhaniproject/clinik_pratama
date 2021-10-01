@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Pasien;
+use App\Pengaturan;
 use App\RekamMedik;
 use App\Transaksi;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -48,7 +49,9 @@ class ReportKeuanganController extends Controller
 
         $pdf = PDF::loadview('pages.admin.reportkeuangan.pdf.transaksi', [
             'filterRekam' => $filterRekam, 
-            'request' => $request
+            'request' => $request,
+            'tgl_periksa' => $this->dayDateID(now()),
+            'kepala_klinik' => Pengaturan::find('KEPALA_KLINIK')->first()->value
         ])->setPaper('f4', 'potrait');
 
         return $pdf->stream('dokumen-transaksi.pdf');

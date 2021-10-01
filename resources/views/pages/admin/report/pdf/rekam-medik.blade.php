@@ -58,5 +58,24 @@
             @endforeach
         </tbody>
     </table>
+    <br><br>
+    <table align=right border="0" cellpadding="1" style="width: 250px;">
+        <tbody>
+        <tr>
+            <td valign="top">
+    
+                <div align="left">
+                    <span >{{$tgl_periksa}}</span>
+                    <br>
+                    <span >Kepala Klinik</span>
+                    <br>
+                </div>
+                <div align="left" style="margin: 50px "></div>
+                <div align="left"><br>
+                    <span class="">( {{$kepala_klinik}} )</span></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>

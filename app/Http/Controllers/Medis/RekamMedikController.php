@@ -16,7 +16,7 @@ class RekamMedikController extends Controller
 {
     public function index()
     {
-        $data = RekamMedik::oldest()->where('status', 1)->get();
+        $data = RekamMedik::oldest()->where('status', 1)->where('petugas_id', session('petugas_id'))->get();
 
         return view('pages.medis.rekamMedik.index', compact('data'));
     }
@@ -54,14 +54,16 @@ class RekamMedikController extends Controller
      */
     public function update(Request $request, RekamMedik $rekamMedik)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'pemeriksaan_id' => 'required',
             'keluhan_lain' => 'nullable|min:8',
             'tindakan_lain' => 'nullable|min:8',
             'keluhan' => 'nullable|array|min:1',
             'tindakan' => 'nullable|array|min:1',
-            'resep' => 'required|array|min:1',
-            'resep_aturan_minum' => 'required|min:5',
+            'resep' => 'required_with:keluhan,keluhan_lain|array|min:1',
+            'resep_aturan_minum' => 'required_with:keluhan,keluhan_lain',
+        ], [
+            'resep_aturan_minum.required_with' => 'Isian resep aturan minum field diperlukan jika keluhan ada.'
         ]);
 
         $rekamMedik->pemeriksaan_id = $request->pemeriksaan_id;
