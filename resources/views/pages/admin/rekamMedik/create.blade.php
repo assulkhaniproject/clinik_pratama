@@ -92,7 +92,7 @@
                       results:  $.map(data, function (item) {
                           return {
                             id: item.id,
-                            text:  item.no_identitas+ ' - ' +item.nama,
+                            text:  (item.no_identitas == '' ? ((item.civitas == 'Mahasiswa' ? 'NIM. ':'NIPY. ') + item.nim_nipy):'NO.ID. '+item.no_identitas) + ' - ' +item.nama,
                           }
                       })
                   };

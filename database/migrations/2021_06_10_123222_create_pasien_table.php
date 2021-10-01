@@ -16,6 +16,8 @@ class CreatePasienTable extends Migration
         Schema::create('pasien', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kategori_pasien');
+            $table->string('civitas', 10)->nullable();
+            $table->string('nim_nipy', 20)->nullable();
             $table->string('nama', 100);
             $table->char('no_identitas', 16)->nullable();
             $table->string('tempat_lahir');

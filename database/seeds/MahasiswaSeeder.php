@@ -1,7 +1,8 @@
 <?php
 
-use App\Mahasiswa;
+use App\Pasien;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class MahasiswaSeeder extends Seeder
 {
@@ -12,379 +13,381 @@ class MahasiswaSeeder extends Seeder
      */
     public function run()
     {
-        Mahasiswa::create( [
-            'nim'=>'16090014',
+        $faker = Faker::create('id_ID');
+
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'16090014',
             'nama'=>'Abu Muslih Assulkhani',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1997-05-08',
-            'alamat'=>'Jl. Raya Balamoa Timur Tarub Kab.Tegal',
-            'angkatan'=>'2016',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Jl. Raya Balamoa Timur Tarub Kab.Tegal',
             'no_hp'=>'085385723130',
-            'jalur'=>'Reguler',
-            'email'=>'assulkhani08@gmail.com',
-            'nama_ortu'=>'Sholihin'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'17090092',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'17090092',
             'nama'=>'Mokhamad Wijaya',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2000-09-17',
-            'alamat'=>'Jl. Mujaer No.12 Tegal Sari',
-            'angkatan'=>'2017',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Jl. Mujaer No.12 Tegal Sari',
             'no_hp'=>'085810555362',
-            'jalur'=>'Reguler',
-            'email'=>'wijayamokhamad@gmail.com',
-            'nama_ortu'=>'Wadirjo'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'17090076',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'17090076',
             'nama'=>'Anisa Pandu Sabillah ',
+            'no_identitas' => '',
             'tempat_lahir'=>'Cilacap',
             'tanggal_lahir'=>'1999-08-23',
-            'alamat'=>'Jl. Lingkar Timur rt.02/rw.13',
-            'angkatan'=>'2017',
             'jenis_kelamin'=>'Perempuan',
-            'agama'=>'Islam',
+            'alamat'=>'Jl. Lingkar Timur rt.02/rw.13',
             'no_hp'=>'085866565620',
-            'jalur'=>'Reguler',
-            'email'=>'anisapandundis1@gmail.com',
-            'nama_ortu'=>'Sutomo'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'18090124',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'18090124',
             'nama'=>'Eli Krisnawati',
+            'no_identitas' => '',
             'tempat_lahir'=>'Brebes',
             'tanggal_lahir'=>'1996-11-30',
-            'alamat'=>'Jl. Pagejugan Kab.Brebes',
-            'angkatan'=>'2018',
             'jenis_kelamin'=>'Perempuan',
-            'agama'=>'Islam',
+            'alamat'=>'Jl. Pagejugan Kab.Brebes',
             'no_hp'=>'081290492489',
-            'jalur'=>'Reguler',
-            'email'=>'elikrisnawati@gmail.com',
-            'nama_ortu'=>'Akhmad'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'16090112',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'16090112',
             'nama'=>'Maulana Abdul Siddiq',
+            'no_identitas' => '',
             'tempat_lahir'=>'Jakarta',
             'tanggal_lahir'=>'1998-05-23',
-            'alamat'=>'Jl. Dr. Cipto Mangunkusumo Rt.005/001 Krandon Margadana',
-            'angkatan'=>'2016',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Jl. Dr. Cipto Mangunkusumo Rt.005/001 Krandon Margadana',
             'no_hp'=>'082324653228',
-            'jalur'=>'Reguler',
-            'email'=>'maulana@gmail.com',
-            'nama_ortu'=>'Muhammad'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090001',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090001',
             'nama'=>'RAMANG DARUSSALAM',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2001-07-21',
-            'alamat'=>'Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal',
             'no_hp'=>'083893484766',
-            'jalur'=>'Reguler',
-            'email'=>'ramang@poltektegal.ac.id',
-            'nama_ortu'=>'Larno'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090002',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090002',
             'nama'=>'M. ADE NOVAL FIRMANSYAH',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2002-06-16',
-            'alamat'=>'Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal',
             'no_hp'=>'085747576437',
-            'jalur'=>'Reguler',
-            'email'=>'adenoval121@gmail.com',
-            'nama_ortu'=>'Abdul Ghofir'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090003',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090003',
             'nama'=>'AGUNG ISWANTO',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1999-03-25',
-            'alamat'=>'Tegal. Tegal Timur. Mintaragen',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal. Tegal Timur. Mintaragen',
             'no_hp'=>'082322195570',
-            'jalur'=>'Reguler',
-            'email'=>'agung_iswanto@outlook.co.id',
-            'nama_ortu'=>'Tarmo'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090004',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090004',
             'nama'=>'MOHAMAD WILDAN',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1998-10-03',
-            'alamat'=>'DS.KERTAYASA RT03 RW 04 KECAMATAN KRAMAT KABUATEN TEGAL JAWA TENGAH',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'DS.KERTAYASA RT03 RW 04 KECAMATAN KRAMAT KABUATEN TEGAL JAWA TENGAH',
             'no_hp'=>'08986670963',
-            'jalur'=>'Reguler',
-            'email'=>'mohamadwildan1998@gmail.com',
-            'nama_ortu'=>'DAMIN'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090005',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090005',
             'nama'=>'ADITYA HERI FEBRIANTO',
+            'no_identitas' => '',
             'tempat_lahir'=>'Pemalang ',
             'tanggal_lahir'=>'2000-02-23',
-            'alamat'=>'Pemalang ',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Pemalang ',
             'no_hp'=>'085225161807',
-            'jalur'=>'Reguler',
-            'email'=>'adityaheri007@gmail.com',
-            'nama_ortu'=>'SUHERMAN'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090006',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090006',
             'nama'=>'HANIFAN HUSEIN ISNANTO',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2000-04-10',
-            'alamat'=>'Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal',
             'no_hp'=>'082325288088',
-            'jalur'=>'Reguler',
-            'email'=>'huseinisnanto123@gmail.com',
-            'nama_ortu'=>'Turip'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090007',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090007',
             'nama'=>'IKHLASUL AMAL AWALUDIN',
+            'no_identitas' => '',
             'tempat_lahir'=>'Pekalonggan',
             'tanggal_lahir'=>'2000-06-30',
-            'alamat'=>'Pekalonggan',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Pekalonggan',
             'no_hp'=>'0895423001065',
-            'jalur'=>'Reguler',
-            'email'=>'ikhlas@gmail.com',
-            'nama_ortu'=>'iskandas'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090008',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090008',
             'nama'=>'NAIMATUL MAUDIYAH',
+            'no_identitas' => '',
             'tempat_lahir'=>'Brebes',
             'tanggal_lahir'=>'2000-06-22',
-            'alamat'=>'Pasarbatang',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Perempuan',
-            'agama'=>'Islam',
+            'alamat'=>'Pasarbatang',
             'no_hp'=>'083861346966',
-            'jalur'=>'Reguler',
-            'email'=>'naimatulmd@gmail.com',
-            'nama_ortu'=>'Jamroni'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090009',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090009',
             'nama'=>'ESY NURJANAH',
+            'no_identitas' => '',
             'tempat_lahir'=>'Brebes',
             'tanggal_lahir'=>'1999-06-02',
-            'alamat'=>'Brebes',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Perempuan',
-            'agama'=>'Islam',
+            'alamat'=>'Brebes',
             'no_hp'=>'089690405979',
-            'jalur'=>'Reguler',
-            'email'=>'essynurjanah730@gmail.com',
-            'nama_ortu'=>'Iwan Setiawan'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090010',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090010',
             'nama'=>'ARIFFULAH',
+            'no_identitas' => '',
             'tempat_lahir'=>'Pemalang ',
             'tanggal_lahir'=>'2001-01-06',
-            'alamat'=>'Pemalang ',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Pemalang ',
             'no_hp'=>'085290443521',
-            'jalur'=>'Reguler',
-            'email'=>'am2719608@gmail.com',
-            'nama_ortu'=>'Khaerul Anam '
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090011',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090011',
             'nama'=>'AIDA NUR SYA\'BANI',
+            'no_identitas' => '',
             'tempat_lahir'=>'Kab. Tegal',
             'tanggal_lahir'=>'1999-11-29',
-            'alamat'=>'Kab. Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Perempuan',
-            'agama'=>'Islam',
+            'alamat'=>'Kab. Tegal',
             'no_hp'=>'082137963590',
-            'jalur'=>'Reguler',
-            'email'=>'aidanursyabani29@gmail.com',
-            'nama_ortu'=>'HOZALI'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090012',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090012',
             'nama'=>'Arief Rachman',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2001-05-09',
-            'alamat'=>'Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal',
             'no_hp'=>'087894475033',
-            'jalur'=>'Reguler',
-            'email'=>'ariefrachman0265@gmail.com',
-            'nama_ortu'=>'Sardjono'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090013',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090013',
             'nama'=>'Getar Dewantara',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2001-05-03',
-            'alamat'=>'Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal',
             'no_hp'=>'082314949881',
-            'jalur'=>'Reguler',
-            'email'=>'getardewa@gmail.com',
-            'nama_ortu'=>'M.Rokhman'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090014',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090014',
             'nama'=>'MUHAMMAD ADE VIKI',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'1998-10-01',
-            'alamat'=>'Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal',
             'no_hp'=>'081804729618',
-            'jalur'=>'Reguler',
-            'email'=>'muhammadade229@gmail.com',
-            'nama_ortu'=>'Masfuri'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090015',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090015',
             'nama'=>'AZZAH FITRIATUN NIZZAH',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2000-02-05',
-            'alamat'=>'Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Perempuan',
-            'agama'=>'Islam',
+            'alamat'=>'Tegal',
             'no_hp'=>'082326012982',
-            'jalur'=>'Reguler',
-            'email'=>'azzahfitriatunnizzah@gmail.com',
-            'nama_ortu'=>'WARIDI'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090016',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090016',
             'nama'=>'MOHAMMAD PRANA DHITYA RIZKI ALDI',
+            'no_identitas' => '',
             'tempat_lahir'=>'Brebes',
             'tanggal_lahir'=>'2001-05-29',
-            'alamat'=>'Brebes',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Brebes',
             'no_hp'=>'085642001574',
-            'jalur'=>'Reguler',
-            'email'=>'pranadhitya08@gmail.com',
-            'nama_ortu'=>'ratisno'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090017',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090017',
             'nama'=>'KHAEPAH',
+            'no_identitas' => '',
             'tempat_lahir'=>'Brebes',
             'tanggal_lahir'=>'2001-08-12',
-            'alamat'=>'Brebes',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Perempuan',
-            'agama'=>'Islam',
+            'alamat'=>'Brebes',
             'no_hp'=>'085600802491',
-            'jalur'=>'Reguler',
-            'email'=>'khayffahhepah@gmail.com',
-            'nama_ortu'=>'Abdul Mu\'in'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090018',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090018',
             'nama'=>'AINUN MADJID',
+            'no_identitas' => '',
             'tempat_lahir'=>'Bekasi',
             'tanggal_lahir'=>'1996-07-06',
-            'alamat'=>'Bekasi',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Bekasi',
             'no_hp'=>'081329737948',
-            'jalur'=>'Reguler',
-            'email'=>'ainunaisyah68@gmail.com',
-            'nama_ortu'=>'Sugeng Riyadi'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090019',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090019',
             'nama'=>'ADI SANGJAYA',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2000-11-27',
-            'alamat'=>' Jl. Bogares Lor Ds. Bogares Lor RT 05 RW 01 Kec. Pangkah Kab. Tegal',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>' Jl. Bogares Lor Ds. Bogares Lor RT 05 RW 01 Kec. Pangkah Kab. Tegal',
             'no_hp'=>'085780270260',
-            'jalur'=>'Reguler',
-            'email'=>'adi.sangjaya@gmail.com',
-            'nama_ortu'=>'Dwi Cahyo Harnoto'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
                 
-            Mahasiswa::create( [
-            'nim'=>'19090020',
+            Pasien::create( [
+            'kategori_pasien' => 'Pasien Civitas PHB',
+            'civitas' => 'Mahasiswa',
+            'nim_nipy'=>'19090020',
             'nama'=>'HANIF ARKHAN AL ASYRAFI',
+            'no_identitas' => '',
             'tempat_lahir'=>'Tegal',
             'tanggal_lahir'=>'2001-03-22',
-            'alamat'=>'Gresik jawatimur',
-            'angkatan'=>'2019',
             'jenis_kelamin'=>'Laki-laki',
-            'agama'=>'Islam',
+            'alamat'=>'Gresik jawatimur',
             'no_hp'=>'085727922474',
-            'jalur'=>'Reguler',
-            'email'=>'hanifarkhan68@gmail.com',
-            'nama_ortu'=>'Saptono Teguh Widodo'
+            'usia' => 20,
+            'golongan_darah' => 'A',
             ] );
     }
 }

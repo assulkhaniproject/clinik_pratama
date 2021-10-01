@@ -25,6 +25,8 @@ class PasienController extends Controller
     {
         $this->validate($request, [
             'kategori_pasien' => 'required',
+            'civitas' => 'nullable',
+            'nim_nipy' => 'nullable|numeric',
             'nama' => 'required|max:100',
             'no_identitas' => 'nullable|max:16',
             'tempat_lahir' => 'required|max:20',
@@ -38,6 +40,8 @@ class PasienController extends Controller
 
         Pasien::create([
             'kategori_pasien' => $request->kategori_pasien,
+            'civitas' => $request->civitas,
+            'nim_nipy' => $request->nim_nipy,
             'nama' => $request->nama,
             'no_identitas' => $request->no_identitas,
             'tempat_lahir' => $request->tempat_lahir,

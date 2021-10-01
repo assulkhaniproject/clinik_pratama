@@ -11,6 +11,34 @@
          <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                <div class="iq-header-title">
+                  <h4 class="card-title">Informasi Lain Pasien</h4>
+               </div>
+            </div>
+            <div class="iq-card-body">
+
+               <table class="table">
+                  <thead>
+                     <tr>
+                        <th scope="col">Kategori</th>
+                        <td>{{$data->pasien->kategori_pasien}}</td>
+                     </tr>
+                     @if ($data->pasien->kategori_pasien != 'Pasien Umum') 
+                     <tr>
+                        <th scope="col">Civitas</th>
+                        <td>{{$data->pasien->civitas}}</td>
+                     </tr>
+                     <tr>
+                        <th scope="col">NIM / NIPY</th>
+                        <td>{{$data->pasien->nim_nipy}}</td>
+                     </tr>
+                     @endif
+                  </thead>
+               </table>
+            </div>
+         </div>
+         <div class="iq-card">
+            <div class="iq-card-header d-flex justify-content-between">
+               <div class="iq-header-title">
                   <h4 class="card-title">Transaksi</h4>
                </div>
             </div>
@@ -57,7 +85,19 @@
                      </tr>
                      <tr>
                         <th scope="col">Total yang harus dibayar</th>
-                        <td>{{$total = $biayaAdmin + $biayaPetugasMedis + $biayaObat }}</td>
+                        @if ($data->pasien->kategori_pasien == 'Pasien Umum')
+                           {{-- KALO KATEGORINYA PASIEN UMUM --}}
+                           <td>{{$total = $biayaAdmin + $biayaPetugasMedis + $biayaObat }}</td>
+                        @else
+                           {{-- KALO KATEGORINYA PASIEN CIVITAS PHB --}}
+                           @if ($data->pasien->civitas == 'Mahasiswa')
+                              {{-- KALO KATEGORINYA PASIEN CIVITAS PHB DAN CIVITASNYA MAHASISWA --}}
+                              <td>{{$total = 0 }}</td>
+                           @else
+                              {{-- KALO KATEGORINYA PASIEN CIVITAS PHB DAN CIVITASNYA PEGAWAI --}}
+                              <td>{{$total = 10000 }}</td>
+                           @endif
+                        @endif
                      </tr>
                   </thead>
                </table>
@@ -71,7 +111,7 @@
                   <input type="text" name="total_pembayaran" value="{{$total}}" hidden>
 
                   <a class="btn iq-bg-danger mt-3" onclick="history.back()">Batal</a>
-                  <button type="submit" class="btn iq-bg-primary mt-3">Print Nota</button>
+                  <button type="submit" class="btn iq-bg-primary mt-3" formtarget="_blank">Print Nota</button>
                </form>
             </div>
          </div>
