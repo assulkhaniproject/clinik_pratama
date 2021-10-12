@@ -61,7 +61,7 @@
                 <div class="col-md-6 position-relative">
                     <div class="sign-in-from">
                         <h1 class="mb-0">Sign in Admin</h1>
-                        <p>Enter your email address and password to access admin panel.</p>
+                        <p>Masukkan Username dan Password</p>
                         @if (session()->has('message'))
                         <div class="alert alert-danger mx-3 mt-3">
                             {{ session('message') }}

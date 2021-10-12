@@ -44,6 +44,7 @@
                                         <option value="{{ $item->id }}" @if($rekamMedik->keluhan->containsStrict('id', $item->id)) selected="selected" @endif>{{ $item->keluhan }}</option>
                                      @endforeach 
                                 </select>
+                                <small>keluhan tidak wajib diisi.</small>
                                 @if ($errors->has('keluhan'))
                                 <span class="invalid-feedback" role="alert">
                                     <p><b>{{ $errors->first('keluhan')}}</b></p>
@@ -124,6 +125,7 @@
                                             <option value="{{ $item->id }}" @if($rekamMedik->obat->containsStrict('id', $item->id)) selected="selected" @endif>{{ $item->kode }} {{ $item->nama }}</option>
                                         @endforeach 
                                     </select>
+                                    <small>jika tidak ada keluhan resep obat tidak wajib diisi.</small>
                                 </div>
                                 @if ($errors->has('resep'))
                                 <span class="invalid-feedback" role="alert">

@@ -61,7 +61,7 @@
                 <div class="col-md-6 position-relative">
                     <div class="sign-in-from">
                         <h1 class="mb-0">Sign in</h1>
-                        <p>Enter your email address and password to access dashboard panel.</p>
+                        <p>Masukkan username dan password.</p>
                         @if (session()->has('message'))
                         <div class="alert alert-info mx-3 mt-3">
                             {{ session('message') }}
@@ -79,7 +79,7 @@
                             <div class="form-group">
                                 <label for="exampleInputUsername">Username</label>
                                 <input name="username" type="username" class="form-control mb-0" id="exampleInputUsername"
-                                    placeholder="Masukan Username">
+                                    placeholder="NIPY">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
