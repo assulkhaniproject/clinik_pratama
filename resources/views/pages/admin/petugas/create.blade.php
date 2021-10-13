@@ -58,12 +58,26 @@
                     <div class="form-group row">
                         <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Password :</label>
                         <div class="col-sm-8">
-                            <input value="{{old('password')}}" name="password" type="text"
+                            <input value="{{old('password')}}" name="password" type="password"
                                 class="form-control ml-3 text-dark {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                 id="pwd1" placeholder="">
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
                                     <p><b>{{ $errors->first('password') }}</b></p>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0 ml-4" for="pwd1">Konfirmasi Password :</label>
+                        <div class="col-sm-8">
+                            <input name="password_confirmation" type="password"
+                                class="form-control ml-3 text-dark {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                                id="pwd1" placeholder="">
+                                <small class="ml-3">kosongkan jika tidak ingin diganti</small>
+                            @if ($errors->has('password_confirmation'))
+                                <span class="invalid-feedback" role="alert">
+                                    <p><b>{{ $errors->first('password_confirmation') }}</b></p>
                                 </span>
                             @endif
                         </div>
@@ -97,7 +111,9 @@
                         <div class="col-sm-4">
                             <input value="{{old('tanggal_lahir')}}" name="tanggal_lahir" type="date"
                                 class="form-control ml-3 text-dark {{ $errors->has('tanggal_lahir') ? 'is-invalid' : '' }}"
-                                id="pwd1" placeholder="">
+                                id="pwd1" placeholder=""
+                                min="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(60)))  }}"
+                                max="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subMonth(1)))  }}">
                             @if ($errors->has('tanggal_lahir'))
                                 <span class="invalid-feedback" role="alert">
                                     <p><b>{{ $errors->first('tanggal_lahir') }}</b></p>

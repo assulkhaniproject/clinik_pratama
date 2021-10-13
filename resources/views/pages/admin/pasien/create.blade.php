@@ -94,7 +94,9 @@
                      </div>
                      <div class="col-6">
                         <label for="">Tanggal Lahir:</label>
-                        <input name="tanggal_lahir" type="date" class="form-control {{$errors->has('tanggal_lahir')?'is-invalid':''}}" placeholder="" id="tanggal_lahir">
+                        <input name="tanggal_lahir" type="date" class="form-control {{$errors->has('tanggal_lahir')?'is-invalid':''}}" placeholder="" id="tanggal_lahir"
+                        min="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(60)))  }}"
+                        max="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subMonth(1)))  }}">
                         @if ($errors->has('tanggal_lahir'))
                   <span class="invalid-feedback" role="alert">
                      <p><b>{{ $errors->first('tanggal_lahir')}}</b></p>
@@ -176,7 +178,17 @@
                     $('#no_identitas_form').show();
                     $('#civitas').hide();
                 }
+            });
+
+            $('#tanggal_lahir').change(() => {
+               $('#usia').val(_calculateAge(new Date($('#tanggal_lahir').val())));
             })
+
+            function _calculateAge(birthday) {
+               var ageDifMs = Date.now() - birthday.getTime();
+               var ageDate = new Date(ageDifMs);
+               return Math.abs(ageDate.getUTCFullYear() - 1970);
+            }
         })
 
         // AJAX SELECT2
@@ -228,12 +240,6 @@
                         },
                     });
                 });
-
-            function _calculateAge(birthday) {
-                var ageDifMs = Date.now() - birthday.getTime();
-                var ageDate = new Date(ageDifMs);
-                return Math.abs(ageDate.getUTCFullYear() - 1970);
-            }
         });
     </script>
 @endsection
