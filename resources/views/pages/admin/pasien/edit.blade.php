@@ -73,7 +73,7 @@
                <div class="col-4">
                   <input name="tanggal_lahir" type="date" class="form-control ml-3 text-dark {{$errors->has('tanggal_lahir')?'is-invalid':''}}" placeholder="" value="{{$data->tanggal_lahir}}"
                   min="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(60)))  }}"
-                  max="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subMonth(1)))  }}">
+                  max="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subDay(1)))  }}">
                   @if ($errors->has('tanggal_lahir'))
                   <span class="invalid-feedback" role="alert">
                      <p><b>{{ $errors->first('tanggal_lahir')}}</b></p>
